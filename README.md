@@ -5,5 +5,9 @@ You play as a small cat who moves into a quiet countryside village full of other
 #### 2026 APR 07
 - [x] Cat sprites
 
-#### 2026 APR 08
-- [] Environment/World Building Sprites
+#### 2026 APR 08 (19)
+- [x] Environment/World Building Sprites
+
+#### 2026 APR 20
+- [ ] Godot sprite tracing
+- [ ] Game sfx
