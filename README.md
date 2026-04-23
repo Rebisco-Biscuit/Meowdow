@@ -8,6 +8,8 @@ You play as a small cat who moves into a quiet countryside village full of other
 #### 2026 APR 08 (19)
 - [x] Environment/World Building Sprites
 
-#### 2026 APR 20
-- [ ] Godot sprite tracing
+#### 2026 APR 23
+- [x] Godot sprite tracing
+- [x] Walking and farm functionalities
+- [ ] World generation (1 out of 3 maps)
 - [ ] Game sfx
