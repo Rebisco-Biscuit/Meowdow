@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://nrc0oqgg57sm"]
 
-<<<<<<< Updated upstream
 [ext_resource type="Script" uid="uid://x1cuy0rs3bo4" path="res://orange_cat.gd" id="1_6x8ig"]
 [ext_resource type="Texture2D" uid="uid://bhfm771vnsiy0" path="res://assets/Meow-Sprites/Free pack/cat 1.6.png" id="1_glo32"]
 [ext_resource type="Script" uid="uid://b1d53rfwolafp" path="res://animated_sprite_2d.gd" id="2_6x8ig"]
@@ -961,13 +960,11 @@ height = 56.0
 position = Vector2(42, 56)
 script = ExtResource("1_6x8ig")
 inv = ExtResource("2_oyyw8")
-=======
 [ext_resource type="Script" uid="uid://dpjnt4yyvdqfw" path="res://cat_selection.gd" id="1_estkj"]
 
 [node name="Node2D" type="Node2D" unique_id=2026840253]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=694690960]
->>>>>>> Stashed changes
 
 [node name="Control" type="Control" parent="CanvasLayer" unique_id=1417730338]
 layout_mode = 3
@@ -990,13 +987,11 @@ layout_mode = 2
 action_mode = 0
 text = "orange cat"
 
-<<<<<<< Updated upstream
 [node name="Inv_UI" parent="CharacterBody2D" unique_id=135768738 instance=ExtResource("5_5bw4s")]
 offset_right = 49.0
 offset_bottom = 47.0
 
 [connection signal="animation_finished" from="CharacterBody2D/AnimatedSprite2D" to="CharacterBody2D/AnimatedSprite2D" method="_on_animation_finished"]
-=======
 [node name="black" type="Button" parent="CanvasLayer/Control/HBoxContainer" unique_id=2318194]
 layout_mode = 2
 action_mode = 0
@@ -1010,4 +1005,3 @@ text = "white cat"
 [connection signal="pressed" from="CanvasLayer/Control/HBoxContainer/orange" to="CanvasLayer/Control" method="_on_orange_select_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/HBoxContainer/black" to="CanvasLayer/Control" method="_on_black_select_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/HBoxContainer/white" to="CanvasLayer/Control" method="_on_white_select_pressed"]
->>>>>>> Stashed changes
