@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://nrc0oqgg57sm"]
 
 [ext_resource type="Script" uid="uid://x1cuy0rs3bo4" path="res://orange_cat.gd" id="1_6x8ig"]
-[ext_resource type="Texture2D" uid="uid://bhfm771vnsiy0" path="res://Meow-Sprites/Free pack/cat 1.6.png" id="1_glo32"]
+[ext_resource type="Texture2D" uid="uid://bhfm771vnsiy0" path="res://assets/Meow-Sprites/Free pack/cat 1.6.png" id="1_glo32"]
 [ext_resource type="Script" uid="uid://b1d53rfwolafp" path="res://animated_sprite_2d.gd" id="2_6x8ig"]
+[ext_resource type="Resource" uid="uid://deonxubtj7756" path="res://inventory/playerinv.tres" id="2_oyyw8"]
+[ext_resource type="PackedScene" uid="uid://b2xm6va3lf6ja" path="res://inventory/inv_ui.tscn" id="5_5bw4s"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oyyw8"]
 atlas = ExtResource("1_glo32")
@@ -957,6 +959,7 @@ height = 56.0
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=863105388]
 position = Vector2(42, 56)
 script = ExtResource("1_6x8ig")
+inv = ExtResource("2_oyyw8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=308452878]
 scale = Vector2(2, 2)
@@ -966,5 +969,9 @@ script = ExtResource("2_6x8ig")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=2144362271]
 shape = SubResource("CapsuleShape2D_oyyw8")
+
+[node name="Inv_UI" parent="CharacterBody2D" unique_id=135768738 instance=ExtResource("5_5bw4s")]
+offset_right = 49.0
+offset_bottom = 47.0
 
 [connection signal="animation_finished" from="CharacterBody2D/AnimatedSprite2D" to="CharacterBody2D/AnimatedSprite2D" method="_on_animation_finished"]
