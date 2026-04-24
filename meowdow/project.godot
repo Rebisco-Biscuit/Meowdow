@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 Dialogic="*uid://ds2q0uclmolvu"
 <<<<<<<UpdatedupstreamGlobalData="*uid://bwcl6luxb50s7"
+GlobalData="*uid://bwcl6luxb50s7"
 
 [dialogic]
 
@@ -79,6 +80,8 @@ text/input_action="dialogic_default_action"
 
 [display]
 
+window/size/viewport_width=1280
+window/size/viewport_height=720
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
 
