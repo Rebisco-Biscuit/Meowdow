@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://d2atkhfl2m7g3"]
+
+[ext_resource type="Texture2D" uid="uid://bj2bfids0vh1n" path="res://assets/icons/black_cat_icon.png" id="1_flweh"]
+[ext_resource type="Script" uid="uid://cpqxyvuqah30v" path="res://characterSlot.gd" id="1_mcpye"]
+[ext_resource type="Texture2D" uid="uid://cfu6em5siq51d" path="res://assets/UI-Sprites.png" id="1_ug455"]
+
+[node name="Character" type="Panel" unique_id=2079901492]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(110, 110)
+offset_right = 110.0
+offset_bottom = 110.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_mcpye")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=484179318]
+scale = Vector2(4.230769, 4.1923075)
+texture = ExtResource("1_ug455")
+centered = false
+region_enabled = true
+region_rect = Rect2(59, 11, 26, 26)
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1224912446]
+custom_minimum_size = Vector2(55, 55)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -9.0
+offset_top = -9.0
+offset_right = 9.0
+offset_bottom = 9.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_flweh")

@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://cmb0ta6qx3wuo"]
+
+[ext_resource type="Script" uid="uid://rrpocub34w87" path="res://selection_screen.gd" id="1_02ils"]
+[ext_resource type="FontFile" uid="uid://la3t8b3gk5jh" path="res://assets/pixelFont-7-8x14-sproutLands.ttf" id="1_mgcrx"]
+[ext_resource type="Texture2D" uid="uid://bj2bfids0vh1n" path="res://assets/icons/black_cat_icon.png" id="2_nf7ud"]
+[ext_resource type="PackedScene" uid="uid://d2atkhfl2m7g3" path="res://characterSlot.tscn" id="2_yfmej"]
+[ext_resource type="Texture2D" uid="uid://ct7vl7t8kndv3" path="res://assets/icons/test_bg.png" id="2_yvk22"]
+[ext_resource type="Texture2D" uid="uid://dq5mbll4bdb3j" path="res://assets/icons/orange_cat_icon.png" id="5_yvk22"]
+[ext_resource type="Texture2D" uid="uid://dpj50dqtygcnp" path="res://assets/icons/white_cat_icon.png" id="6_k1fcs"]
+
+[node name="SelectionScreen" type="Control" unique_id=2045891526]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_02ils")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=438942123]
+layout_mode = 0
+offset_right = 1147.0
+offset_bottom = 647.0
+texture = ExtResource("2_yvk22")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1970855710]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 30
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=1258166449]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_mgcrx")
+theme_override_font_sizes/font_size = 38
+text = "SELECT YOUR CAT"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=1077042539]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 17
+
+[node name="Character1" parent="VBoxContainer/HBoxContainer" unique_id=2079901492 instance=ExtResource("2_yfmej")]
+layout_mode = 2
+characterPath = "res://BlackCat.tscn"
+characterTexture = ExtResource("2_nf7ud")
+
+[node name="Character2" parent="VBoxContainer/HBoxContainer" unique_id=1026397261 instance=ExtResource("2_yfmej")]
+layout_mode = 2
+characterPath = "res://OrangeCat.tscn"
+characterTexture = ExtResource("5_yvk22")
+
+[node name="Character3" parent="VBoxContainer/HBoxContainer" unique_id=397702787 instance=ExtResource("2_yfmej")]
+layout_mode = 2
+characterPath = "res://WhiteCat.tscn"
+characterTexture = ExtResource("6_k1fcs")
+
+[node name="Button" type="Button" parent="VBoxContainer" unique_id=2074818697]
+custom_minimum_size = Vector2(86, 30)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("1_mgcrx")
+theme_override_font_sizes/font_size = 28
+text = "START"
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]

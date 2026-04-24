@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://cf250yck4dxvm"]
 
 [ext_resource type="Script" uid="uid://x1cuy0rs3bo4" path="res://cat_function.gd" id="1_vtvqm"]
-[ext_resource type="Texture2D" uid="uid://digcbq5wyohpf" path="res://Meow-Sprites/Free pack/cat 1.9.png" id="2_4dpgh"]
+[ext_resource type="Texture2D" uid="uid://digcbq5wyohpf" path="res://assets/Meow-Sprites/Free pack/cat 1.9.png" id="2_4dpgh"]
 [ext_resource type="Script" uid="uid://b1d53rfwolafp" path="res://anim2d.gd" id="3_xd7rr"]
+[ext_resource type="PackedScene" uid="uid://b2xm6va3lf6ja" path="res://inventory/inv_ui.tscn" id="4_4dpgh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kcq34"]
 atlas = ExtResource("2_4dpgh")
@@ -891,5 +892,7 @@ script = ExtResource("3_xd7rr")
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1919153255]
 position = Vector2(-6.556511e-07, 0)
 shape = SubResource("CapsuleShape2D_4dpgh")
+
+[node name="Inv_UI" parent="CharacterBody2D" unique_id=135768738 instance=ExtResource("4_4dpgh")]
 
 [connection signal="animation_finished" from="CharacterBody2D/AnimatedSprite2D" to="CharacterBody2D" method="_on_animation_finished"]

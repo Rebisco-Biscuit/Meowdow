@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b07h5qsckgoh2"
-path="res://.godot/imported/carrot_icon-removebg-preview (1).png-8850f4e628cde8aeb6092c7883cfae16.ctex"
+uid="uid://ct7vl7t8kndv3"
+path="res://.godot/imported/test_bg.png-e83ae0f1cc039b0373fea1e61b0a662b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/icons/carrot_icon-removebg-preview (1).png"
-dest_files=["res://.godot/imported/carrot_icon-removebg-preview (1).png-8850f4e628cde8aeb6092c7883cfae16.ctex"]
+source_file="res://assets/icons/test_bg.png"
+dest_files=["res://.godot/imported/test_bg.png-e83ae0f1cc039b0373fea1e61b0a662b.ctex"]
 
 [params]
 
