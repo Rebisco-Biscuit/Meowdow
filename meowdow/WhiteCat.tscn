@@ -241,6 +241,10 @@ region = Rect2(96, 1440, 32, 32)
 atlas = ExtResource("2_4dpgh")
 region = Rect2(128, 1440, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_4dpgh"]
+atlas = ExtResource("2_4dpgh")
+region = Rect2(64, 32, 32, 32)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_t4pn7"]
 atlas = ExtResource("2_4dpgh")
 region = Rect2(96, 32, 32, 32)
@@ -659,7 +663,10 @@ animations = [{
 "name": &"white_cat_farm_w",
 "speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4dpgh")
+}],
 "loop": true,
 "name": &"white_cat_idle_a",
 "speed": 5.0
@@ -886,7 +893,7 @@ script = ExtResource("1_vtvqm")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=655170244]
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_vtvqm")
-animation = &"white_cat_walk_s"
+animation = &"white_cat_idle_a"
 script = ExtResource("3_xd7rr")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1919153255]
