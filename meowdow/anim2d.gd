@@ -8,6 +8,8 @@ var is_afk = false
 var idle_timer = 0.0
 var afk_threshold = 10.0 
 
+
+
 func _process(delta):
 	# 1. THE HARD LOCK: Farming cannot be interrupted
 	if is_farming:

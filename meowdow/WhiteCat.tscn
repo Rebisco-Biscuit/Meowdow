@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://x1cuy0rs3bo4" path="res://cat_function.gd" id="1_vtvqm"]
 [ext_resource type="Texture2D" uid="uid://digcbq5wyohpf" path="res://assets/Meow-Sprites/Free pack/cat 1.9.png" id="2_4dpgh"]
+[ext_resource type="Texture2D" uid="uid://baokpiq7os6do" path="res://assets/shadow.png" id="2_xd7rr"]
 [ext_resource type="Script" uid="uid://b1d53rfwolafp" path="res://anim2d.gd" id="3_xd7rr"]
 [ext_resource type="PackedScene" uid="uid://b2xm6va3lf6ja" path="res://inventory/inv_ui.tscn" id="4_4dpgh"]
 
@@ -881,19 +882,23 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4dpgh"]
-radius = 24.0
-height = 56.0
+radius = 15.0
 
 [node name="Node2D" type="Node2D" unique_id=2118906389]
+z_index = 2
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1839679247]
-scale = Vector2(1.5, 1.5)
 script = ExtResource("1_vtvqm")
 
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=960044275]
+modulate = Color(1, 1, 1, 0.1764706)
+position = Vector2(-1.0000001, 8)
+scale = Vector2(0.28571427, 0.48000002)
+texture = ExtResource("2_xd7rr")
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=655170244]
-scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_vtvqm")
-animation = &"white_cat_idle_a"
+animation = &"white_cat_idle_s"
 script = ExtResource("3_xd7rr")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1919153255]
@@ -901,5 +906,11 @@ position = Vector2(-6.556511e-07, 0)
 shape = SubResource("CapsuleShape2D_4dpgh")
 
 [node name="Inv_UI" parent="CharacterBody2D" unique_id=135768738 instance=ExtResource("4_4dpgh")]
+visible = false
+z_index = 10
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=1436251003]
+
+[node name="MeowPlayer" type="AudioStreamPlayer2D" parent="CharacterBody2D" unique_id=63938962]
 
 [connection signal="animation_finished" from="CharacterBody2D/AnimatedSprite2D" to="CharacterBody2D" method="_on_animation_finished"]
