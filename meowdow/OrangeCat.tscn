@@ -958,6 +958,7 @@ z_index = 2
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=90748852]
 position = Vector2(42, 56)
+scale = Vector2(0.9, 0.9)
 script = ExtResource("1_aogdi")
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=27244300]

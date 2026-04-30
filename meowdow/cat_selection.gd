@@ -1,7 +1,8 @@
 extends Control
 
 var CAT_SCENE = preload("res://OrangeCat.tscn")
-var MAP_SCENE = preload("res://MAPtest.tscn")
+#var MAP_SCENE = preload("res://MAPtest.tscn")
+var MAP_SCENE = preload("res://MAP2.tscn")
 
 func _on_orange_select_pressed():
 	CAT_SCENE = preload("res://OrangeCat.tscn")
@@ -33,7 +34,7 @@ func select_and_spawn(color_string):
 
 	# 4. Spawn at TILE (24,15)
 	var tilemap = map.get_node("TileMapLayer")
-	var tile_pos = Vector2i(24, 15)
+	var tile_pos = Vector2i(39, 26)
 
 	var world_pos = tilemap.map_to_local(tile_pos)
 	var tile_size = tilemap.tile_set.tile_size
