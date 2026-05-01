@@ -27,7 +27,7 @@ var next_meow_time := 0.0
 # -------------------
 
 # --- TAP SYSTEM ---
-var step_timer := 0.0a
+var step_timer := 0.0
 var step_interval := 0.02
 # -------------------
 
