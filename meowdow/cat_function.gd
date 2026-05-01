@@ -4,6 +4,7 @@ extends CharacterBody2D
 @onready var sprite = $AnimatedSprite2D
 @onready var shadow = $Sprite2D
 @onready var meow_player = $MeowPlayer
+@onready var step_player = $StepPlayer
 
 @export_enum("orange", "black", "white") var cat_type: String = "orange"
 
@@ -25,13 +26,29 @@ var meow_timer := 0.0
 var next_meow_time := 0.0
 # -------------------
 
+# --- TAP SYSTEM ---
+var step_timer := 0.0a
+var step_interval := 0.02
+# -------------------
+
 func _ready():
 	randomize()
 	set_next_meow_time()
 
 func _physics_process(delta):
 	shadow.global_position = global_position + Vector2(0, 6)
-
+	
+	# --- TAP TIMER ---
+	if velocity.length() > 0:
+		step_timer += delta
+		
+		if step_timer >= step_interval:
+			play_step()
+			step_timer = 0.0
+	else:
+		step_timer = 0.0
+	# ------------------
+	
 	# --- MEOW TIMER ---
 	meow_timer += delta
 	if meow_timer >= next_meow_time:
@@ -132,3 +149,13 @@ func play_meow():
 	meow_player.pitch_scale = randf_range(0.9, 1.1)
 	meow_player.play()
 # --------------------
+
+# --- TAP HELPERS ---
+func play_step():
+	if step_player.playing:
+		return
+	
+	step_player.stream = preload("res://meow-sic/tap.mp3")
+	step_player.pitch_scale = randf_range(0.9, 1.1) # slight variation
+	step_player.play()
+# --------------------	
