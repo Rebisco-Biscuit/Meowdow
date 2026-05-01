@@ -976,6 +976,7 @@ script = ExtResource("3_yg1y3")
 shape = SubResource("CapsuleShape2D_kse2u")
 
 [node name="Inv_UI" parent="CharacterBody2D" unique_id=135768738 instance=ExtResource("4_1077u")]
+visible = false
 z_index = 10
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=628187782]

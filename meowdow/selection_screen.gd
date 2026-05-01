@@ -18,14 +18,14 @@ func _get_char_node():
 
 func _set_char_selected(charNode):
 	GlobalData.playerCharPath = charNode.characterPath
+	GlobalData.selectedCatType = charNode.catType
 	
 	for node in character_selection_box.get_children():
 		var isSelected = charNode == node
 		node.set_selected(isSelected)
-			
 
 
 func _on_button_pressed() -> void:
 	if not GlobalData.playerCharPath: return
 	
-	get_tree().change_scene_to_file("res://test_scene.tscn")
+	get_tree().change_scene_to_file("res://MAPtest.tscn")

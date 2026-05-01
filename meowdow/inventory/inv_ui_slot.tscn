@@ -5,12 +5,13 @@
 
 [node name="inv_UI_slot" type="Panel" unique_id=290537927]
 self_modulate = Color(1, 1, 1, 0)
-custom_minimum_size = Vector2(26, 26)
-offset_right = 26.0
-offset_bottom = 26.0
+custom_minimum_size = Vector2(13, 13)
+offset_right = 13.0
+offset_bottom = 13.0
 script = ExtResource("1_fcwim")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1839897286]
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_dfngl")
 centered = false
 region_enabled = true
@@ -18,9 +19,11 @@ region_rect = Rect2(59, 155, 26, 26)
 
 [node name="CenterContainer" type="CenterContainer" parent="." unique_id=1270417248]
 custom_minimum_size = Vector2(26, 26)
-layout_mode = 0
+layout_mode = 1
 offset_right = 26.0
 offset_bottom = 26.0
+scale = Vector2(0.5, 0.5)
+localize_numeral_system = false
 
 [node name="Panel" type="Panel" parent="CenterContainer" unique_id=724786316]
 layout_mode = 2
