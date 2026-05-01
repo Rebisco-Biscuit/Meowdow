@@ -1,0 +1,109 @@
+join "NPC GUIDE" rightmost
+
+"NPC GUIDE" (happy hello): Hello traveller, you look new!!
+"NPC GUIDE" (happy hello): Welcome to Vinalore—the town of laughter, song, and endless celebration!
+
+"NPC GUIDE" (sad): ...At least, that's what it's supposed to be.
+
+"NPC GUIDE" (neutral): You hear the music, right? The giggles? The dancing?
+"NPC GUIDE" (neutral): Look closer.
+
+"NPC GUIDE" (sad): Their smiles… don’t reach their eyes.
+
+- What happened here?
+
+"NPC GUIDE": Before all this… there was harmony.
+leave "NPC GUIDE" [animation="Fade Out"]
+
+join "The First Garnder" center [animation="Fade In" length="0.4"]
+"NPC GUIDE": The First Gardener created his kingdom.
+leave "The First Garnder" [animation="Fade Out"]
+join Echofall center [animation="Fade In"]
+"NPC GUIDE": Echofall, the Keeper of Rhollow, the town of Stillness.
+join "Old Jerry" leftmost [animation="Fade In"]
+"NPC GUIDE": Old Jerry, the Keeper of Vinalore, the town of Joy.
+join Frostcribe rightmost [animation="Fade In"]
+"NPC GUIDE": Frostcribe, the keeper of Aubrialis, the town of Memory
+leave Echofall [animation="Fade Out"]
+leave "Old Jerry" [animation="Fade Out"]
+leave Frostcribe [animation="Fade Out"]
+join "harmony of three" center [animation="Fade In"]
+
+"NPC GUIDE": Together, they sang what we call… the Harmony of Three.
+leave "harmony of three" [animation="Fade Out"]
+join "Old Jerry" (sang joy) center [animation="Fade In"]
+
+"NPC GUIDE": Old Jerry sang joy.
+leave "Old Jerry" [animation="Fade Out"]
+join Frostcribe (hold memory) center [animation="Fade In"]
+"NPC GUIDE": Frostcribe held memory.
+leave Frostcribe [animation="Fade Out"]
+join Echofall (hold stillness) center [animation="Fade In"]
+"NPC GUIDE": Echofall kept stillness.
+leave Echofall [animation="Fade Out"]
+
+"NPC GUIDE": But one of them… broke that harmony.
+join Echofall (Neutral) leftmost [animation="Fade In"]
+
+"NPC GUIDE": The keeper of stillness… Echofall.
+
+"NPC GUIDE": He grew tired of holding everything together.
+"NPC GUIDE": He thought… if he could take the Gardener’s power… he could control it all.
+
+[SHOW CHARACTER\: The First Gardener center]
+
+"NPC GUIDE": So he used a dagger of void…
+"NPC GUIDE": A blade meant to silence even sound itself…
+
+"NPC GUIDE": And struck… the First Gardener.
+
+- 
+
+"NPC GUIDE": But power… was never meant to be taken.
+
+"NPC GUIDE": The Gardener said—
+"The First Gardener": Foolish child… power cannot be taken. It can only be… shared.
+
+"The First Gardener": You have not gained anything.
+
+"The First Gardener": You have broken… the only thing that held us together.
+
+- 
+
+[FADE OUT\: The First Gardener]
+
+"NPC GUIDE": The Gardener didn’t bleed…
+"NPC GUIDE": It faded… into three seeds of music.
+
+"NPC GUIDE": And scattered… across the three towns.
+
+- 
+
+[HIDE CHARACTER\: Echofall]
+
+"NPC GUIDE": Since then… nothing has been right.
+
+"NPC GUIDE": We laugh… but we don’t feel joy.
+"NPC GUIDE": We sing… but the song is wrong.
+
+- 
+
+"NPC GUIDE": Our keeper… Old Jerry…
+
+[SHOW CHARACTER\: Old Jerry center]
+
+"NPC GUIDE": He’s trying to protect us.
+"NPC GUIDE": But something’s… off.
+
+- 
+
+"NPC GUIDE": If you really want to help…
+
+"NPC GUIDE": Talk to the others.
+"NPC GUIDE": Listen carefully.
+
+"NPC GUIDE": And… try planting something.
+
+- 
+
+[LEAVE: NPC GUIDE]

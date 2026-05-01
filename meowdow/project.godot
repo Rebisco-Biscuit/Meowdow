@@ -30,14 +30,22 @@ directories/dch_directory={
 "Frostcribe": "res://Timelines/characters/Frostcribe.dch",
 "Glow": "res://Timelines/characters/Glow.dch",
 "Mitten": "res://Timelines/characters/Mitten.dch",
+"NPC GUIDE": "res://assets/Meow-Sprites/lore/NPC GUIDE.dch",
 "Narrator": "res://Timelines/characters/narrator.dch",
 "Old Jerry": "res://Timelines/characters/Old Jerry.dch",
-"Thaw": "res://Timelines/characters/Thaw.dch"
+"Thaw": "res://Timelines/characters/Thaw.dch",
+"The First Garnder": "res://The First Garnder.dch",
+"harmony of three": "res://Timelines/characters/harmony of three.dch",
+"map": "res://Timelines/characters/map.dch"
 }
 directories/dtl_directory={
+"Town1_Start": "res://Timelines/towns/Town1_Start.dtl",
 "practice": "res://Timelines/practice.dtl"
 }
-layout/style_directory={}
+layout/style_directory={
+"": "res://Timelines/towns/Town1.tres",
+"Town1": "res://Timelines/towns/Town1.tres"
+}
 extensions_folder="res://addons/dialogic_additions"
 text/letter_speed=0.022
 text/initial_text_reveal_skippable=true
@@ -72,8 +80,8 @@ audio/channel_defaults={
 }
 }
 variables={}
-layout/style_list=[""]
-layout/default_style=""
+layout/style_list=["res://Timelines/towns/Town1.tres"]
+layout/default_style="res://Timelines/towns/Town1.tres"
 glossary/default_case_sensitive=true
 history/simple_history_enabled=true
 text/input_action="dialogic_default_action"

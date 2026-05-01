@@ -25,6 +25,15 @@
 "offset": Vector2(0, 0),
 "scale": 1,
 "scene": ""
+},
+"sang joy": {
+"export_overrides": {
+"image": "\"res://assets/Meow-Sprites/lore/old jerrry sang joy.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
 }
 },
 &"scale": 1.0
