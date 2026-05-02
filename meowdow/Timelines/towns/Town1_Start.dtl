@@ -6,7 +6,7 @@ join "NPC GUIDE" rightmost
 "NPC GUIDE" (sad): ...At least, that's what it's supposed to be.
 
 "NPC GUIDE" (neutral): You hear the music, right? The giggles? The dancing?
-"NPC GUIDE" (neutral): Look closer.
+"NPC GUIDE" (point up): Look closer.
 
 "NPC GUIDE" (sad): Their smiles… don’t reach their eyes.
 
@@ -48,62 +48,48 @@ join Echofall (Neutral) leftmost [animation="Fade In"]
 "NPC GUIDE": The keeper of stillness… Echofall.
 
 "NPC GUIDE": He grew tired of holding everything together.
+join "The First Garnder" rightmost [animation="Fade In"]
 "NPC GUIDE": He thought… if he could take the Gardener’s power… he could control it all.
-
-[SHOW CHARACTER\: The First Gardener center]
+join Echofall (Echofall With Dagger) leftmost
+leave "The First Garnder" [animation="Fade Out"]
+join "NPC GUIDE" rightmost
 
 "NPC GUIDE": So he used a dagger of void…
 "NPC GUIDE": A blade meant to silence even sound itself…
 
 "NPC GUIDE": And struck… the First Gardener.
+leave Echofall
+leave "The First Garnder"
 
-- 
+"NPC GUIDE" (sigh): But power… was never meant to be taken.
 
-"NPC GUIDE": But power… was never meant to be taken.
+"NPC GUIDE" (sad): The Gardener said—
+"NPC GUIDE" (sad): Foolish child… power cannot be taken. It can only be… shared.
 
-"NPC GUIDE": The Gardener said—
-"The First Gardener": Foolish child… power cannot be taken. It can only be… shared.
+"NPC GUIDE" (sad): That echofall did not gain anything.
 
-"The First Gardener": You have not gained anything.
+"NPC GUIDE" (neutral): but have broken what held everyone together.
 
-"The First Gardener": You have broken… the only thing that held us together.
-
-- 
-
-[FADE OUT\: The First Gardener]
-
-"NPC GUIDE": The Gardener didn’t bleed…
+"NPC GUIDE" (neutral): The Gardener didn’t bleed…
+join seeds left
 "NPC GUIDE": It faded… into three seeds of music.
 
 "NPC GUIDE": And scattered… across the three towns.
 
-- 
+"NPC GUIDE" (neutral): Since then… nothing has been right.
 
-[HIDE CHARACTER\: Echofall]
-
-"NPC GUIDE": Since then… nothing has been right.
-
-"NPC GUIDE": We laugh… but we don’t feel joy.
+"NPC GUIDE" (sad): We laugh… but we don’t feel joy.
 "NPC GUIDE": We sing… but the song is wrong.
 
-- 
+"NPC GUIDE" (sobs): Our keeper… Old Jerry…
 
-"NPC GUIDE": Our keeper… Old Jerry…
+"NPC GUIDE" (sad): He’s trying to protect us.
+"NPC GUIDE" (neutral): But something’s… off.
 
-[SHOW CHARACTER\: Old Jerry center]
+"NPC GUIDE" (idea): If you really want to help…
 
-"NPC GUIDE": He’s trying to protect us.
-"NPC GUIDE": But something’s… off.
+"NPC GUIDE" (neutral): Talk to the others.
+"NPC GUIDE" (happy): Listen carefully.
 
-- 
-
-"NPC GUIDE": If you really want to help…
-
-"NPC GUIDE": Talk to the others.
-"NPC GUIDE": Listen carefully.
-
-"NPC GUIDE": And… try planting something.
-
-- 
-
-[LEAVE: NPC GUIDE]
+"NPC GUIDE" (neutral): And… try planting something.
+leave "NPC GUIDE"

@@ -17,9 +17,27 @@
 &"nicknames": [""],
 &"offset": Vector2(0, 0),
 &"portraits": {
+"happy": {
+"export_overrides": {
+"image": "\"res://assets/Meow-Sprites/lore/hppy.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
 "happy hello": {
 "export_overrides": {
 "image": "\"res://assets/Meow-Sprites/lore/npc guide hello.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"idea": {
+"export_overrides": {
+"image": "\"res://assets/Meow-Sprites/lore/npc guide idea.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
@@ -47,6 +65,24 @@
 "sad": {
 "export_overrides": {
 "image": "\"res://assets/Meow-Sprites/lore/guide npc sad.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"sigh": {
+"export_overrides": {
+"image": "\"res://assets/Meow-Sprites/lore/npc guide sigh.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"sobs": {
+"export_overrides": {
+"image": "\"res://assets/Meow-Sprites/lore/sobs.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),

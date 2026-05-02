@@ -36,7 +36,8 @@ directories/dch_directory={
 "Thaw": "res://Timelines/characters/Thaw.dch",
 "The First Garnder": "res://The First Garnder.dch",
 "harmony of three": "res://Timelines/characters/harmony of three.dch",
-"map": "res://Timelines/characters/map.dch"
+"map": "res://Timelines/characters/map.dch",
+"seeds": "res://assets/Meow-Sprites/lore/seeds.dch"
 }
 directories/dtl_directory={
 "Town1_Start": "res://Timelines/towns/Town1_Start.dtl",

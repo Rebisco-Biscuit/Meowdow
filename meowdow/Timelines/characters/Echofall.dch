@@ -17,6 +17,15 @@
 &"nicknames": [""],
 &"offset": Vector2(0, 0),
 &"portraits": {
+"Echofall With Dagger": {
+"export_overrides": {
+"image": "\"res://assets/Meow-Sprites/lore/echofall with dagger.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
 "Neutral": {
 "export_overrides": {
 "image": "\"res://assets/Meow-Sprites/lore/Echofall.png\""
@@ -33,6 +42,16 @@
 "mirror": false,
 "offset": Vector2(0, 0),
 "scale": 1,
+"scene": ""
+},
+"reach to kill": {
+"export_overrides": {
+"image": "\"res://assets/Meow-Sprites/lore/echofall reaching to kill.png\""
+},
+"ignore_char_scale": false,
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1.0,
 "scene": ""
 }
 },
