@@ -6,6 +6,8 @@ extends CharacterBody2D
 @onready var meow_player = $MeowPlayer
 @onready var step_player = $StepPlayer
 
+@export var inventory: Inv
+
 @export_enum("orange", "black", "white") var cat_type: String = "orange"
 
 var last_dir = "s" 

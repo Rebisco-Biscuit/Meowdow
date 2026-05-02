@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://dmgn6px0i0n47"]
+
+[ext_resource type="PackedScene" uid="uid://bafxlswyrb3h3" path="res://inventory/collectables/collectable.tscn" id="1_xrool"]
+[ext_resource type="Resource" uid="uid://63cyr5bfcau8" path="res://inventory/items/tomato.tres" id="2_7wb4u"]
+[ext_resource type="Texture2D" uid="uid://dtkdueblkjssi" path="res://assets/icons/tomato_icon.png" id="2_vflia"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7wb4u"]
+resource_local_to_scene = true
+size = Vector2(10, 10)
+
+[node name="Tomato" unique_id=2120849737 instance=ExtResource("1_xrool")]
+item = ExtResource("2_7wb4u")
+
+[node name="CollisionShape2D" parent="." index="0" unique_id=1553553608]
+shape = SubResource("RectangleShape2D_7wb4u")
+
+[node name="Sprite2D" parent="." index="1" unique_id=692579624]
+texture = ExtResource("2_vflia")

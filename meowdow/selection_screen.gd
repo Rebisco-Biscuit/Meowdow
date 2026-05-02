@@ -28,4 +28,4 @@ func _set_char_selected(charNode):
 func _on_button_pressed() -> void:
 	if not GlobalData.playerCharPath: return
 	
-	get_tree().change_scene_to_file("res://MAPtest.tscn")
+	get_tree().change_scene_to_file("res://test_scene.tscn")

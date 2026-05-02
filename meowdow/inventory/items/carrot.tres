@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bm7k1fjixgjlm" path="res://assets/icons/carrot_icon.png" id="2_ih064"]
 
 [resource]
+resource_name = "carrot"
 script = ExtResource("1_ixq38")
 name = "carrot"
 texture = ExtResource("2_ih064")

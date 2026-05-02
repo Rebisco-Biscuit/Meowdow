@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://x1cuy0rs3bo4" path="res://cat_function.gd" id="1_vtvqm"]
 [ext_resource type="Texture2D" uid="uid://digcbq5wyohpf" path="res://assets/Meow-Sprites/Free pack/cat 1.9.png" id="2_4dpgh"]
+[ext_resource type="Resource" uid="uid://deonxubtj7756" path="res://inventory/playerinv.tres" id="2_dwdoy"]
 [ext_resource type="Texture2D" uid="uid://baokpiq7os6do" path="res://assets/shadow.png" id="2_xd7rr"]
 [ext_resource type="Script" uid="uid://b1d53rfwolafp" path="res://anim2d.gd" id="3_xd7rr"]
 [ext_resource type="PackedScene" uid="uid://b2xm6va3lf6ja" path="res://inventory/inv_ui.tscn" id="4_4dpgh"]
@@ -890,6 +891,8 @@ z_index = 2
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1839679247]
 scale = Vector2(0.9, 0.9)
 script = ExtResource("1_vtvqm")
+inventory = ExtResource("2_dwdoy")
+cat_type = "white"
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=960044275]
 modulate = Color(1, 1, 1, 0.1764706)
@@ -907,8 +910,12 @@ position = Vector2(-6.556511e-07, 0)
 shape = SubResource("CapsuleShape2D_4dpgh")
 
 [node name="Inv_UI" parent="CharacterBody2D" unique_id=135768738 instance=ExtResource("4_4dpgh")]
-visible = false
 z_index = 10
+offset_left = -48.888893
+offset_top = -33.333336
+offset_right = 47.111107
+offset_bottom = 30.666664
+metadata/_edit_use_anchors_ = true
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=1436251003]
 

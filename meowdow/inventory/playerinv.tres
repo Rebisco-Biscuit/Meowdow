@@ -3,8 +3,9 @@
 [ext_resource type="Script" uid="uid://dhje1jivdtxyf" path="res://inventory/inventory_item.gd" id="1_bm6gn"]
 [ext_resource type="Resource" uid="uid://cfir6u5vspt2w" path="res://inventory/items/carrot.tres" id="2_f70d8"]
 [ext_resource type="Script" uid="uid://5jt27bpa2v53" path="res://inventory/inventory.gd" id="3_bm6gn"]
+[ext_resource type="Resource" uid="uid://63cyr5bfcau8" path="res://inventory/items/tomato.tres" id="3_f70d8"]
 
 [resource]
 script = ExtResource("3_bm6gn")
-items = Array[ExtResource("1_bm6gn")]([ExtResource("2_f70d8"), null, null, null, ExtResource("2_f70d8"), null, null, null])
+items = Array[ExtResource("1_bm6gn")]([ExtResource("2_f70d8"), null, null, null, null, null, ExtResource("3_f70d8"), null, null, ExtResource("3_f70d8"), null, null, ExtResource("2_f70d8"), null, null])
 metadata/_custom_type_script = "uid://5jt27bpa2v53"

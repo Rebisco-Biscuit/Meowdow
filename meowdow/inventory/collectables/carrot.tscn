@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://0vivqrj131yv"]
+
+[ext_resource type="PackedScene" uid="uid://bafxlswyrb3h3" path="res://inventory/collectables/collectable.tscn" id="1_b4qcf"]
+[ext_resource type="Resource" uid="uid://cfir6u5vspt2w" path="res://inventory/items/carrot.tres" id="2_6h6rx"]
+[ext_resource type="Texture2D" uid="uid://bm7k1fjixgjlm" path="res://assets/icons/carrot_icon.png" id="2_d4h7c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p0d1k"]
+resource_local_to_scene = true
+size = Vector2(6.4001226, 17.000614)
+
+[node name="Carrot" unique_id=2120849737 instance=ExtResource("1_b4qcf")]
+item = ExtResource("2_6h6rx")
+
+[node name="CollisionShape2D" parent="." index="0" unique_id=1553553608]
+position = Vector2(0.2599136, -0.6802962)
+rotation = 0.6441186
+shape = SubResource("RectangleShape2D_p0d1k")
+
+[node name="Sprite2D" parent="." index="1" unique_id=692579624]
+texture_filter = 3
+texture = ExtResource("2_d4h7c")
