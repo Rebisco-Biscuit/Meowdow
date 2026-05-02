@@ -2,7 +2,7 @@ extends Control
 
 var CAT_SCENE = preload("res://OrangeCat.tscn")
 #var MAP_SCENE = preload("res://MAPtest.tscn")
-var MAP_SCENE = preload("res://MAP2.tscn")
+var MAP_SCENE = preload("res://Aubrialis.tscn")
 
 func _on_orange_select_pressed():
 	CAT_SCENE = preload("res://OrangeCat.tscn")

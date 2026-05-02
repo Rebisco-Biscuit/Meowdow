@@ -927,5 +927,6 @@ grow_vertical = 2
 [node name="MeowPlayer" type="AudioStreamPlayer2D" parent="CharacterBody2D" unique_id=346951820]
 
 [node name="StepPlayer" type="AudioStreamPlayer2D" parent="CharacterBody2D" unique_id=1971366254]
+volume_db = 10.0
 
 [connection signal="animation_finished" from="CharacterBody2D/AnimatedSprite2D" to="CharacterBody2D" method="_on_animation_finished"]

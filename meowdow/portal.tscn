@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://chy6fuhhsib2w"]
+
+[ext_resource type="Script" uid="uid://chii7it063t00" path="res://portal.gd" id="1_dl81w"]
+[ext_resource type="Texture2D" uid="uid://7gcaihnl72bi" path="res://assets/World-Sprites/GrassAssests/test.png" id="2_5rgpn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c0nl8"]
+size = Vector2(16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1dtnr"]
+atlas = ExtResource("2_5rgpn")
+region = Rect2(96, 48, 16, 32)
+
+[node name="Area2D" type="Area2D" unique_id=1666784245]
+script = ExtResource("1_dl81w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1624740889]
+shape = SubResource("RectangleShape2D_c0nl8")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=767954485]
+texture = SubResource("AtlasTexture_1dtnr")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

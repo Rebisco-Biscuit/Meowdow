@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://d2atkhfl2m7g3"]
+[gd_scene format=3 uid="uid://bbf4xkn0hnkvx"]
 
 [ext_resource type="Texture2D" uid="uid://bj2bfids0vh1n" path="res://assets/icons/black_cat_icon.png" id="1_flweh"]
 [ext_resource type="Script" uid="uid://cpqxyvuqah30v" path="res://characterSlot.gd" id="1_mcpye"]

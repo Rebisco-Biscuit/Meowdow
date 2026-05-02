@@ -922,5 +922,6 @@ metadata/_edit_use_anchors_ = true
 [node name="MeowPlayer" type="AudioStreamPlayer2D" parent="CharacterBody2D" unique_id=63938962]
 
 [node name="StepPlayer" type="AudioStreamPlayer2D" parent="CharacterBody2D" unique_id=196801043]
+volume_db = 10.0
 
 [connection signal="animation_finished" from="CharacterBody2D/AnimatedSprite2D" to="CharacterBody2D" method="_on_animation_finished"]
