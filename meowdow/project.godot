@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Meowdow"
-run/main_scene="res://miaw.tscn"
+run/main_scene="uid://r6v8vpm0x4bh"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 

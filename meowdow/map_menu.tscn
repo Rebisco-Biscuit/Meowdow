@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://chg1yhy0crdp3" path="res://MapMenu.gd" id="1_fw6nu"]
 
 [node name="MapMenu" type="Control" unique_id=251710403]
+process_mode = 3
 z_index = 11
 layout_mode = 3
 anchors_preset = 8
