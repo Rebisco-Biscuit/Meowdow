@@ -1,3 +1,4 @@
+[style name="Town1"]
 join "NPC GUIDE" rightmost
 
 "NPC GUIDE" (happy hello): Hello traveller, you look new!!

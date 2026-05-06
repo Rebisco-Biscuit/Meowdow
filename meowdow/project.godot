@@ -31,15 +31,18 @@ directories/dch_directory={
 "Glow": "res://Timelines/characters/Glow.dch",
 "Mitten": "res://Timelines/characters/Mitten.dch",
 "NPC GUIDE": "res://assets/Meow-Sprites/lore/NPC GUIDE.dch",
-"Narrator": "res://Timelines/characters/narrator.dch",
 "Old Jerry": "res://Timelines/characters/Old Jerry.dch",
 "Thaw": "res://Timelines/characters/Thaw.dch",
 "The First Garnder": "res://The First Garnder.dch",
 "harmony of three": "res://Timelines/characters/harmony of three.dch",
 "map": "res://Timelines/characters/map.dch",
+"narrator": "res://Timelines/characters/narrator.dch",
 "seeds": "res://assets/Meow-Sprites/lore/seeds.dch"
 }
 directories/dtl_directory={
+"KeeperTalkNothing": "res://Timelines/towns/Vinalore(Town1/KeeperTalkNothing.dtl",
+"Quest1Done": "res://Timelines/towns/Vinalore(Town1/Quest1Done.dtl",
+"Quest1Not Done": "res://Timelines/towns/Vinalore(Town1/Quest1Not Done.dtl",
 "Town1_Start": "res://Timelines/towns/Town1_Start.dtl",
 "practice": "res://Timelines/practice.dtl"
 }
