@@ -14,7 +14,7 @@ func _ready():
 	# --- CAMERA SETUP ---
 	var camera = cat_body.get_node("Camera2D")
 	camera.enabled = true
-	camera.zoom = Vector2(4, 4)
+	camera.zoom = Vector2(5, 5)
 
 	camera.position_smoothing_enabled = true
 	camera.position_smoothing_speed = 5.0

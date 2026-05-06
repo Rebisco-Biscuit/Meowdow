@@ -549,7 +549,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_k3sqa")
 }],
-"loop": true,
+"loop": false,
 "name": &"black_cat_afk2",
 "speed": 5.0
 }, {
@@ -902,7 +902,7 @@ texture = ExtResource("2_stmko")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=925517049]
 sprite_frames = SubResource("SpriteFrames_3rg4k")
-animation = &"black_cat_walk_a"
+animation = &"black_cat_afk2"
 script = ExtResource("3_stmko")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1825231330]

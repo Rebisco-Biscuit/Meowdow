@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://7gcaihnl72bi" path="res://assets/World-Sprites/GrassAssests/test.png" id="2_5rgpn"]
 [ext_resource type="FontFile" uid="uid://temvh5pyi624" path="res://assets/Minecraft.ttf" id="3_grrij"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_c0nl8"]
-size = Vector2(16, 32)
+[sub_resource type="CircleShape2D" id="CircleShape2D_grrij"]
+radius = 33.24154
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1dtnr"]
 atlas = ExtResource("2_5rgpn")
@@ -16,7 +16,7 @@ process_mode = 3
 script = ExtResource("1_dl81w")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1624740889]
-shape = SubResource("RectangleShape2D_c0nl8")
+shape = SubResource("CircleShape2D_grrij")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=767954485]
 texture = SubResource("AtlasTexture_1dtnr")
