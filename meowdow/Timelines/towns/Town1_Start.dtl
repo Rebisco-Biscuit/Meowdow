@@ -21,9 +21,9 @@ join "The First Garnder" center [animation="Fade In" length="0.4"]
 leave "The First Garnder" [animation="Fade Out"]
 join Echofall center [animation="Fade In"]
 "NPC GUIDE": Echofall, the Keeper of Rhollow, the town of Stillness.
-join "Old Jerry" leftmost [animation="Fade In"]
+join "Old Jerry" rightmost [animation="Fade In"]
 "NPC GUIDE": Old Jerry, the Keeper of Vinalore, the town of Joy.
-join Frostcribe rightmost [animation="Fade In"]
+join Frostcribe leftmost [animation="Fade In"]
 "NPC GUIDE": Frostcribe, the keeper of Aubrialis, the town of Memory
 leave Echofall [animation="Fade Out"]
 leave "Old Jerry" [animation="Fade Out"]
