@@ -894,10 +894,10 @@ script = ExtResource("1_3rg4k")
 inventory = ExtResource("2_q7l1q")
 cat_type = "black"
 
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=1860014456]
-modulate = Color(1, 1, 1, 0.1764706)
-position = Vector2(-1.0000001, 8)
-scale = Vector2(0.28571427, 0.48000002)
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=617294318]
+modulate = Color(1, 1, 1, 0.37254903)
+position = Vector2(2.1457672e-06, 8.777778)
+scale = Vector2(0.34632042, 0.5422222)
 texture = ExtResource("2_stmko")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=925517049]

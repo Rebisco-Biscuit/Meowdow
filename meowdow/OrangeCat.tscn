@@ -964,9 +964,9 @@ script = ExtResource("1_aogdi")
 inventory = ExtResource("2_i1rxi")
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=27244300]
-modulate = Color(0.31283176, 0.24813561, 0.7452746, 0.1764706)
-position = Vector2(-1, 8)
-scale = Vector2(0.28571427, 0.48000002)
+modulate = Color(1, 1, 1, 0.37254903)
+position = Vector2(2.1457672e-06, 8.777778)
+scale = Vector2(0.34632042, 0.5422222)
 texture = ExtResource("2_yg1y3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=375259865]
@@ -978,6 +978,7 @@ script = ExtResource("3_yg1y3")
 shape = SubResource("CapsuleShape2D_kse2u")
 
 [node name="Inv_UI" parent="CharacterBody2D" unique_id=135768738 instance=ExtResource("4_1077u")]
+visible = false
 z_index = 10
 anchors_preset = 8
 anchor_left = 0.5

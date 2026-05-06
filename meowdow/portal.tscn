@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://chii7it063t00" path="res://portal.gd" id="1_dl81w"]
 [ext_resource type="Texture2D" uid="uid://7gcaihnl72bi" path="res://assets/World-Sprites/GrassAssests/test.png" id="2_5rgpn"]
+[ext_resource type="FontFile" uid="uid://temvh5pyi624" path="res://assets/Minecraft.ttf" id="3_grrij"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c0nl8"]
 size = Vector2(16, 32)
@@ -25,7 +26,11 @@ visible = false
 z_index = 11
 offset_right = 40.0
 offset_bottom = 23.0
-text = "Press E to interact"
+scale = Vector2(0.5, 0.5)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.3137255)
+theme_override_fonts/font = ExtResource("3_grrij")
+theme_override_font_sizes/font_size = 12
+text = "Press \"E\" to Interact"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

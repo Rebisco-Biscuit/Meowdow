@@ -1,0 +1,91 @@
+[gd_scene format=3 uid="uid://c82pyte51l60w"]
+
+[ext_resource type="Script" uid="uid://bxr7bowlc2acr" path="res://dewpaw.gd" id="1_377xf"]
+[ext_resource type="Texture2D" uid="uid://b51tyv7aptbdq" path="res://assets/Meow-Sprites/Free pack/frostcribe.png" id="1_tw5gb"]
+[ext_resource type="FontFile" uid="uid://temvh5pyi624" path="res://assets/Minecraft.ttf" id="2_377xf"]
+[ext_resource type="Texture2D" uid="uid://baokpiq7os6do" path="res://assets/shadow.png" id="3_uwes8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_85kfd"]
+atlas = ExtResource("1_tw5gb")
+region = Rect2(0, 896, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a70tw"]
+atlas = ExtResource("1_tw5gb")
+region = Rect2(32, 896, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lic6u"]
+atlas = ExtResource("1_tw5gb")
+region = Rect2(64, 896, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4g0wk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_85kfd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a70tw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lic6u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_85kfd")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uofj6"]
+size = Vector2(12, 9)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cn7ar"]
+radius = 30.0
+
+[node name="Node2D" type="Node2D" unique_id=229093727]
+script = ExtResource("1_377xf")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1813423092]
+modulate = Color(1, 1, 1, 0.37254903)
+position = Vector2(2.1457672e-06, 8.777778)
+scale = Vector2(0.34632042, 0.5422222)
+texture = ExtResource("3_uwes8")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=738390311]
+sprite_frames = SubResource("SpriteFrames_4g0wk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1662949841]
+position = Vector2(0, 4.5)
+shape = SubResource("RectangleShape2D_uofj6")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=470128970]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1167566722]
+position = Vector2(0, -3)
+shape = SubResource("CircleShape2D_cn7ar")
+
+[node name="Label" type="Label" parent="." unique_id=761035088]
+offset_left = -24.0
+offset_top = -28.0
+offset_right = 48.0
+offset_bottom = -13.0
+scale = Vector2(0.7, 0.7)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.3137255)
+theme_override_constants/shadow_outline_size = 5
+theme_override_fonts/font = ExtResource("2_377xf")
+theme_override_font_sizes/font_size = 14
+text = "Frostcribe"
+
+[node name="Prompt" type="Label" parent="." unique_id=1742159641]
+visible = false
+offset_right = 152.0
+offset_bottom = 23.0
+scale = Vector2(0.7, 0.7)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.3137255)
+theme_override_fonts/font = ExtResource("2_377xf")
+theme_override_font_sizes/font_size = 12
+text = "Press \"E\" to Interact"
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_interaction_zone_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_interaction_zone_body_exited"]

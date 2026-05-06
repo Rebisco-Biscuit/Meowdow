@@ -4600,6 +4600,7 @@ texture = SubResource("AtlasTexture_j4605")
 position = Vector2(374, 267)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=873893060]
+process_mode = 3
 stream = SubResource("AudioStreamMP3_w3m06")
 volume_db = -1.0
 autoplay = true

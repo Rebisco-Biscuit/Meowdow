@@ -1,0 +1,123 @@
+[gd_scene format=3 uid="uid://bk8orcx70am7w"]
+
+[ext_resource type="Script" uid="uid://bxr7bowlc2acr" path="res://dewpaw.gd" id="1_dj0bt"]
+[ext_resource type="Texture2D" uid="uid://baokpiq7os6do" path="res://assets/shadow.png" id="1_lq6fy"]
+[ext_resource type="Texture2D" uid="uid://b51tyv7aptbdq" path="res://assets/Meow-Sprites/Free pack/frostcribe.png" id="2_dj0bt"]
+[ext_resource type="FontFile" uid="uid://temvh5pyi624" path="res://assets/Minecraft.ttf" id="3_duybs"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fb1rq"]
+atlas = ExtResource("2_dj0bt")
+region = Rect2(0, 1088, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cy2ki"]
+atlas = ExtResource("2_dj0bt")
+region = Rect2(32, 1088, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gnynm"]
+atlas = ExtResource("2_dj0bt")
+region = Rect2(64, 1088, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qswr1"]
+atlas = ExtResource("2_dj0bt")
+region = Rect2(96, 1088, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bt15j"]
+atlas = ExtResource("2_dj0bt")
+region = Rect2(128, 1088, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1pyj0"]
+atlas = ExtResource("2_dj0bt")
+region = Rect2(160, 1088, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v10jv"]
+atlas = ExtResource("2_dj0bt")
+region = Rect2(192, 1088, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_an81u"]
+atlas = ExtResource("2_dj0bt")
+region = Rect2(224, 1088, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8j5nt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fb1rq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cy2ki")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gnynm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qswr1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bt15j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1pyj0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v10jv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_an81u")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0ewi3"]
+size = Vector2(13, 9)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hqqiu"]
+radius = 30.0
+
+[node name="Node2D" type="Node2D" unique_id=1674586597]
+script = ExtResource("1_dj0bt")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1326524604]
+modulate = Color(1, 1, 1, 0.37254903)
+position = Vector2(2.1457672e-06, 8.777778)
+scale = Vector2(0.34632042, 0.5422222)
+texture = ExtResource("1_lq6fy")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=808958225]
+sprite_frames = SubResource("SpriteFrames_8j5nt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1211981130]
+position = Vector2(-0.5, 4.5)
+shape = SubResource("RectangleShape2D_0ewi3")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=730972719]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=443385733]
+position = Vector2(0, -3)
+shape = SubResource("CircleShape2D_hqqiu")
+
+[node name="Label" type="Label" parent="." unique_id=795602260]
+offset_left = -14.0
+offset_top = -24.0
+offset_right = 23.142857
+offset_bottom = -9.0
+scale = Vector2(0.7, 0.7)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.3137255)
+theme_override_constants/shadow_outline_size = 5
+theme_override_fonts/font = ExtResource("3_duybs")
+theme_override_font_sizes/font_size = 14
+text = "Thaw"
+
+[node name="Prompt" type="Label" parent="." unique_id=142336113]
+visible = false
+offset_right = 152.0
+offset_bottom = 23.0
+scale = Vector2(0.7, 0.7)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.3137255)
+theme_override_fonts/font = ExtResource("3_duybs")
+theme_override_font_sizes/font_size = 12
+text = "Press \"E\" to Interact"
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_interaction_zone_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_interaction_zone_body_exited"]

@@ -27,7 +27,7 @@ func _on_body_exited(body):
 
 func _process(_delta):
 	if prompt.visible:
-		prompt.position.y = -40 + sin(Time.get_ticks_msec() * 0.005) * 3
+		prompt.position.y = -10 + sin(Time.get_ticks_msec() * 0.005) * 3
 		
 	if player_inside and Input.is_action_just_pressed("interact"):
 		print(menu_instance)
