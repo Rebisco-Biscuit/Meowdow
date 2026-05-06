@@ -1,0 +1,18 @@
+join "Old Jerry" rightmost
+"Old Jerry" (Neutral): Travellr!!! Is there anything I can help you?
+- No Nothing
+	label end
+	"Old Jerry": Okay traveller!! Stay as you want and never let me see you grin, or you shall be executed!
+- Yes, I'm here to offer you something!
+	"Old Jerry" (sang joy): Wow!!!! You are making me so happy ..Show me what is it that you have?
+	"Old Jerry": Wheeping wheat??! you want me to taste it?
+	- Yes of course
+		"Old Jerry": This is the most tasty crop I have ever tasted
+		"Old Jerry" (Old Jerrry Cry): But..but.."I couldn't save her. So I tried to make everyone forget. I'm sorry."
+		"Old Jerry" (Old Jery So Cry): Thank you for making me realize how acceptance makes everything feel lighter than isolation.
+		"Old Jerry" (Neutral): Here's the Seed of Joy, one of the fragments left by the First Gardener after he faded. Go to Aubrialis  their keeper froze everything because she thinks memory is enough. It's not. She needs to feel again.
+		"Old Jerry" (Old Jerry Bye): Bye bye!!
+		[end_timeline]
+	- No,nothing!!
+		join "Old Jerry" rightmost
+		jump end

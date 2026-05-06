@@ -1,6 +1,7 @@
 [gd_resource type="StyleBoxFlat" format=3 uid="uid://dkv1pl1c1dq6"]
 
 [resource]
+resource_local_to_scene = true
 content_margin_left = 15.0
 content_margin_top = 15.0
 content_margin_right = 15.0

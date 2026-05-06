@@ -17,6 +17,24 @@
 &"nicknames": [""],
 &"offset": Vector2(0, 0),
 &"portraits": {
+"Dewpawcry": {
+"export_overrides": {
+"image": "\"res://assets/Meow-Sprites/lore/dewpawcry.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Dewpawwink": {
+"export_overrides": {
+"image": "\"res://assets/Meow-Sprites/lore/Dewpawwink.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
 "Neutral": {
 "export_overrides": {
 "image": "\"res://assets/Meow-Sprites/lore/Dewpaw.png\""

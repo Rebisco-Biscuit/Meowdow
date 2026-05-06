@@ -26,6 +26,33 @@
 "scale": 1,
 "scene": ""
 },
+"Old Jerrry Cry": {
+"export_overrides": {
+"image": "\"res://assets/Meow-Sprites/lore/old jerrry cry.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Old Jerry Bye": {
+"export_overrides": {
+"image": "\"res://assets/Meow-Sprites/lore/Old Jerry bye.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Old Jery So Cry": {
+"export_overrides": {
+"image": "\"res://assets/Meow-Sprites/lore/Old Jery so cry.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
 "sang joy": {
 "export_overrides": {
 "image": "\"res://assets/Meow-Sprites/lore/old jerrry sang joy.png\""
