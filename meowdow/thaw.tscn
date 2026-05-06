@@ -84,7 +84,7 @@ position = Vector2(2.1457672e-06, 8.777778)
 scale = Vector2(0.34632042, 0.5422222)
 texture = ExtResource("1_lq6fy")
 
-[node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=808958225]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=808958225]
 sprite_frames = SubResource("SpriteFrames_8j5nt")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1211981130]
@@ -113,7 +113,7 @@ text = "Thaw"
 visible = false
 offset_right = 152.0
 offset_bottom = 23.0
-scale = Vector2(0.7, 0.7)
+scale = Vector2(0.5, 0.5)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.3137255)
 theme_override_fonts/font = ExtResource("3_duybs")
 theme_override_font_sizes/font_size = 12
