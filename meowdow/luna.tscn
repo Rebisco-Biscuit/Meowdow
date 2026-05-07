@@ -1,0 +1,151 @@
+[gd_scene format=3 uid="uid://cedq77kifamct"]
+
+[ext_resource type="Script" uid="uid://ce4j02e6wuknl" path="res://luna.gd" id="1_2jqd2"]
+[ext_resource type="Texture2D" uid="uid://baokpiq7os6do" path="res://assets/shadow.png" id="1_wjovh"]
+[ext_resource type="Texture2D" uid="uid://b51tyv7aptbdq" path="res://assets/Meow-Sprites/Free pack/frostcribe.png" id="2_2jqd2"]
+[ext_resource type="FontFile" uid="uid://temvh5pyi624" path="res://assets/Minecraft.ttf" id="3_vuire"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5qrus"]
+atlas = ExtResource("2_2jqd2")
+region = Rect2(0, 1248, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3gnlw"]
+atlas = ExtResource("2_2jqd2")
+region = Rect2(32, 1248, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1jcxw"]
+atlas = ExtResource("2_2jqd2")
+region = Rect2(64, 1248, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xqwew"]
+atlas = ExtResource("2_2jqd2")
+region = Rect2(96, 1248, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rrvfs"]
+atlas = ExtResource("2_2jqd2")
+region = Rect2(128, 1248, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_65qdt"]
+atlas = ExtResource("2_2jqd2")
+region = Rect2(160, 1248, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fhm6s"]
+atlas = ExtResource("2_2jqd2")
+region = Rect2(192, 1248, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_45mau"]
+atlas = ExtResource("2_2jqd2")
+region = Rect2(224, 1248, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8at6v"]
+atlas = ExtResource("2_2jqd2")
+region = Rect2(256, 1248, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4dkxa"]
+atlas = ExtResource("2_2jqd2")
+region = Rect2(288, 1248, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wy05w"]
+atlas = ExtResource("2_2jqd2")
+region = Rect2(320, 1248, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5ax6v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5qrus")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3gnlw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1jcxw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xqwew")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rrvfs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_65qdt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fhm6s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_45mau")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8at6v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4dkxa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wy05w")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bdouw"]
+radius = 30.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f4q4b"]
+bg_color = Color(0.16470589, 0.16470589, 0.16470589, 0.5882353)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[node name="Node2D" type="Node2D" unique_id=1291380832]
+script = ExtResource("1_2jqd2")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1563719140]
+modulate = Color(1, 1, 1, 0.37254903)
+position = Vector2(0, 8)
+scale = Vector2(0.34632042, 0.5422222)
+texture = ExtResource("1_wjovh")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1167949535]
+sprite_frames = SubResource("SpriteFrames_5ax6v")
+
+[node name="InteractionZone" type="Area2D" parent="." unique_id=760743068]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionZone" unique_id=2026004163]
+position = Vector2(0, -3)
+shape = SubResource("CircleShape2D_bdouw")
+
+[node name="Label" type="Label" parent="." unique_id=536781009]
+offset_left = -11.0
+offset_top = -26.0
+offset_right = 23.0
+offset_bottom = -11.0
+scale = Vector2(0.7, 0.7)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.3137255)
+theme_override_constants/shadow_outline_size = 5
+theme_override_fonts/font = ExtResource("3_vuire")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxFlat_f4q4b")
+text = "Luna"
+
+[node name="Prompt" type="Label" parent="." unique_id=576205065]
+visible = false
+offset_right = 146.0
+offset_bottom = 15.0
+scale = Vector2(0.5, 0.5)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.3137255)
+theme_override_constants/shadow_outline_size = 5
+theme_override_fonts/font = ExtResource("3_vuire")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxFlat_f4q4b")
+text = "Press \"E\" to buy item"
+
+[connection signal="body_entered" from="InteractionZone" to="." method="_on_interaction_zone_body_entered"]
+[connection signal="body_exited" from="InteractionZone" to="." method="_on_interaction_zone_body_exited"]

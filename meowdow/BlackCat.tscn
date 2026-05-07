@@ -882,8 +882,9 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_d6dyv"]
-radius = 15.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_q7l1q"]
+radius = 16.666668
+height = 33.333336
 
 [node name="Node2D" type="Node2D" unique_id=912401954]
 z_index = 2
@@ -905,8 +906,8 @@ sprite_frames = SubResource("SpriteFrames_3rg4k")
 animation = &"black_cat_afk2"
 script = ExtResource("3_stmko")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1825231330]
-shape = SubResource("CapsuleShape2D_d6dyv")
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="CharacterBody2D" unique_id=608794348]
+shape = SubResource("CapsuleShape2D_q7l1q")
 
 [node name="Inv_UI" parent="CharacterBody2D" unique_id=135768738 instance=ExtResource("4_d6dyv")]
 z_index = 10

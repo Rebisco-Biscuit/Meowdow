@@ -86,11 +86,30 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0otnu"]
-size = Vector2(15, 7)
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_fti7j"]
 radius = 30.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fti7j"]
+bg_color = Color(0.16470589, 0.16470589, 0.16470589, 0.5882353)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3p3mo"]
+bg_color = Color(0.16470589, 0.16470589, 0.16470589, 0.5882353)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
 
 [node name="Node2D" type="Node2D" unique_id=920501265]
 script = ExtResource("1_fti7j")
@@ -105,37 +124,36 @@ texture = ExtResource("1_ucwom")
 scale = Vector2(0.9, 0.9)
 sprite_frames = SubResource("SpriteFrames_ucrw6")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1235816701]
-position = Vector2(-0.5, 4.5)
-scale = Vector2(0.9, 0.9)
-shape = SubResource("RectangleShape2D_0otnu")
-
 [node name="InteractionZone" type="Area2D" parent="." unique_id=1021170210]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionZone" unique_id=1399991312]
 position = Vector2(0, -3)
 shape = SubResource("CircleShape2D_fti7j")
 
-[node name="Label" type="Label" parent="." unique_id=2129501799]
-offset_left = -22.000002
-offset_top = -23.0
-offset_right = 42.0
-offset_bottom = -7.0
+[node name="Label" type="Label" parent="." unique_id=1889879509]
+offset_left = -19.0
+offset_top = -24.0
+offset_right = 37.0
+offset_bottom = -9.0
 scale = Vector2(0.7, 0.7)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.3137255)
 theme_override_constants/shadow_outline_size = 5
 theme_override_fonts/font = ExtResource("4_fti7j")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxFlat_fti7j")
 text = "Dewpaw"
 
-[node name="Prompt" type="Label" parent="." unique_id=102495583]
+[node name="Prompt" type="Label" parent="." unique_id=1903042883]
 visible = false
-offset_right = 140.0
-offset_bottom = 23.0
+offset_right = 146.0
+offset_bottom = 15.0
 scale = Vector2(0.5, 0.5)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.3137255)
+theme_override_constants/shadow_outline_size = 5
 theme_override_fonts/font = ExtResource("4_fti7j")
-theme_override_font_sizes/font_size = 12
-text = "Press \"E\" to Interact"
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxFlat_3p3mo")
+text = "Press \"E\" to interact"
 
 [connection signal="body_entered" from="InteractionZone" to="." method="_on_interaction_zone_body_entered"]
 [connection signal="body_exited" from="InteractionZone" to="." method="_on_interaction_zone_body_exited"]

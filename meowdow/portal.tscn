@@ -11,6 +11,17 @@ radius = 33.24154
 atlas = ExtResource("2_5rgpn")
 region = Rect2(96, 48, 16, 32)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_grrij"]
+bg_color = Color(0.16470589, 0.16470589, 0.16470589, 0.5882353)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
 [node name="Area2D" type="Area2D" unique_id=1666784245]
 process_mode = 3
 script = ExtResource("1_dl81w")
@@ -21,16 +32,18 @@ shape = SubResource("CircleShape2D_grrij")
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=767954485]
 texture = SubResource("AtlasTexture_1dtnr")
 
-[node name="Prompt" type="Label" parent="." unique_id=872089609]
+[node name="Prompt" type="Label" parent="." unique_id=2057387238]
 visible = false
-z_index = 11
-offset_right = 40.0
-offset_bottom = 23.0
+z_index = 6
+offset_right = 146.0
+offset_bottom = 15.0
 scale = Vector2(0.5, 0.5)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.3137255)
+theme_override_constants/shadow_outline_size = 5
 theme_override_fonts/font = ExtResource("3_grrij")
-theme_override_font_sizes/font_size = 12
-text = "Press \"E\" to Interact"
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxFlat_grrij")
+text = "Press \"E\" to interact"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

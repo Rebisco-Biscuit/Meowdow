@@ -12,6 +12,9 @@
 [ext_resource type="Script" uid="uid://deh6oto7r5w7w" path="res://clouds.gd" id="10_q3vt3"]
 [ext_resource type="Texture2D" uid="uid://c5agym8hvbtlp" path="res://assets/clouds.png" id="11_w3m06"]
 [ext_resource type="Texture2D" uid="uid://13bqcwaqg8y3" path="res://assets/World of Solaria Demo Pack Update 04/Solaria Palette.png" id="12_w3m06"]
+[ext_resource type="PackedScene" uid="uid://80wyo4diqehq" path="res://glow.tscn" id="13_7kkbp"]
+[ext_resource type="PackedScene" uid="uid://cobe0pyodbssc" path="res://echofall.tscn" id="14_6o8mm"]
+[ext_resource type="PackedScene" uid="uid://dopat1fk0pnmg" path="res://guide.tscn" id="15_6o8mm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_aakfv"]
 texture = ExtResource("1_5cj5f")
@@ -4626,3 +4629,15 @@ lifetime = 20.0
 randomness = 1.0
 trail_lifetime = 6.0
 process_material = SubResource("ParticleProcessMaterial_w3m06")
+
+[node name="Glow" parent="." unique_id=1298105278 instance=ExtResource("13_7kkbp")]
+z_index = 6
+position = Vector2(821, 158)
+
+[node name="Echofall" parent="." unique_id=879051880 instance=ExtResource("14_6o8mm")]
+z_index = 6
+position = Vector2(644, 549)
+
+[node name="Guide" parent="." unique_id=1764293959 instance=ExtResource("15_6o8mm")]
+z_index = 6
+position = Vector2(272, 230)

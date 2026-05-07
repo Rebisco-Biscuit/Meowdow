@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://ck4paofom1tdd"]
+
+[ext_resource type="Script" uid="uid://bcfshugm6x8af" path="res://inventory/collectables/Collectable.gd" id="1_exrdp"]
+[ext_resource type="Texture2D" uid="uid://cm82i3txwd4vv" path="res://assets/World-Sprites/Garden_Planters_PlantBases.png" id="2_20pg1"]
+[ext_resource type="Script" uid="uid://dhje1jivdtxyf" path="res://inventory/inventory_item.gd" id="2_ke8e1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_glnxp"]
+atlas = ExtResource("2_20pg1")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="Resource" id="Resource_51kbf"]
+script = ExtResource("2_ke8e1")
+texture = SubResource("AtlasTexture_glnxp")
+metadata/_custom_type_script = "uid://dhje1jivdtxyf"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ke8e1"]
+
+[node name="CarrotSeed" type="Area2D" unique_id=627519706]
+script = ExtResource("1_exrdp")
+item = SubResource("Resource_51kbf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1006051189]
+shape = SubResource("RectangleShape2D_ke8e1")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=691837807]
+texture = ExtResource("2_20pg1")
+region_enabled = true
+region_rect = Rect2(0, 16, 16, 16)

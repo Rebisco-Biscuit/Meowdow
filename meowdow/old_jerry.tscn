@@ -37,11 +37,30 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_epnf2"]
-size = Vector2(24, 10)
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_pjua7"]
 radius = 30.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4q7x2"]
+bg_color = Color(0.16470589, 0.16470589, 0.16470589, 0.5882353)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fystf"]
+bg_color = Color(0.16470589, 0.16470589, 0.16470589, 0.5882353)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
 
 [node name="Node2D" type="Node2D" unique_id=1081970072]
 script = ExtResource("1_4q7x2")
@@ -55,10 +74,6 @@ texture = ExtResource("2_4q7x2")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=679587542]
 sprite_frames = SubResource("SpriteFrames_v4kdl")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1741368958]
-position = Vector2(0, 3)
-shape = SubResource("RectangleShape2D_epnf2")
-
 [node name="InteractionZone" type="Area2D" parent="." unique_id=333126152]
 position = Vector2(0, 3)
 
@@ -70,23 +85,26 @@ shape = SubResource("CircleShape2D_pjua7")
 offset_left = -22.0
 offset_top = -28.000002
 offset_right = 43.0
-offset_bottom = -13.714285
+offset_bottom = -13.000002
 scale = Vector2(0.7, 0.7)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.3137255)
 theme_override_constants/shadow_outline_size = 5
 theme_override_fonts/font = ExtResource("4_4q7x2")
 theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxFlat_4q7x2")
 text = "Old Jerry"
 
-[node name="Prompt" type="Label" parent="." unique_id=1804921750]
+[node name="Prompt" type="Label" parent="." unique_id=795329129]
 visible = false
-offset_right = 152.0
-offset_bottom = 23.0
+offset_right = 146.0
+offset_bottom = 15.0
 scale = Vector2(0.5, 0.5)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.3137255)
+theme_override_constants/shadow_outline_size = 5
 theme_override_fonts/font = ExtResource("4_4q7x2")
-theme_override_font_sizes/font_size = 12
-text = "Press \"E\" to Interact"
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxFlat_fystf")
+text = "Press \"E\" to interact"
 
 [connection signal="body_entered" from="InteractionZone" to="." method="_on_interaction_zone_body_entered"]
 [connection signal="body_exited" from="InteractionZone" to="." method="_on_interaction_zone_body_exited"]

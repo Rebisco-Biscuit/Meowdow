@@ -69,55 +69,62 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0ewi3"]
-size = Vector2(13, 9)
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_hqqiu"]
 radius = 30.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dj0bt"]
+bg_color = Color(0.16470589, 0.16470589, 0.16470589, 0.5882353)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
 
 [node name="Node2D" type="Node2D" unique_id=1674586597]
 script = ExtResource("1_dj0bt")
 
 [node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1326524604]
 modulate = Color(1, 1, 1, 0.37254903)
-position = Vector2(2.1457672e-06, 8.777778)
+position = Vector2(0, 5)
 scale = Vector2(0.34632042, 0.5422222)
 texture = ExtResource("1_lq6fy")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=808958225]
 sprite_frames = SubResource("SpriteFrames_8j5nt")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1211981130]
-position = Vector2(-0.5, 4.5)
-shape = SubResource("RectangleShape2D_0ewi3")
+[node name="InteractionZone" type="Area2D" parent="." unique_id=730972719]
 
-[node name="Area2D" type="Area2D" parent="." unique_id=730972719]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=443385733]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionZone" unique_id=443385733]
 position = Vector2(0, -3)
 shape = SubResource("CircleShape2D_hqqiu")
 
-[node name="Label" type="Label" parent="." unique_id=795602260]
-offset_left = -14.0
-offset_top = -24.0
-offset_right = 23.142857
-offset_bottom = -9.0
+[node name="Label" type="Label" parent="." unique_id=24179416]
+offset_left = -12.0
+offset_top = -27.0
+offset_right = 25.0
+offset_bottom = -12.0
 scale = Vector2(0.7, 0.7)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.3137255)
 theme_override_constants/shadow_outline_size = 5
 theme_override_fonts/font = ExtResource("3_duybs")
 theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxFlat_dj0bt")
 text = "Thaw"
 
-[node name="Prompt" type="Label" parent="." unique_id=142336113]
+[node name="Prompt" type="Label" parent="." unique_id=133174856]
 visible = false
-offset_right = 152.0
-offset_bottom = 23.0
+offset_right = 146.0
+offset_bottom = 15.0
 scale = Vector2(0.5, 0.5)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.3137255)
+theme_override_constants/shadow_outline_size = 5
 theme_override_fonts/font = ExtResource("3_duybs")
-theme_override_font_sizes/font_size = 12
-text = "Press \"E\" to Interact"
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxFlat_dj0bt")
+text = "Press \"E\" to interact"
 
-[connection signal="body_entered" from="Area2D" to="." method="_on_interaction_zone_body_entered"]
-[connection signal="body_exited" from="Area2D" to="." method="_on_interaction_zone_body_exited"]
+[connection signal="body_entered" from="InteractionZone" to="." method="_on_interaction_zone_body_entered"]
+[connection signal="body_exited" from="InteractionZone" to="." method="_on_interaction_zone_body_exited"]

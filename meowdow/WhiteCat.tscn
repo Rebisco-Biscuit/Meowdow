@@ -882,8 +882,9 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4dpgh"]
-radius = 15.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dwdoy"]
+radius = 16.666668
+height = 33.333336
 
 [node name="Node2D" type="Node2D" unique_id=2118906389]
 z_index = 2
@@ -905,9 +906,8 @@ sprite_frames = SubResource("SpriteFrames_vtvqm")
 animation = &"white_cat_idle_s"
 script = ExtResource("3_xd7rr")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1919153255]
-position = Vector2(-6.556511e-07, 0)
-shape = SubResource("CapsuleShape2D_4dpgh")
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="CharacterBody2D" unique_id=909632758]
+shape = SubResource("CapsuleShape2D_dwdoy")
 
 [node name="Inv_UI" parent="CharacterBody2D" unique_id=135768738 instance=ExtResource("4_4dpgh")]
 z_index = 10
