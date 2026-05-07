@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://b6o30a2q24roa"]
+
+[ext_resource type="Script" uid="uid://dukst5b3m4xm4" path="res://crops/crop.gd" id="2_dr0fx"]
+
+[node name="Crop" type="Sprite2D" unique_id=706574697]
+z_index = 1
+script = ExtResource("2_dr0fx")

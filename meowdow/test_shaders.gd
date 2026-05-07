@@ -8,7 +8,8 @@ const ALT_ID = 0
 const FACING_DISTANCE = 15.0
 
 var planted_cells: Dictionary = {}
-var crop_scene = preload("res://crops/carrot_crop.tscn")
+var crop_scene = preload("res://crops/Crop.tscn")
+var carrot_data = preload("res://crops/corn_crop.tres")
 
 var glow_sprite: Sprite2D
 var currently_glowing_cell: Vector2i = Vector2i(-9999, -9999)
@@ -52,23 +53,24 @@ func _try_interact():
 
 	var cell = currently_glowing_cell
 
-	# Harvest if crop exists
+	# Harvest if fully grown
 	if planted_cells.has(cell):
 		var crop = planted_cells[cell]
-		if crop.stage == 3:
+		if crop.stage == crop.data.stage_rects.size():  # ← fully grown when on last stage
 			crop.harvest()
 			planted_cells.erase(cell)
 		else:
-			print("Crop not ready yet! Stage: ", crop.stage)
+			print("Not ready! Stage: ", crop.stage)
 		return
 
-	# Plant new crop
+	# Plant
 	var crop = crop_scene.instantiate()
+	crop.data = carrot_data
 	var tile_pos = tile_layer.to_global(tile_layer.map_to_local(cell))
 	crop.global_position = tile_pos
 	add_child(crop)
 	planted_cells[cell] = crop
-	print("Planted crop at: ", cell)
+	print("Planted carrot at: ", cell)
 
 func _process(_delta):
 	if cat_body == null:
