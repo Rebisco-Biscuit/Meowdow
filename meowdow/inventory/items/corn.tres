@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="InvItem" format=3 uid="uid://bmalboq02klvr"]
+
+[ext_resource type="Script" uid="uid://dhje1jivdtxyf" path="res://inventory/inventory_item.gd" id="1_qwrhe"]
+[ext_resource type="Texture2D" uid="uid://c3rc53ycdoenn" path="res://assets/World-Sprites/Garden_Planters_16x16Icons.png" id="2_tx2y6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y7jct"]
+atlas = ExtResource("2_tx2y6")
+region = Rect2(16, 32, 16, 16)
+
+[resource]
+script = ExtResource("1_qwrhe")
+name = "corn"
+texture = SubResource("AtlasTexture_y7jct")

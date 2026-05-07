@@ -883,7 +883,7 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_q7l1q"]
-radius = 16.666668
+radius = 14.444447
 height = 33.333336
 
 [node name="Node2D" type="Node2D" unique_id=912401954]
@@ -906,7 +906,7 @@ sprite_frames = SubResource("SpriteFrames_3rg4k")
 animation = &"black_cat_farm_s"
 script = ExtResource("3_stmko")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="CharacterBody2D" unique_id=608794348]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1206587582]
 shape = SubResource("CapsuleShape2D_q7l1q")
 
 [node name="Inv_UI" parent="CharacterBody2D" unique_id=135768738 instance=ExtResource("4_d6dyv")]
@@ -929,5 +929,8 @@ grow_vertical = 2
 
 [node name="StepPlayer" type="AudioStreamPlayer2D" parent="CharacterBody2D" unique_id=1971366254]
 volume_db = 10.0
+
+[node name="FarmPlayer" type="AudioStreamPlayer2D" parent="CharacterBody2D" unique_id=1452908127]
+volume_db = -10.0
 
 [connection signal="animation_finished" from="CharacterBody2D/AnimatedSprite2D" to="CharacterBody2D" method="_on_animation_finished"]

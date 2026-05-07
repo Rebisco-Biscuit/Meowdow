@@ -2,11 +2,15 @@
 
 [ext_resource type="PackedScene" uid="uid://bafxlswyrb3h3" path="res://inventory/collectables/collectable.tscn" id="1_b4qcf"]
 [ext_resource type="Resource" uid="uid://cfir6u5vspt2w" path="res://inventory/items/carrot.tres" id="2_6h6rx"]
-[ext_resource type="Texture2D" uid="uid://bm7k1fjixgjlm" path="res://assets/icons/carrot_icon.png" id="2_d4h7c"]
+[ext_resource type="Texture2D" uid="uid://c3rc53ycdoenn" path="res://assets/World-Sprites/Garden_Planters_16x16Icons.png" id="3_d4h7c"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_p0d1k"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d4h7c"]
 resource_local_to_scene = true
 size = Vector2(6.4001226, 17.000614)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6h6rx"]
+atlas = ExtResource("3_d4h7c")
+region = Rect2(16, 0, 16, 16)
 
 [node name="Carrot" unique_id=2120849737 instance=ExtResource("1_b4qcf")]
 item = ExtResource("2_6h6rx")
@@ -14,8 +18,8 @@ item = ExtResource("2_6h6rx")
 [node name="CollisionShape2D" parent="." index="0" unique_id=1553553608]
 position = Vector2(0.2599136, -0.6802962)
 rotation = 0.6441186
-shape = SubResource("RectangleShape2D_p0d1k")
+shape = SubResource("RectangleShape2D_d4h7c")
 
 [node name="Sprite2D" parent="." index="1" unique_id=692579624]
 texture_filter = 3
-texture = ExtResource("2_d4h7c")
+texture = SubResource("AtlasTexture_6h6rx")

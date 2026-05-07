@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="InvItem" format=3 uid="uid://btrgnt0omiig3"]
+
+[ext_resource type="Script" uid="uid://dhje1jivdtxyf" path="res://inventory/inventory_item.gd" id="1_1uaha"]
+[ext_resource type="Texture2D" uid="uid://c3rc53ycdoenn" path="res://assets/World-Sprites/Garden_Planters_16x16Icons.png" id="2_pqayc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d1kyy"]
+atlas = ExtResource("2_pqayc")
+region = Rect2(16, 128, 16, 16)
+
+[resource]
+script = ExtResource("1_1uaha")
+name = "strawberry"
+texture = SubResource("AtlasTexture_d1kyy")
