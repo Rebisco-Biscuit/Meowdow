@@ -76,8 +76,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_ceyw5"]
-radius = 30.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_xvcer"]
+radius = 18.110771
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qic40"]
 bg_color = Color(0.16470589, 0.16470589, 0.16470589, 0.5882353)
@@ -104,9 +104,9 @@ sprite_frames = SubResource("SpriteFrames_0vtmt")
 
 [node name="InteractionZone" type="Area2D" parent="." unique_id=1590837576]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionZone" unique_id=151780755]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionZone" unique_id=1755490034]
 position = Vector2(0, -3)
-shape = SubResource("CircleShape2D_ceyw5")
+shape = SubResource("CircleShape2D_xvcer")
 
 [node name="Label" type="Label" parent="." unique_id=1319894307]
 offset_left = -12.0
@@ -134,4 +134,4 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_qic40")
 text = "Press \"E\" to interact"
 
 [connection signal="body_entered" from="InteractionZone" to="." method="_on_interaction_zone_body_entered"]
-[connection signal="body_exited" from="InteractionZone" to="." method="_on_interaction_zone_body_entered"]
+[connection signal="body_exited" from="InteractionZone" to="." method="_on_interaction_zone_body_exited"]

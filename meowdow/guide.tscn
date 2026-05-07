@@ -73,7 +73,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gajip"]
-radius = 30.0
+radius = 18.110771
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gajip"]
 bg_color = Color(0.16470589, 0.16470589, 0.16470589, 0.5882353)
@@ -111,7 +111,7 @@ sprite_frames = SubResource("SpriteFrames_4xiro")
 
 [node name="InteractionZone" type="Area2D" parent="." unique_id=495900086]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionZone" unique_id=2054644424]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionZone" unique_id=1529356891]
 position = Vector2(0, -3)
 shape = SubResource("CircleShape2D_gajip")
 

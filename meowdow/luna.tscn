@@ -90,8 +90,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_bdouw"]
-radius = 30.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_2jqd2"]
+radius = 18.110771
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f4q4b"]
 bg_color = Color(0.16470589, 0.16470589, 0.16470589, 0.5882353)
@@ -118,9 +118,9 @@ sprite_frames = SubResource("SpriteFrames_5ax6v")
 
 [node name="InteractionZone" type="Area2D" parent="." unique_id=760743068]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionZone" unique_id=2026004163]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionZone" unique_id=2018715065]
 position = Vector2(0, -3)
-shape = SubResource("CircleShape2D_bdouw")
+shape = SubResource("CircleShape2D_2jqd2")
 
 [node name="Label" type="Label" parent="." unique_id=536781009]
 offset_left = -11.0
