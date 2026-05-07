@@ -15,8 +15,17 @@ You play as a small cat who moves into a quiet countryside village full of other
 - [x] Game sfx and cat sfx
 <img width="1300" height="839" alt="image" src="https://github.com/user-attachments/assets/5fb543df-d596-46bc-8dc6-d2448db2f4ef" />
 
-#### 2026 MAY 01 (05/06-?)
+#### 2026 MAY 01 (05/06-7)
 - [x] World generation (2-3 out of 3 maps) [3 of 3]
-- [ ] Add NPCS to map
+- [x] Add NPCS to map
 - [x] Add inventory functions/logic
-- [ ] Add farming mechanics
+- [x] Add farming mechanics
+<img width="650" height="419" alt="image" src="https://github.com/user-attachments/assets/4eb12035-a6b5-4a7f-9a69-57ee378837c2" />
+<img width="650" height="419" alt="image" src="https://github.com/user-attachments/assets/f7adc68f-f5e0-4a14-ac6c-b642826343ab" />
+
+#### 2026 MAY 08
+- [ ] Add majority of town dialogues
+- [ ] Prettify world & menu UI
+- [ ] Plan for minigames
+- [ ] Add game currency for transactions
+- [ ] Add house interior designing mechanic
