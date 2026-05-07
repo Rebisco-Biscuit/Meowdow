@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://bgu0od74i8uoe"]
+
+[ext_resource type="Script" uid="uid://bcfshugm6x8af" path="res://inventory/collectables/Collectable.gd" id="1_50b8i"]
+[ext_resource type="Resource" uid="uid://cmiyjkdtkyugj" path="res://inventory/items/berries.tres" id="2_3i5gp"]
+[ext_resource type="Texture2D" uid="uid://c3rc53ycdoenn" path="res://assets/World-Sprites/Garden_Planters_16x16Icons.png" id="3_usf6x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j8jqp"]
+size = Vector2(14, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_01w2v"]
+atlas = ExtResource("3_usf6x")
+region = Rect2(80, 96, 16, 16)
+
+[node name="Berries" type="Area2D" unique_id=1418206751]
+script = ExtResource("1_50b8i")
+item = ExtResource("2_3i5gp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1913608627]
+shape = SubResource("RectangleShape2D_j8jqp")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1988175805]
+texture = SubResource("AtlasTexture_01w2v")

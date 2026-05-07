@@ -952,7 +952,7 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i1rxi"]
-radius = 16.666668
+radius = 14.444447
 height = 33.333336
 
 [node name="Node2D" type="Node2D" unique_id=1633393327]
@@ -996,6 +996,9 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=628187782]
+
+[node name="FarmPlayer" type="AudioStreamPlayer2D" parent="CharacterBody2D" unique_id=1476591410]
+volume_db = -10.0
 
 [node name="MeowPlayer" type="AudioStreamPlayer2D" parent="CharacterBody2D" unique_id=1658823946]
 

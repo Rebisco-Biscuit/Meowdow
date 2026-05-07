@@ -5,6 +5,7 @@ extends CharacterBody2D
 @onready var shadow = $Sprite2D
 @onready var meow_player = $MeowPlayer
 @onready var step_player = $StepPlayer
+@onready var farm_player = $FarmPlayer
 
 @export var inventory: Inv
 
@@ -111,7 +112,9 @@ func start_farming():
 	idle_timer = 0.0
 	var farm_dir = last_dir.left(1)
 	sprite.play_safe(cat_type + "_cat_farm_" + farm_dir)
-
+	
+	farm_player.stream = preload("res://meow-sic/grass-sfx.mp3")
+	farm_player.play()
 
 func start_afk():
 	is_afk = true
