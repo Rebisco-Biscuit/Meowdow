@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://dhjkpiv2q12sj"]
+
+[ext_resource type="Script" uid="uid://bdvsy7c8wrxi5" path="res://inventory/hotbar_slot.gd" id="1_6gi07"]
+[ext_resource type="Texture2D" uid="uid://cfu6em5siq51d" path="res://assets/UI-Sprites.png" id="2_6gi07"]
+[ext_resource type="PackedScene" uid="uid://cd1jlyih8r105" path="res://inventory/itemStackGui.tscn" id="3_w4el8"]
+
+[node name="HotbarSlot" type="Button" unique_id=2011711941]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(13, 13)
+offset_right = 13.0
+offset_bottom = 13.0
+script = ExtResource("1_6gi07")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1839897286]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_6gi07")
+centered = false
+region_enabled = true
+region_rect = Rect2(59, 155, 26, 26)
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1270417248]
+custom_minimum_size = Vector2(26, 26)
+layout_mode = 1
+offset_right = 26.0
+offset_bottom = 26.0
+scale = Vector2(0.5, 0.5)
+localize_numeral_system = false
+
+[node name="Panel" parent="CenterContainer" unique_id=478215206 instance=ExtResource("3_w4el8")]
+layout_mode = 2
