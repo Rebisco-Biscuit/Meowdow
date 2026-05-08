@@ -7,6 +7,53 @@
 [ext_resource type="FontFile" uid="uid://temvh5pyi624" path="res://assets/Minecraft.ttf" id="3_k1fcs"]
 [ext_resource type="Texture2D" uid="uid://dq5mbll4bdb3j" path="res://assets/icons/orange_cat_icon.png" id="5_yvk22"]
 [ext_resource type="Texture2D" uid="uid://dpj50dqtygcnp" path="res://assets/icons/white_cat_icon.png" id="6_k1fcs"]
+[ext_resource type="Texture2D" uid="uid://o4rmun5aeu8e" path="res://assets/icons/brown_selector.png" id="8_325y2"]
+[ext_resource type="Texture2D" uid="uid://cfu6em5siq51d" path="res://assets/UI-Sprites.png" id="8_k1fcs"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_325y2"]
+resource_local_to_scene = true
+content_margin_left = 15.0
+content_margin_top = 10.0
+content_margin_right = 15.0
+content_margin_bottom = 10.0
+texture = ExtResource("8_k1fcs")
+texture_margin_left = 6.0
+texture_margin_top = 6.0
+texture_margin_right = 6.0
+texture_margin_bottom = 6.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+region_rect = Rect2(11, 11, 26, 28)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_aays5"]
+resource_local_to_scene = true
+content_margin_left = 15.0
+content_margin_top = 10.0
+content_margin_right = 15.0
+content_margin_bottom = 10.0
+texture = ExtResource("8_k1fcs")
+texture_margin_left = 6.0
+texture_margin_top = 6.0
+texture_margin_right = 6.0
+texture_margin_bottom = 6.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+region_rect = Rect2(107, 11, 26, 26)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_d5wys"]
+resource_local_to_scene = true
+content_margin_left = 15.0
+content_margin_top = 10.0
+content_margin_right = 15.0
+content_margin_bottom = 10.0
+texture = ExtResource("8_k1fcs")
+texture_margin_left = 6.0
+texture_margin_top = 6.0
+texture_margin_right = 6.0
+texture_margin_bottom = 6.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+region_rect = Rect2(59, 11, 26, 26)
 
 [node name="SelectionScreen" type="Control" unique_id=2045891526]
 layout_mode = 3
@@ -44,37 +91,65 @@ theme_override_font_sizes/font_size = 38
 text = "SELECT YOUR CAT"
 horizontal_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=1077042539]
+[node name="Panel" type="Panel" parent="VBoxContainer" unique_id=2122809659]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(364, 110)
 layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Panel" unique_id=1077042539]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -182.0
+offset_top = -55.0
+offset_right = 182.0
+offset_bottom = 55.0
+grow_horizontal = 2
+grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_constants/separation = 17
 
-[node name="Character1" parent="VBoxContainer/HBoxContainer" unique_id=2079901492 instance=ExtResource("2_yfmej")]
+[node name="Character1" parent="VBoxContainer/Panel/HBoxContainer" unique_id=2079901492 instance=ExtResource("2_yfmej")]
 layout_mode = 2
 characterPath = "res://BlackCat.tscn"
 characterTexture = ExtResource("2_nf7ud")
 catType = "black"
 
-[node name="Character2" parent="VBoxContainer/HBoxContainer" unique_id=1026397261 instance=ExtResource("2_yfmej")]
+[node name="Character2" parent="VBoxContainer/Panel/HBoxContainer" unique_id=1026397261 instance=ExtResource("2_yfmej")]
 layout_mode = 2
 characterPath = "res://OrangeCat.tscn"
 characterTexture = ExtResource("5_yvk22")
 catType = "orange"
 
-[node name="Character3" parent="VBoxContainer/HBoxContainer" unique_id=397702787 instance=ExtResource("2_yfmej")]
+[node name="Character3" parent="VBoxContainer/Panel/HBoxContainer" unique_id=397702787 instance=ExtResource("2_yfmej")]
 layout_mode = 2
 characterPath = "res://WhiteCat.tscn"
 characterTexture = ExtResource("6_k1fcs")
 catType = "white"
+
+[node name="Indicator" type="Sprite2D" parent="VBoxContainer/Panel" unique_id=877056138]
+z_as_relative = false
+position = Vector2(-0.9999754, -5.4999895)
+scale = Vector2(4.9583316, 4.68)
+texture = ExtResource("8_325y2")
+centered = false
 
 [node name="Button" type="Button" parent="VBoxContainer" unique_id=2074818697]
 custom_minimum_size = Vector2(104, 36)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_override_colors/font_color = Color(0.25202727, 0.2520278, 0.25202736, 1)
 theme_override_fonts/font = ExtResource("3_k1fcs")
 theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxTexture_325y2")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_aays5")
+theme_override_styles/hover = SubResource("StyleBoxTexture_d5wys")
+action_mode = 0
 text = "START"
 
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
