@@ -5,10 +5,10 @@
 [resource]
 texture = ExtResource("1_ovrdg")
 texture_margin_left = 49.0
-texture_margin_top = 21.0
+texture_margin_top = 23.0
 texture_margin_right = 52.0
 texture_margin_bottom = 34.0
-expand_margin_left = 10.0
+expand_margin_left = 602.0
 expand_margin_top = 10.0
-expand_margin_right = 10.0
+expand_margin_right = 602.0
 expand_margin_bottom = 10.0

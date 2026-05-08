@@ -1,0 +1,8 @@
+join "NPC GUIDE" rightmost [animation="Bounce In"]
+"NPC GUIDE" (happy hello): Hello again traveller!! You have arrived to your second desination.
+"NPC GUIDE" (happy): This is Aubrialis. Everything here is so cold.. Colder since the Great Stillness
+"NPC GUIDE" (sad): This towns aura is always cold but it was of comfort. Now it's just unbearable cold.
+"NPC GUIDE" (sobs): Their keeper Aubrialis used to hold all the memory together, but after the Great Stillness she just refused to hold those memories and kept everything frozen.
+"NPC GUIDE" (happy): You can still meet her though!!. She is calm, kind, and utterly frozen—literally. Her fur is ice!!
+"NPC GUIDE" (happy hello): GOOO!!!
+leave "NPC GUIDE" [animation="Bounce Out"]

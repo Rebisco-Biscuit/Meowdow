@@ -1,0 +1,10 @@
+[gd_resource type="StyleBoxTexture" format=3 uid="uid://bvydu4im78ox0"]
+
+[ext_resource type="Texture2D" uid="uid://c5kql4qfd2ujn" path="res://assets/Meow-Sprites/lore/textbox.png" id="1_ndlh4"]
+
+[resource]
+content_margin_left = 70.0
+content_margin_top = 10.0
+content_margin_right = 70.0
+content_margin_bottom = 10.0
+texture = ExtResource("1_ndlh4")

@@ -17,9 +17,63 @@
 &"nicknames": [""],
 &"offset": Vector2(0, 0),
 &"portraits": {
+"Bye": {
+"export_overrides": {
+"image": "\"res://assets/Meow-Sprites/lore/bye.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
 "Neutral": {
 "export_overrides": {
 "image": "\"res://assets/Meow-Sprites/lore/Thaw.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Thaw Happy": {
+"export_overrides": {
+"image": "\"res://assets/Meow-Sprites/lore/thaw happy.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Thaw Sad": {
+"export_overrides": {
+"image": "\"res://assets/Meow-Sprites/lore/thaw sad.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Thaw Shocked": {
+"export_overrides": {
+"image": "\"res://assets/Meow-Sprites/lore/thaw shocked.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Thaw Should Come Back": {
+"export_overrides": {
+"image": "\"res://assets/Meow-Sprites/lore/thaw should come back.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Thaw Wwhy You Came Back": {
+"export_overrides": {
+"image": "\"res://assets/Meow-Sprites/lore/Thaw wwhy you came back.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),

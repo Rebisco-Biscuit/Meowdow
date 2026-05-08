@@ -39,7 +39,10 @@ directories/dch_directory={
 "seeds": "res://assets/Meow-Sprites/lore/seeds.dch"
 }
 directories/dtl_directory={
+"Dewpaw": "res://Timelines/towns/Aubrialis(Town2/Dewpaw.dtl",
+"KeeperIntroduction": "res://Timelines/towns/Aubrialis(Town2/KeeperIntroduction.dtl",
 "KeeperTalkNothing": "res://Timelines/towns/Vinalore(Town1/KeeperTalkNothing.dtl",
+"KeeperTalks": "res://Timelines/towns/Aubrialis(Town2/KeeperTalks.dtl",
 "Quest1Done": "res://Timelines/towns/Vinalore(Town1/Quest1Done.dtl",
 "Quest1Not Done": "res://Timelines/towns/Vinalore(Town1/Quest1Not Done.dtl",
 "Town1_Start": "res://Timelines/towns/Town1_Start.dtl",
@@ -82,7 +85,14 @@ audio/channel_defaults={
 "volume": 0.0
 }
 }
-variables={}
+variables={
+"Thaw": {
+"event_done": false,
+"frostbell_count": 0,
+"quest_started": false,
+"snowbloom_count": 0
+}
+}
 layout/style_list=["res://Timelines/towns/Town1.tres"]
 layout/default_style="res://Timelines/towns/Town1.tres"
 glossary/default_case_sensitive=true
