@@ -1,0 +1,47 @@
+[style name="Town1"]
+join Frostcribe rightmost [animation="Bounce In"]
+Frostcribe (Neutral): And who might you be?
+
+- Hello, I am new here.
+	Frostcribe (Neutral): I can see... Everything in this town is under my control.
+	Frostcribe (Neutral): I have preserved every note the First Gardener ever sang.
+	Frostcribe (Neutral): We do not need new music. We have the old.
+	Frostcribe (Neutral): Stay as long as you like. But do not plant anything warm.
+if has_thawbloom and has_old_picture:
+	
+	- I have something to show you.
+		Frostcribe (Neutral): ...What is it?
+		Player: I found this.
+		Player: A thawbloom... and this old image.
+		Frostcribe (Neutral): ...
+		Frostcribe (Shocked): Where did you get this?
+		Player: Near the old roots outside town.
+		Frostcribe (Shocked): This picture...
+		Frostcribe (Frostcribe Sad): The Three Keepers...
+		Frostcribe (Frostcibe Photo): Before everything became silent.
+		
+		Frostcribe (Frostcibe Photo): We used to sing together beneath the First Gardener’s branches.
+		Frostcribe (Frostcibe Photo): Aubralis carried warmth. Rhollow carried stillness.
+		Frostcribe (Frostcribe Sad): And I... I carried memory.
+		Frostcribe (Frostcribe Sad): We were never meant to stand apart.
+		
+		Frostcribe (Frostcribe Cryy): He was my brother.
+		Frostcribe (Frostcribe Cryy): I cannot forget what he did.
+		Frostcribe (Frostcribe Sad): But I can stop pretending he never existed.
+		
+		Frostcribe (Frostcribe Sad): After the First Gardener fell...
+		Frostcribe (Frostcribe Sad): I locked every song away so nothing could ever change again.
+		Frostcribe (Frostcribe Cryy): I thought preserving the past would stop the pain.
+		
+		Frostcribe (Frost Cribe Soft): But it only froze everything.
+		
+		Frostcribe (Frost Cribe Soft): ...
+		Frostcribe (Frost Cribe Soft): Perhaps.
+		Frostcribe (Frostcribe Sad): That thawbloom should not even exist here.
+		Frostcribe (Frostcribe Sad): Yet somehow... it still grew.
+		
+		Frostcribe (Frost Cribe Soft): Maybe the old harmony is not completely gone.
+		Frostcribe (Frost Cribe Soft): Keep that flower safe.
+		Frostcribe (Frost Cribe Soft): And do not let the others see this picture yet.
+		<Empty Text Event>
+<Empty Text Event>

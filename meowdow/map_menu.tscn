@@ -1,6 +1,91 @@
 [gd_scene format=3 uid="uid://c6aloue4vvvq4"]
 
 [ext_resource type="Script" uid="uid://chg1yhy0crdp3" path="res://MapMenu.gd" id="1_fw6nu"]
+[ext_resource type="FontFile" uid="uid://temvh5pyi624" path="res://assets/Minecraft.ttf" id="2_r5awk"]
+[ext_resource type="Texture2D" uid="uid://cfu6em5siq51d" path="res://assets/UI-Sprites.png" id="3_jxnfv"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qdv60"]
+resource_local_to_scene = true
+content_margin_left = 6.0
+content_margin_top = 6.0
+content_margin_right = 6.0
+content_margin_bottom = 6.0
+texture = ExtResource("3_jxnfv")
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+region_rect = Rect2(163, 178, 90, 27)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4k2b5"]
+resource_local_to_scene = true
+content_margin_left = 6.0
+content_margin_top = 6.0
+content_margin_right = 6.0
+content_margin_bottom = 6.0
+texture = ExtResource("3_jxnfv")
+region_rect = Rect2(259, 180, 90, 25)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r5awk"]
+resource_local_to_scene = true
+content_margin_left = 6.0
+content_margin_top = 6.0
+content_margin_right = 6.0
+content_margin_bottom = 6.0
+texture = ExtResource("3_jxnfv")
+region_rect = Rect2(259, 180, 90, 25)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jxnfv"]
+resource_local_to_scene = true
+content_margin_left = 6.0
+content_margin_top = 6.0
+content_margin_right = 6.0
+content_margin_bottom = 6.0
+texture = ExtResource("3_jxnfv")
+region_rect = Rect2(163, 178, 90, 27)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4dm5r"]
+resource_local_to_scene = true
+content_margin_left = 6.0
+content_margin_top = 6.0
+content_margin_right = 6.0
+content_margin_bottom = 6.0
+texture = ExtResource("3_jxnfv")
+region_rect = Rect2(259, 180, 90, 25)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_taou0"]
+resource_local_to_scene = true
+content_margin_left = 6.0
+content_margin_top = 6.0
+content_margin_right = 6.0
+content_margin_bottom = 6.0
+texture = ExtResource("3_jxnfv")
+region_rect = Rect2(259, 180, 90, 25)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xhlxe"]
+resource_local_to_scene = true
+content_margin_left = 6.0
+content_margin_top = 6.0
+content_margin_right = 6.0
+content_margin_bottom = 6.0
+texture = ExtResource("3_jxnfv")
+region_rect = Rect2(163, 178, 90, 27)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kwh1x"]
+resource_local_to_scene = true
+content_margin_left = 6.0
+content_margin_top = 6.0
+content_margin_right = 6.0
+content_margin_bottom = 6.0
+texture = ExtResource("3_jxnfv")
+region_rect = Rect2(259, 180, 90, 25)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xdkx5"]
+resource_local_to_scene = true
+content_margin_left = 6.0
+content_margin_top = 6.0
+content_margin_right = 6.0
+content_margin_bottom = 6.0
+texture = ExtResource("3_jxnfv")
+region_rect = Rect2(259, 180, 90, 25)
 
 [node name="MapMenu" type="Control" unique_id=251710403]
 process_mode = 3
@@ -28,12 +113,28 @@ offset_bottom = 40.0
 
 [node name="Vinalore" type="Button" parent="VBoxContainer" unique_id=1140989543]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.95, 0.6729167, 0.285, 1)
+theme_override_fonts/font = ExtResource("2_r5awk")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxTexture_qdv60")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_4k2b5")
+theme_override_styles/hover = SubResource("StyleBoxTexture_r5awk")
 text = "Vinalore"
 
 [node name="Aubrialis" type="Button" parent="VBoxContainer" unique_id=1164375400]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.42529908, 0.997034, 0.99999994, 1)
+theme_override_fonts/font = ExtResource("2_r5awk")
+theme_override_styles/normal = SubResource("StyleBoxTexture_jxnfv")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_4dm5r")
+theme_override_styles/hover = SubResource("StyleBoxTexture_taou0")
 text = "Aubrialis"
 
 [node name="Rhollow" type="Button" parent="VBoxContainer" unique_id=331495645]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.2834027, 0.30626076, 0.5234947, 1)
+theme_override_fonts/font = ExtResource("2_r5awk")
+theme_override_styles/normal = SubResource("StyleBoxTexture_xhlxe")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_kwh1x")
+theme_override_styles/hover = SubResource("StyleBoxTexture_xdkx5")
 text = "Rhollow"

@@ -1,31 +1,39 @@
 extends Control
 
-@onready var character_selection_box = $VBoxContainer/HBoxContainer
+@onready var character_selection_box = $VBoxContainer/Panel/HBoxContainer
+@onready var indicator = $VBoxContainer/Panel/Indicator
+
+func _ready():
+	indicator.visible = false
 
 func _input(event):
 	if event is InputEventMouseButton && event.button_index == 1 && event.is_pressed():
 		var charNode = _get_char_node()
-		
-		if charNode: _set_char_selected(charNode)
+
+		if charNode:
+			_set_char_selected(charNode)
 
 func _get_char_node():
 	var mousePos = get_viewport().get_mouse_position()
-	
+
 	for node in character_selection_box.get_children():
 		if node.get_global_rect().has_point(mousePos):
 			return node
-			
 
 func _set_char_selected(charNode):
 	GlobalData.playerCharPath = charNode.characterPath
 	GlobalData.selectedCatType = charNode.catType
-	
+
+	# show + move indicator
+	indicator.visible = true
+	indicator.position = charNode.position
+
 	for node in character_selection_box.get_children():
 		var isSelected = charNode == node
 		node.set_selected(isSelected)
 
-
 func _on_button_pressed() -> void:
-	if not GlobalData.playerCharPath: return
-	
+	if not GlobalData.playerCharPath:
+		return
+
 	get_tree().change_scene_to_file("res://Vinalore.tscn")
