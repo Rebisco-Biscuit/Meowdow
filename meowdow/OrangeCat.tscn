@@ -952,14 +952,13 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i1rxi"]
-radius = 14.444447
-height = 33.333336
+radius = 13.333332
+height = 26.666664
 
 [node name="Node2D" type="Node2D" unique_id=1633393327]
 z_index = 2
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=90748852]
-position = Vector2(42, 56)
 scale = Vector2(0.9, 0.9)
 script = ExtResource("1_aogdi")
 inventory = ExtResource("2_i1rxi")

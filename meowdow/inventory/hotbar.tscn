@@ -12,10 +12,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -218.0
-offset_top = -72.0
-offset_right = -218.0
-offset_bottom = -72.0
+offset_left = -217.99997
+offset_top = -89.99994
+offset_right = -217.99997
+offset_bottom = -89.99994
 grow_horizontal = 2
 grow_vertical = 0
 scale = Vector2(5.5, 5.5)
@@ -43,7 +43,7 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="Selector" type="Sprite2D" parent="." unique_id=898548680]
-texture_filter = 3
+texture_filter = 1
 scale = Vector2(0.5416667, 0.52)
 texture = ExtResource("3_g5ggu")
 centered = false

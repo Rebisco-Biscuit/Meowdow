@@ -883,8 +883,8 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_q7l1q"]
-radius = 14.444447
-height = 33.333336
+radius = 13.333332
+height = 26.666664
 
 [node name="Node2D" type="Node2D" unique_id=912401954]
 z_index = 2
@@ -907,7 +907,7 @@ sprite_frames = SubResource("SpriteFrames_3rg4k")
 animation = &"black_cat_farm_s"
 script = ExtResource("3_stmko")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1206587582]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1543520497]
 shape = SubResource("CapsuleShape2D_q7l1q")
 
 [node name="Inv_UI" parent="CharacterBody2D" unique_id=135768738 instance=ExtResource("4_d6dyv")]
