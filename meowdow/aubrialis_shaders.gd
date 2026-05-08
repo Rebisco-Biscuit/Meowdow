@@ -10,12 +10,18 @@ const FACING_DISTANCE = 15.0
 var planted_cells: Dictionary = {}
 var crop_scene = preload("res://crops/Crop.tscn")
 var berries_data = preload("res://crops/beetroot_crop.tres")
+var beetroot_data = preload("res://crops/beetroot_crop.tres")
+var hotbar_node
 
 var glow_sprite: Sprite2D
 var currently_glowing_cell: Vector2i = Vector2i(-9999, -9999)
 var cat_body: CharacterBody2D
 
 func _ready():
+	
+	hotbar_node = preload("res://inventory/hotbar.tscn").instantiate()
+	$CanvasLayer.add_child(hotbar_node)
+	
 	var playerCharPath = GlobalData.playerCharPath
 	var playerNode = load(playerCharPath).instantiate()
 	add_child(playerNode)
@@ -56,21 +62,32 @@ func _try_interact():
 	# Harvest if fully grown
 	if planted_cells.has(cell):
 		var crop = planted_cells[cell]
-		if crop.stage == crop.data.stage_rects.size():  # ← fully grown when on last stage
+		if crop.stage == crop.data.stage_rects.size():
 			crop.harvest()
 			planted_cells.erase(cell)
 		else:
 			print("Not ready! Stage: ", crop.stage)
 		return
 
-	# Plant
+	# --- Check selected hotbar item ---
+	var selected_item: InvItem = hotbar_node.get_selected_item()
+
+	if selected_item == null or selected_item.crop_data == null:
+		print("No seed selected!")
+		return
+
+	# Consume one seed from inventory
+	var inv: Inv = cat_body.inventory
+	inv.remove(selected_item)
+
+	# Plant using the seed's crop data
 	var crop = crop_scene.instantiate()
-	crop.data = berries_data
+	crop.data = selected_item.crop_data
 	var tile_pos = tile_layer.to_global(tile_layer.map_to_local(cell))
 	crop.global_position = tile_pos
 	add_child(crop)
 	planted_cells[cell] = crop
-	print("Planted carrot at: ", cell)
+	print("Planted ", selected_item.name, " at: ", cell)
 
 func _process(_delta):
 	if cat_body == null:

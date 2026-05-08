@@ -1,6 +1,7 @@
 [gd_resource type="Resource" script_class="InvItem" format=3 uid="uid://bcncsejutk0bq"]
 
 [ext_resource type="Script" uid="uid://dhje1jivdtxyf" path="res://inventory/inventory_item.gd" id="1_b0jin"]
+[ext_resource type="Resource" uid="uid://w7eixobk3rs" path="res://crops/tomato_crop.tres" id="1_qpqgl"]
 [ext_resource type="Texture2D" uid="uid://c3rc53ycdoenn" path="res://assets/World-Sprites/Garden_Planters_16x16Icons.png" id="2_qpqgl"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6ykie"]
@@ -11,3 +12,4 @@ region = Rect2(0, 80, 16, 16)
 script = ExtResource("1_b0jin")
 name = "tomato_seed"
 texture = SubResource("AtlasTexture_6ykie")
+crop_data = ExtResource("1_qpqgl")

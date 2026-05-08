@@ -112,6 +112,7 @@ expand_margin_right = 2.0
 expand_margin_bottom = 2.0
 
 [node name="Node2D" type="Node2D" unique_id=920501265]
+texture_filter = 1
 script = ExtResource("1_fti7j")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=67807889]

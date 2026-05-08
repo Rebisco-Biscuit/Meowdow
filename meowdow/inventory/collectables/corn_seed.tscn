@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://dtth42ubby10e"]
+
+[ext_resource type="Script" uid="uid://bcfshugm6x8af" path="res://inventory/collectables/Collectable.gd" id="1_5f0b8"]
+[ext_resource type="Resource" uid="uid://cnykoh8d8bhgc" path="res://inventory/items/corn_seed.tres" id="2_byq5m"]
+[ext_resource type="Texture2D" uid="uid://c3rc53ycdoenn" path="res://assets/World-Sprites/Garden_Planters_16x16Icons.png" id="3_pg2ol"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7rh56"]
+size = Vector2(14, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wgv75"]
+atlas = ExtResource("3_pg2ol")
+region = Rect2(0, 48, 16, 16)
+
+[node name="CornSeed" type="Area2D" unique_id=632886233]
+texture_filter = 1
+script = ExtResource("1_5f0b8")
+item = ExtResource("2_byq5m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=41882300]
+shape = SubResource("RectangleShape2D_7rh56")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1596896084]
+texture = SubResource("AtlasTexture_wgv75")

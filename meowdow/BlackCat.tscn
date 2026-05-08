@@ -888,6 +888,7 @@ height = 33.333336
 
 [node name="Node2D" type="Node2D" unique_id=912401954]
 z_index = 2
+texture_filter = 1
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=529878895]
 scale = Vector2(0.9, 0.9)

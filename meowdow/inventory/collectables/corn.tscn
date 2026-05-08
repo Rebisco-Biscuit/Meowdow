@@ -12,6 +12,7 @@ atlas = ExtResource("3_km5ds")
 region = Rect2(16, 32, 16, 16)
 
 [node name="Corn" type="Area2D" unique_id=695462567]
+texture_filter = 1
 script = ExtResource("1_8g0k4")
 item = ExtResource("2_7tm68")
 

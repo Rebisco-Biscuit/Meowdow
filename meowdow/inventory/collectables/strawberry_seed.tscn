@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://cd2lgefr10b1w"]
+
+[ext_resource type="Script" uid="uid://bcfshugm6x8af" path="res://inventory/collectables/Collectable.gd" id="1_t2ss7"]
+[ext_resource type="Resource" uid="uid://bnw8uigqnqcr4" path="res://inventory/items/strawberry_seed.tres" id="2_v8c40"]
+[ext_resource type="Texture2D" uid="uid://c3rc53ycdoenn" path="res://assets/World-Sprites/Garden_Planters_16x16Icons.png" id="3_ygyby"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mlsgg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ut5m2"]
+atlas = ExtResource("3_ygyby")
+region = Rect2(0, 144, 16, 16)
+
+[node name="StrawberrySeed" type="Area2D" unique_id=1294259694]
+texture_filter = 1
+script = ExtResource("1_t2ss7")
+item = ExtResource("2_v8c40")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1429853583]
+shape = SubResource("RectangleShape2D_mlsgg")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2006762527]
+texture = SubResource("AtlasTexture_ut5m2")

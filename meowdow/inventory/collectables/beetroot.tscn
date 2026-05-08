@@ -12,6 +12,7 @@ atlas = ExtResource("3_xe1vn")
 region = Rect2(80, 64, 16, 16)
 
 [node name="Beetroot" type="Area2D" unique_id=1567418395]
+texture_filter = 1
 script = ExtResource("1_m2f5g")
 item = ExtResource("2_gki8i")
 

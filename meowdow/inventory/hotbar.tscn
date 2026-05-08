@@ -6,8 +6,19 @@
 
 [node name="Hotbar" type="Panel" unique_id=660909474]
 self_modulate = Color(1, 1, 1, 0)
-offset_right = 81.0
-offset_bottom = 13.0
+texture_filter = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -218.0
+offset_top = -72.0
+offset_right = -218.0
+offset_bottom = -72.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(5.5, 5.5)
 script = ExtResource("1_jxmj8")
 
 [node name="Container" type="HBoxContainer" parent="." unique_id=834893134]

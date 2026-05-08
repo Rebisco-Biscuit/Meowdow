@@ -907,6 +907,7 @@ animation = &"white_cat_farm_s"
 script = ExtResource("3_xd7rr")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="CharacterBody2D" unique_id=905456948]
+texture_filter = 1
 shape = SubResource("CapsuleShape2D_dwdoy")
 
 [node name="Inv_UI" parent="CharacterBody2D" unique_id=135768738 instance=ExtResource("4_4dpgh")]

@@ -12,6 +12,7 @@ atlas = ExtResource("3_usf6x")
 region = Rect2(80, 96, 16, 16)
 
 [node name="Berries" type="Area2D" unique_id=1418206751]
+texture_filter = 1
 script = ExtResource("1_50b8i")
 item = ExtResource("2_3i5gp")
 

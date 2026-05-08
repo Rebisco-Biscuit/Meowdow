@@ -98,6 +98,7 @@ sprite_frames = SubResource("SpriteFrames_khe71")
 [node name="InteractionZone" type="Area2D" parent="." unique_id=851152015]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionZone" unique_id=74066299]
+texture_filter = 1
 position = Vector2(0, -3)
 shape = SubResource("CircleShape2D_7wqrj")
 

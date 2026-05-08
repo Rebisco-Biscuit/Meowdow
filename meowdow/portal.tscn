@@ -24,6 +24,7 @@ expand_margin_bottom = 2.0
 
 [node name="Area2D" type="Area2D" unique_id=1666784245]
 process_mode = 3
+texture_filter = 1
 script = ExtResource("1_dl81w")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1624740889]

@@ -24,12 +24,12 @@ func move_selector(direction: int) -> void:
 	selector.global_position = slots[currently_selected].global_position
 
 func _unhandled_input(event) -> void:
-	if event.is_action_pressed("farm"):
-		inventory.use_item_at_index(currently_selected)
-	
 	if event.is_action_pressed("hotbar_right"):
 		move_selector(1)
 		
 	if event.is_action_pressed("hotbar_left"):
 		move_selector(-1)
 		
+func get_selected_item() -> InvItem:
+	var slot: InventorySlot = inventory.slots[currently_selected]
+	return slot.item  # adjust if your InventorySlot uses a different field name		

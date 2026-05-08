@@ -12,6 +12,6 @@ region = Rect2(224, 0, 192, 288)
 script = ExtResource("2_c8scw")
 crop_name = "berries"
 spritesheet = SubResource("AtlasTexture_xrcye")
-stage_rects = Array[Rect2]([Rect2(32, 208, 16, 32), Rect2(64, 192, 16, 32), Rect2(96, 192, 16, 32), Rect2(128, 192, 16, 32)])
+stage_rects = Array[Rect2]([Rect2(32, 208, 16, 16), Rect2(64, 192, 16, 32), Rect2(96, 192, 16, 32), Rect2(128, 192, 16, 32)])
 harvestable_scene = ExtResource("1_vkct5")
 stage_duration = 4.5

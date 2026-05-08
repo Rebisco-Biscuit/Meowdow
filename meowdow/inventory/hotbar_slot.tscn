@@ -1,11 +1,12 @@
 [gd_scene format=3 uid="uid://dhjkpiv2q12sj"]
 
-[ext_resource type="Script" uid="uid://bdvsy7c8wrxi5" path="res://inventory/hotbar_slot.gd" id="1_6gi07"]
+[ext_resource type="Script" path="res://inventory/hotbar_slot.gd" id="1_6gi07"]
 [ext_resource type="Texture2D" uid="uid://cfu6em5siq51d" path="res://assets/UI-Sprites.png" id="2_6gi07"]
 [ext_resource type="PackedScene" uid="uid://cd1jlyih8r105" path="res://inventory/itemStackGui.tscn" id="3_w4el8"]
 
 [node name="HotbarSlot" type="Button" unique_id=2011711941]
 self_modulate = Color(1, 1, 1, 0)
+texture_filter = 1
 custom_minimum_size = Vector2(13, 13)
 offset_right = 13.0
 offset_bottom = 13.0

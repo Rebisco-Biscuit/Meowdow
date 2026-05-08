@@ -5,6 +5,7 @@
 
 [node name="inv_UI_slot" type="Button" unique_id=2011711941]
 self_modulate = Color(1, 1, 1, 0)
+texture_filter = 1
 custom_minimum_size = Vector2(13, 13)
 offset_right = 13.0
 offset_bottom = 13.0

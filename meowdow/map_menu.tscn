@@ -5,6 +5,7 @@
 [node name="MapMenu" type="Control" unique_id=251710403]
 process_mode = 3
 z_index = 11
+texture_filter = 1
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5

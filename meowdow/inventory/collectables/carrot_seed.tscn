@@ -8,6 +8,7 @@
 size = Vector2(14, 16)
 
 [node name="CarrotSeed" type="Area2D" unique_id=627519706]
+texture_filter = 1
 script = ExtResource("1_exrdp")
 item = ExtResource("2_ke8e1")
 

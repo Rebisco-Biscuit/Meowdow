@@ -1,5 +1,6 @@
 [gd_resource type="Resource" script_class="InvItem" format=3 uid="uid://cnykoh8d8bhgc"]
 
+[ext_resource type="Resource" uid="uid://ng6gouu2l80t" path="res://crops/corn_crop.tres" id="1_aoswt"]
 [ext_resource type="Script" uid="uid://dhje1jivdtxyf" path="res://inventory/inventory_item.gd" id="1_ml1ov"]
 [ext_resource type="Texture2D" uid="uid://c3rc53ycdoenn" path="res://assets/World-Sprites/Garden_Planters_16x16Icons.png" id="2_aoswt"]
 
@@ -11,3 +12,4 @@ region = Rect2(0, 48, 16, 16)
 script = ExtResource("1_ml1ov")
 name = "corn_seed"
 texture = SubResource("AtlasTexture_fcx5e")
+crop_data = ExtResource("1_aoswt")

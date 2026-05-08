@@ -13,6 +13,7 @@ atlas = ExtResource("3_d4h7c")
 region = Rect2(16, 0, 16, 16)
 
 [node name="Carrot" unique_id=2120849737 instance=ExtResource("1_b4qcf")]
+texture_filter = 1
 item = ExtResource("2_6h6rx")
 
 [node name="CollisionShape2D" parent="." index="0" unique_id=1553553608]

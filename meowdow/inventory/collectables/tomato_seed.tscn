@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://decdaedtc1qym"]
+
+[ext_resource type="Script" uid="uid://bcfshugm6x8af" path="res://inventory/collectables/Collectable.gd" id="1_cl2ms"]
+[ext_resource type="Resource" uid="uid://bcncsejutk0bq" path="res://inventory/items/tomato_seed.tres" id="2_vtbhq"]
+[ext_resource type="Texture2D" uid="uid://c3rc53ycdoenn" path="res://assets/World-Sprites/Garden_Planters_16x16Icons.png" id="3_5x7dm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oxftg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kf563"]
+atlas = ExtResource("3_5x7dm")
+region = Rect2(0, 80, 16, 16)
+
+[node name="TomatoSeed" type="Area2D" unique_id=57146725]
+texture_filter = 1
+script = ExtResource("1_cl2ms")
+item = ExtResource("2_vtbhq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1669830945]
+shape = SubResource("RectangleShape2D_oxftg")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1964776800]
+texture = SubResource("AtlasTexture_kf563")

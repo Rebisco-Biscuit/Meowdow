@@ -4,6 +4,7 @@
 [ext_resource type="FontFile" uid="uid://temvh5pyi624" path="res://assets/Minecraft.ttf" id="1_el80c"]
 
 [node name="Panel" type="Panel" unique_id=478215206]
+texture_filter = 1
 script = ExtResource("1_00y2h")
 
 [node name="item_display" type="Sprite2D" parent="." unique_id=1158872189]

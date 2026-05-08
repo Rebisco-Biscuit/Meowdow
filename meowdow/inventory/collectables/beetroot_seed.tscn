@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://dhyr2lcubhkp5"]
+
+[ext_resource type="Script" uid="uid://bcfshugm6x8af" path="res://inventory/collectables/Collectable.gd" id="1_2hxyo"]
+[ext_resource type="Resource" uid="uid://dbsnqv2o56c62" path="res://inventory/items/beetroot_seed.tres" id="2_nslq4"]
+[ext_resource type="Texture2D" uid="uid://c3rc53ycdoenn" path="res://assets/World-Sprites/Garden_Planters_16x16Icons.png" id="3_8s2e2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wqxfy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1rifq"]
+atlas = ExtResource("3_8s2e2")
+region = Rect2(64, 80, 16, 16)
+
+[node name="BeetrootSeed" type="Area2D" unique_id=1434146121]
+texture_filter = 1
+script = ExtResource("1_2hxyo")
+item = ExtResource("2_nslq4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1637400552]
+shape = SubResource("RectangleShape2D_wqxfy")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1867748719]
+texture = SubResource("AtlasTexture_1rifq")

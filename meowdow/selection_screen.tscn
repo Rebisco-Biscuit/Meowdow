@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://dpj50dqtygcnp" path="res://assets/icons/white_cat_icon.png" id="6_k1fcs"]
 
 [node name="SelectionScreen" type="Control" unique_id=2045891526]
+texture_filter = 1
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
