@@ -1,7 +1,9 @@
 [style name="Town1"]
 join Thaw (Neutral) rightmost [animation="Bounce In"]
-set {Thaw.event_done} = true
 # When mission in town is completed
+set {Thaw.quest_started} = true
+set {Thaw.frostbell_count} = 200.0
+set {Thaw.snowbloom_count} = 300.0
 if {Thaw.event_done} == true:
 	Thaw (Thaw Wwhy You Came Back): What brought you back here??
 	Thaw (Neutral): Your mission is done here traveller!
@@ -23,6 +25,7 @@ if {Thaw.quest_started} == false:
 	Thaw (Thaw Happy): Plant 150 Frostbell and 150 Snowbloom.
 	
 	Thaw (Neutral): They are just ingredients. Nothing more.
+	Thaw (Bye): Goodbye and Goodluck!!!
 	
 	set {Thaw.quest_started} = true
 	[end_timeline]
@@ -73,13 +76,13 @@ if {Thaw.quest_started} == true:
 				
 				Thaw (Thaw Happy): Now listen.
 				
-				Thaw (Thaw Happy): Plant Thawbloom.
+				Thaw (Thaw Happy): Here's a thawbloom. I've been hiding it for someone courageous like you
 				
 				Thaw (Thaw Happy): It is not an ingredient.
 				
 				Thaw (Neutral): It is a reminder.
 				
-				[give_item thawbloom_seed]
+				(Gives you thawbloom plant and the image of the three keepers together)
 				
 				Thaw (Thaw Happy): Bye Byee
 				

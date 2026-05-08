@@ -1,0 +1,11 @@
+[style name="Town1"]
+join "NPC GUIDE" (happy hello) rightmost [animation="Bounce In"]
+"NPC GUIDE" (Npc Scared): Heyy!!Come here
+What is it???Why are you hiding?
+"NPC GUIDE" (sigh): Thank the First Gardener you reached up to this level.
+"NPC GUIDE" (neutral): This is Rhollow it may seem destroyed but it's not.
+"NPC GUIDE" (sad):  It is empty. Not abandoned, hollowed out. The buildings are intact. The streets are clean. But every cat walks alone, head down. No sound at all. Not even wind.
+"NPC GUIDE" (neutral): Their keeper is Echofall..To defeat him you must plant voiid resistant crops. [b]Echoshroom, Gloomberry.[/b]
+"NPC GUIDE" (Npc Scared): Be careful!! I see a black cat following you.
+"NPC GUIDE" (happy hello): Goodluck and goodbye traveller!!
+[end_timeline]

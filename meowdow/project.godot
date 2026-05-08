@@ -26,11 +26,13 @@ directories/dch_directory={
 "Captain Rustfur": "res://Timelines/characters/Captain Rustfur.dch",
 "Dewpaw": "res://Timelines/characters/Dewpaw.dch",
 "Echofall": "res://Timelines/characters/Echofall.dch",
+"Entity": "res://Timelines/characters/Entity.dch",
 "Frostcribe": "res://Timelines/characters/Frostcribe.dch",
 "Glow": "res://Timelines/characters/Glow.dch",
 "Mitten": "res://Timelines/characters/Mitten.dch",
 "NPC GUIDE": "res://assets/Meow-Sprites/lore/NPC GUIDE.dch",
 "Old Jerry": "res://Timelines/characters/Old Jerry.dch",
+"Player": "res://Timelines/characters/Player.dch",
 "Thaw": "res://Timelines/characters/Thaw.dch",
 "The First Garnder": "res://The First Garnder.dch",
 "harmony of three": "res://Timelines/characters/harmony of three.dch",
@@ -39,14 +41,19 @@ directories/dch_directory={
 "seeds": "res://assets/Meow-Sprites/lore/seeds.dch"
 }
 directories/dtl_directory={
-"Dewpaw": "res://Timelines/towns/Aubrialis(Town2/Dewpaw.dtl",
+"Dewpaw": "res://Timelines/towns/Aubrialis(Town2/Thaaw.dtl",
+"Echofall talk before fight": "res://Timelines/towns/Rhollow(Town3/Echofall talk before fight.dtl",
+"Echofalltalkafterplanting ": "res://Timelines/towns/Rhollow(Town3/Echofalltalkafterplanting .dtl",
+"Glow": "res://Timelines/towns/Rhollow(Town3/Glow.dtl",
 "KeeperIntroduction": "res://Timelines/towns/Aubrialis(Town2/KeeperIntroduction.dtl",
 "KeeperTalkNothing": "res://Timelines/towns/Vinalore(Town1/KeeperTalkNothing.dtl",
 "KeeperTalks": "res://Timelines/towns/Aubrialis(Town2/KeeperTalks.dtl",
+"NPC Talk": "res://Timelines/towns/Rhollow(Town3/NPC Talk.dtl",
 "Quest1Done": "res://Timelines/towns/Vinalore(Town1/Quest1Done.dtl",
 "Quest1Not Done": "res://Timelines/towns/Vinalore(Town1/Quest1Not Done.dtl",
 "Town1_Start": "res://Timelines/towns/Town1_Start.dtl",
-"practice": "res://Timelines/practice.dtl"
+"practice": "res://Timelines/practice.dtl",
+"timeline": "res://Timelines/towns/Entitalks/Entitalks.dtl"
 }
 layout/style_directory={
 "": "res://Timelines/towns/Town1.tres",

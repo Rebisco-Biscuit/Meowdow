@@ -17,6 +17,24 @@
 &"nicknames": [""],
 &"offset": Vector2(0, 0),
 &"portraits": {
+"Npc Scared": {
+"export_overrides": {
+"image": "\"res://assets/Meow-Sprites/lore/npc scared.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Npc Shocked": {
+"export_overrides": {
+"image": "\"res://assets/Meow-Sprites/lore/npc shocked.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
 "happy": {
 "export_overrides": {
 "image": "\"res://assets/Meow-Sprites/lore/hppy.png\""
