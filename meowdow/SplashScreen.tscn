@@ -1,0 +1,80 @@
+[gd_scene format=3 uid="uid://cwrbtkdvyjk6c"]
+
+[ext_resource type="Script" uid="uid://nt6oc3gp8yf0" path="res://splash_screen.gd" id="1_xe5an"]
+
+[sub_resource type="Animation" id="Animation_xe5an"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_8lrbv"]
+resource_name = "fade_in"
+step = 0.9
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:modulate")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_onsdr"]
+resource_name = "fade_out"
+step = 0.9
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:modulate")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_onsdr"]
+_data = {
+&"RESET": SubResource("Animation_xe5an"),
+&"fade_in": SubResource("Animation_8lrbv"),
+&"fade_out": SubResource("Animation_onsdr")
+}
+
+[node name="SplashScreen" type="CanvasLayer" unique_id=216245491]
+script = ExtResource("1_xe5an")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1450684952]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1141782512]
+modulate = Color(0, 0, 0, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 2
+stretch_mode = 5
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1295898101]
+libraries/ = SubResource("AnimationLibrary_onsdr")

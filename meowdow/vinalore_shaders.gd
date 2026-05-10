@@ -1,6 +1,7 @@
 extends TileMap
 
 @onready var tile_layer: TileMapLayer = $TileMapLayer2
+@onready var catnip_label: Label = $CanvasLayer/CatnipLabel
 
 const GLOW_ATLAS_COORDS = [Vector2i(18, 3), Vector2i(18, 4)]
 const SOURCE_ID = 0
@@ -52,6 +53,8 @@ func _ready():
 	glow_sprite.centered = false
 	add_child(glow_sprite)
 
+	update_catnip_label()
+	
 # --- try plant ---
 func _try_interact():
 	if not glow_sprite.visible:
@@ -102,6 +105,8 @@ func _process(_delta):
 	# Pulse alpha when visible
 	if glow_sprite.visible:
 		glow_sprite.modulate.a = 0.3 + sin(Time.get_ticks_msec() * 0.005) * 0.2
+		
+	update_catnip_label()
 
 func _last_dir_to_vector(dir: String) -> Vector2:
 	var v = Vector2.ZERO
@@ -127,3 +132,6 @@ func _update_glow(cell: Vector2i):
 		glow_sprite.visible = true
 	else:
 		glow_sprite.visible = false
+
+func update_catnip_label():
+	catnip_label.text = "🐾 " + str(GlobalData.catnips) + " catnips"

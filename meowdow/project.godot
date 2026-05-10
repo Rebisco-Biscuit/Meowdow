@@ -11,8 +11,11 @@ config_version=5
 [application]
 
 config/name="Meowdow"
-run/main_scene="uid://r6v8vpm0x4bh"
+run/main_scene="uid://cwrbtkdvyjk6c"
 config/features=PackedStringArray("4.6", "GL Compatibility")
+boot_splash/bg_color=Color(0.5027185, 0.50271857, 0.5027184, 1)
+boot_splash/stretch_mode=0
+boot_splash/image="uid://cxeamrc4acajh"
 config/icon="res://icon.svg"
 
 [autoload]
@@ -41,9 +44,9 @@ directories/dch_directory={
 "seeds": "res://assets/Meow-Sprites/lore/seeds.dch"
 }
 directories/dtl_directory={
-"Dewpaw": "res://Timelines/towns/Aubrialis(Town2/Thaaw.dtl",
 "Echofall talk before fight": "res://Timelines/towns/Rhollow(Town3/Echofall talk before fight.dtl",
 "Echofalltalkafterplanting ": "res://Timelines/towns/Rhollow(Town3/Echofalltalkafterplanting .dtl",
+"Entitalks": "res://Timelines/towns/Entitalks/Entitalks.dtl",
 "Glow": "res://Timelines/towns/Rhollow(Town3/Glow.dtl",
 "KeeperIntroduction": "res://Timelines/towns/Aubrialis(Town2/KeeperIntroduction.dtl",
 "KeeperTalkNothing": "res://Timelines/towns/Vinalore(Town1/KeeperTalkNothing.dtl",
@@ -51,9 +54,9 @@ directories/dtl_directory={
 "NPC Talk": "res://Timelines/towns/Rhollow(Town3/NPC Talk.dtl",
 "Quest1Done": "res://Timelines/towns/Vinalore(Town1/Quest1Done.dtl",
 "Quest1Not Done": "res://Timelines/towns/Vinalore(Town1/Quest1Not Done.dtl",
+"Thaaw": "res://Timelines/towns/Aubrialis(Town2/Thaaw.dtl",
 "Town1_Start": "res://Timelines/towns/Town1_Start.dtl",
-"practice": "res://Timelines/practice.dtl",
-"timeline": "res://Timelines/towns/Entitalks/Entitalks.dtl"
+"practice": "res://Timelines/practice.dtl"
 }
 layout/style_directory={
 "": "res://Timelines/towns/Town1.tres",
@@ -109,7 +112,7 @@ text/input_action="dialogic_default_action"
 [display]
 
 window/size/viewport_width=1280
-window/size/viewport_height=760
+window/size/viewport_height=720
 window/size/borderless=true
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
