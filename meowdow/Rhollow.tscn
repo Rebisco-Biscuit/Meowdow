@@ -12,10 +12,10 @@
 [ext_resource type="Script" uid="uid://deh6oto7r5w7w" path="res://clouds.gd" id="10_q3vt3"]
 [ext_resource type="Texture2D" uid="uid://c5agym8hvbtlp" path="res://assets/clouds.png" id="11_w3m06"]
 [ext_resource type="Texture2D" uid="uid://13bqcwaqg8y3" path="res://assets/World of Solaria Demo Pack Update 04/Solaria Palette.png" id="12_w3m06"]
-[ext_resource type="PackedScene" uid="uid://80wyo4diqehq" path="res://glow.tscn" id="13_7kkbp"]
-[ext_resource type="PackedScene" uid="uid://cobe0pyodbssc" path="res://echofall.tscn" id="14_6o8mm"]
-[ext_resource type="PackedScene" uid="uid://dopat1fk0pnmg" path="res://guide.tscn" id="15_6o8mm"]
-[ext_resource type="PackedScene" uid="uid://bvwioq0mggfer" path="res://saint_qa.tscn" id="16_lj66f"]
+[ext_resource type="PackedScene" uid="uid://80wyo4diqehq" path="res://characters/glow.tscn" id="13_7kkbp"]
+[ext_resource type="PackedScene" uid="uid://cobe0pyodbssc" path="res://characters/echofall.tscn" id="14_6o8mm"]
+[ext_resource type="PackedScene" uid="uid://dopat1fk0pnmg" path="res://characters/guide.tscn" id="15_6o8mm"]
+[ext_resource type="PackedScene" uid="uid://bvwioq0mggfer" path="res://characters/saint_qa.tscn" id="16_lj66f"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_aakfv"]
 texture = ExtResource("1_5cj5f")

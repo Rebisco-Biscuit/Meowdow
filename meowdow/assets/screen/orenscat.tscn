@@ -1,0 +1,150 @@
+[gd_scene format=3 uid="uid://b18urafi62bah"]
+
+[ext_resource type="Script" uid="uid://7d3cpjm000ay" path="res://characters/saintqa.gd" id="1_es5ut"]
+[ext_resource type="Texture2D" uid="uid://cb3rebex2rr7g" path="res://assets/shadow2.png" id="2_es5ut"]
+[ext_resource type="Texture2D" uid="uid://bhfm771vnsiy0" path="res://assets/Meow-Sprites/Free pack/cat 1.6.png" id="3_es5ut"]
+[ext_resource type="FontFile" uid="uid://temvh5pyi624" path="res://assets/Minecraft.ttf" id="4_0e5y2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8140k"]
+atlas = ExtResource("3_es5ut")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_044bf"]
+atlas = ExtResource("3_es5ut")
+region = Rect2(0, 1152, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xaqph"]
+atlas = ExtResource("3_es5ut")
+region = Rect2(32, 1152, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5lsai"]
+atlas = ExtResource("3_es5ut")
+region = Rect2(64, 1152, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_558nf"]
+atlas = ExtResource("3_es5ut")
+region = Rect2(96, 1152, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kwqme"]
+atlas = ExtResource("3_es5ut")
+region = Rect2(128, 1152, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wq5je"]
+atlas = ExtResource("3_es5ut")
+region = Rect2(160, 1152, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gby3j"]
+atlas = ExtResource("3_es5ut")
+region = Rect2(192, 1152, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mx4e6"]
+atlas = ExtResource("3_es5ut")
+region = Rect2(224, 1152, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8krtq"]
+atlas = ExtResource("3_es5ut")
+region = Rect2(256, 1152, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vadno"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8140k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_044bf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xaqph")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5lsai")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_558nf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kwqme")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wq5je")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gby3j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mx4e6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8krtq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8140k")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_k3nhs"]
+radius = 18.110771
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_omrso"]
+bg_color = Color(0.16470589, 0.16470589, 0.16470589, 0.5882353)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[node name="Node2D" type="Node2D" unique_id=1136141169]
+script = ExtResource("1_es5ut")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=690931196]
+position = Vector2(1, 7)
+scale = Vector2(0.3073593, 0.43111107)
+texture = ExtResource("2_es5ut")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1247469210]
+sprite_frames = SubResource("SpriteFrames_vadno")
+frame = 10
+frame_progress = 1.0
+
+[node name="InteractionZone" type="Area2D" parent="." unique_id=1942263111]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionZone" unique_id=2086891810]
+visible = false
+position = Vector2(0, -3)
+shape = SubResource("CircleShape2D_k3nhs")
+
+[node name="Label" type="Label" parent="." unique_id=1319117865]
+visible = false
+offset_left = -20.0
+offset_top = -27.999998
+offset_right = 39.0
+offset_bottom = -12.999998
+scale = Vector2(0.7, 0.7)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.3137255)
+theme_override_constants/shadow_outline_size = 5
+theme_override_fonts/font = ExtResource("4_0e5y2")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxFlat_omrso")
+text = "Saint QA"
+
+[node name="Prompt" type="Label" parent="." unique_id=1090284209]
+visible = false
+offset_right = 146.0
+offset_bottom = 15.0
+scale = Vector2(0.5, 0.5)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.3137255)
+theme_override_constants/shadow_outline_size = 5
+theme_override_fonts/font = ExtResource("4_0e5y2")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxFlat_omrso")
+text = "Press \"E\" to interact"
+
+[connection signal="body_entered" from="InteractionZone" to="." method="_on_interaction_zone_body_entered"]
+[connection signal="body_exited" from="InteractionZone" to="." method="_on_interaction_zone_body_exited"]

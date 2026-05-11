@@ -1,0 +1,168 @@
+[gd_scene format=3 uid="uid://bn0r6juuugxdx"]
+
+[ext_resource type="Script" uid="uid://brhhn8qr1nmb3" path="res://main_menu.gd" id="1_cqjrg"]
+[ext_resource type="Texture2D" uid="uid://cox5nfbtrlwwp" path="res://assets/screen/selection2.png" id="1_fimr5"]
+[ext_resource type="PackedScene" uid="uid://b18urafi62bah" path="res://assets/screen/orenscat.tscn" id="2_7r1g0"]
+[ext_resource type="FontFile" uid="uid://temvh5pyi624" path="res://assets/Minecraft.ttf" id="6_7r1g0"]
+[ext_resource type="Texture2D" uid="uid://cfu6em5siq51d" path="res://assets/UI-Sprites.png" id="7_e2xy7"]
+[ext_resource type="Texture2D" uid="uid://cxeamrc4acajh" path="res://assets/pakulonumber21.png" id="8_fimr5"]
+[ext_resource type="Texture2D" uid="uid://whwkjnn0tkrh" path="res://assets/pakulonumber3.png" id="8_u7cqb"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_cqjrg"]
+lifetime_randomness = 1.0
+particle_flag_disable_z = true
+spread = 100.0
+initial_velocity_min = 20.0
+initial_velocity_max = 40.0
+gravity = Vector3(0, 45, 0)
+scale_min = 0.0
+scale_max = 8.33
+color = Color(0.69411767, 0.7137255, 0.25882354, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u7cqb"]
+content_margin_top = 35.0
+content_margin_bottom = 35.0
+texture = ExtResource("7_e2xy7")
+region_rect = Rect2(160, 176, 96, 32)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cqjrg"]
+content_margin_top = 35.0
+content_margin_bottom = 35.0
+texture = ExtResource("7_e2xy7")
+region_rect = Rect2(256, 176, 96, 32)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_e2xy7"]
+content_margin_top = 35.0
+content_margin_bottom = 35.0
+texture = ExtResource("7_e2xy7")
+region_rect = Rect2(256, 176, 96, 32)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_31qfy"]
+content_margin_top = 35.0
+content_margin_bottom = 35.0
+texture = ExtResource("7_e2xy7")
+region_rect = Rect2(256, 176, 96, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l1t4j"]
+atlas = ExtResource("8_u7cqb")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e2bvh"]
+atlas = ExtResource("8_fimr5")
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=1932691477]
+script = ExtResource("1_cqjrg")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=175161818]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_fimr5")
+
+[node name="Node2D" parent="." unique_id=1024200494 instance=ExtResource("2_7r1g0")]
+position = Vector2(759, 581)
+scale = Vector2(4.5, 4.5)
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1022506271]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.015300002, 0.015300002, 0.09, 0.2627451)
+
+[node name="Snow" type="GPUParticles2D" parent="." unique_id=321163351]
+position = Vector2(409, -42)
+rotation = 1.5707964
+scale = Vector2(6, 6)
+amount = 200
+lifetime = 20.0
+randomness = 1.0
+trail_lifetime = 6.0
+process_material = SubResource("ParticleProcessMaterial_cqjrg")
+
+[node name="Snow2" type="GPUParticles2D" parent="." unique_id=900848405]
+position = Vector2(836, -49)
+rotation = 1.5707964
+scale = Vector2(6, 6)
+amount = 200
+lifetime = 20.0
+randomness = 1.0
+trail_lifetime = 6.0
+process_material = SubResource("ParticleProcessMaterial_cqjrg")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1427266370]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 55.0
+offset_top = -518.0
+offset_right = 374.0
+grow_vertical = 0
+theme_override_constants/separation = 10
+
+[node name="Continue" type="Button" parent="VBoxContainer" unique_id=1397760766]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.77, 0.63601995, 0.49279997, 1)
+theme_override_fonts/font = ExtResource("6_7r1g0")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxTexture_u7cqb")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_cqjrg")
+theme_override_styles/hover = SubResource("StyleBoxTexture_e2xy7")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_31qfy")
+text = "Continue"
+
+[node name="NewGame" type="Button" parent="VBoxContainer" unique_id=419227]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.77, 0.63601995, 0.49279997, 1)
+theme_override_fonts/font = ExtResource("6_7r1g0")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxTexture_u7cqb")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_cqjrg")
+theme_override_styles/hover = SubResource("StyleBoxTexture_e2xy7")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_31qfy")
+text = "New Game"
+
+[node name="Settings" type="Button" parent="VBoxContainer" unique_id=1766967465]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.77, 0.63601995, 0.49279997, 1)
+theme_override_fonts/font = ExtResource("6_7r1g0")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxTexture_u7cqb")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_cqjrg")
+theme_override_styles/hover = SubResource("StyleBoxTexture_e2xy7")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_31qfy")
+text = "Settings"
+
+[node name="Quit" type="Button" parent="VBoxContainer" unique_id=331769778]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.77, 0.63601995, 0.49279997, 1)
+theme_override_fonts/font = ExtResource("6_7r1g0")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxTexture_u7cqb")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_cqjrg")
+theme_override_styles/hover = SubResource("StyleBoxTexture_e2xy7")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_31qfy")
+text = "Quit"
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=1413965354]
+offset_left = 63.0
+offset_top = 29.0
+offset_right = 524.0
+offset_bottom = 135.0
+scale = Vector2(0.3, 0.3)
+texture = SubResource("AtlasTexture_l1t4j")
+stretch_mode = 2
+
+[node name="TextureRect3" type="TextureRect" parent="." unique_id=775553623]
+offset_left = 65.0
+offset_top = 80.0
+offset_right = 845.0
+offset_bottom = 180.0
+scale = Vector2(0.7, 0.7)
+texture = SubResource("AtlasTexture_e2bvh")
+
+[connection signal="pressed" from="VBoxContainer/Continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="VBoxContainer/NewGame" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]

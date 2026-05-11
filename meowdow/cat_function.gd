@@ -35,6 +35,7 @@ var step_interval := 0.02
 # -------------------
 
 func _ready():
+	add_to_group("player")	
 	randomize()
 	set_next_meow_time()
 

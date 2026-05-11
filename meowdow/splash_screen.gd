@@ -27,4 +27,4 @@ func _on_animation_finished(anim_name: String):
 		if current_slide < slides.size():
 			show_slide(current_slide)
 		else:
-			get_tree().change_scene_to_file("res://selection_screen.tscn")
+			get_tree().change_scene_to_file("res://MainMenu.tscn")

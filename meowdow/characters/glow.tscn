@@ -1,0 +1,138 @@
+[gd_scene format=3 uid="uid://80wyo4diqehq"]
+
+[ext_resource type="Texture2D" uid="uid://baokpiq7os6do" path="res://assets/shadow.png" id="1_2qoh0"]
+[ext_resource type="Script" uid="uid://bxr7bowlc2acr" path="res://characters/dewpaw.gd" id="1_xvcer"]
+[ext_resource type="Texture2D" uid="uid://fhjviedaiimw" path="res://assets/Meow-Sprites/Free pack/glow.png" id="2_2qoh0"]
+[ext_resource type="FontFile" uid="uid://temvh5pyi624" path="res://assets/Minecraft.ttf" id="3_j4ppr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xvcer"]
+atlas = ExtResource("2_2qoh0")
+region = Rect2(0, 1568, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j4ppr"]
+atlas = ExtResource("2_2qoh0")
+region = Rect2(32, 1568, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ov16s"]
+atlas = ExtResource("2_2qoh0")
+region = Rect2(64, 1568, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t2h4v"]
+atlas = ExtResource("2_2qoh0")
+region = Rect2(96, 1568, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4fcy8"]
+atlas = ExtResource("2_2qoh0")
+region = Rect2(128, 1568, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_onwf8"]
+atlas = ExtResource("2_2qoh0")
+region = Rect2(160, 1568, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j6p2r"]
+atlas = ExtResource("2_2qoh0")
+region = Rect2(192, 1568, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u8uqs"]
+atlas = ExtResource("2_2qoh0")
+region = Rect2(224, 1568, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kv8pl"]
+atlas = ExtResource("2_2qoh0")
+region = Rect2(256, 1568, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0vtmt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xvcer")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j4ppr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ov16s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t2h4v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4fcy8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_onwf8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j6p2r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u8uqs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kv8pl")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xvcer"]
+radius = 18.110771
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qic40"]
+bg_color = Color(0.16470589, 0.16470589, 0.16470589, 0.5882353)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[node name="Node2D" type="Node2D" unique_id=1298105278]
+texture_filter = 1
+script = ExtResource("1_xvcer")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1479738142]
+modulate = Color(1, 1, 1, 0.37254903)
+position = Vector2(0, 5)
+scale = Vector2(0.34632042, 0.5422222)
+texture = ExtResource("1_2qoh0")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1948247357]
+sprite_frames = SubResource("SpriteFrames_0vtmt")
+
+[node name="InteractionZone" type="Area2D" parent="." unique_id=1590837576]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionZone" unique_id=1755490034]
+position = Vector2(0, -3)
+shape = SubResource("CircleShape2D_xvcer")
+
+[node name="Label" type="Label" parent="." unique_id=1319894307]
+offset_left = -12.0
+offset_top = -25.0
+offset_right = 20.0
+offset_bottom = -10.0
+scale = Vector2(0.7, 0.7)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.3137255)
+theme_override_constants/shadow_outline_size = 5
+theme_override_fonts/font = ExtResource("3_j4ppr")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxFlat_qic40")
+text = "Glow"
+
+[node name="Prompt" type="Label" parent="." unique_id=1412463670]
+visible = false
+offset_right = 146.0
+offset_bottom = 15.0
+scale = Vector2(0.5, 0.5)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.3137255)
+theme_override_constants/shadow_outline_size = 5
+theme_override_fonts/font = ExtResource("3_j4ppr")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxFlat_qic40")
+text = "Press \"E\" to interact"
+
+[connection signal="body_entered" from="InteractionZone" to="." method="_on_interaction_zone_body_entered"]
+[connection signal="body_exited" from="InteractionZone" to="." method="_on_interaction_zone_body_exited"]

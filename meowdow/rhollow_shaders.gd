@@ -26,7 +26,10 @@ func _ready():
 	var playerNode = load(playerCharPath).instantiate()
 	add_child(playerNode)
 
-	playerNode.global_position = $playerSpawnPoint.global_position
+	if GlobalData.last_position != Vector2.ZERO:
+		playerNode.global_position = GlobalData.last_position
+	else:
+		playerNode.global_position = $playerSpawnPoint.global_position
 
 	# --- CAT TYPE SETUP ---
 	cat_body = playerNode.get_node("CharacterBody2D")

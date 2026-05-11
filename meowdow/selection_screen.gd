@@ -23,6 +23,7 @@ func _get_char_node():
 func _set_char_selected(charNode):
 	GlobalData.playerCharPath = charNode.characterPath
 	GlobalData.selectedCatType = charNode.catType
+	GlobalData.create_save()	
 
 	# show + move indicator
 	indicator.visible = true

@@ -10,8 +10,6 @@ const FACING_DISTANCE = 15.0
 
 var planted_cells: Dictionary = {}
 var crop_scene = preload("res://crops/Crop.tscn")
-var corn_data = preload("res://crops/corn_crop.tres")
-var carrot_data = preload("res://crops/carrot_crop.tres")
 var hotbar_node
 
 var glow_sprite: Sprite2D
@@ -19,6 +17,10 @@ var currently_glowing_cell: Vector2i = Vector2i(-9999, -9999)
 var cat_body: CharacterBody2D
 
 func _ready():
+	get_tree().paused = false
+	
+	var in_game_menu = preload("res://in_gamemenu.tscn").instantiate()
+	$CanvasLayer.add_child(in_game_menu)
 	
 	hotbar_node = preload("res://inventory/hotbar.tscn").instantiate()
 	$CanvasLayer.add_child(hotbar_node)
@@ -27,7 +29,10 @@ func _ready():
 	var playerNode = load(playerCharPath).instantiate()
 	add_child(playerNode)
 
-	playerNode.global_position = $playerSpawnPoint.global_position
+	if GlobalData.last_position != Vector2.ZERO:
+		playerNode.global_position = GlobalData.last_position
+	else:
+		playerNode.global_position = $playerSpawnPoint.global_position
 
 	# --- CAT TYPE SETUP ---
 	cat_body = playerNode.get_node("CharacterBody2D")
@@ -39,6 +44,19 @@ func _ready():
 	camera.zoom = Vector2(4.5, 4.5)
 	camera.position_smoothing_enabled = true
 	camera.position_smoothing_speed = 5.0
+
+	# --- INVENTORY RESTORE --- (after cat_body is assigned)
+	if GlobalData.saved_slots.size() > 0:
+		var inventory: Inv = cat_body.inventory
+		for i in range(min(GlobalData.saved_slots.size(), inventory.slots.size())):
+			var data = GlobalData.saved_slots[i]
+			if data["path"] != "null":
+				var item = load(data["path"]) as InvItem
+				if item:
+					inventory.slots[i].item = item
+					inventory.slots[i].amount = data["amount"]
+		inventory.updated.emit()
+		GlobalData.saved_slots.clear()
 
 	# --- GLOW SETUP ---
 	glow_sprite = Sprite2D.new()
@@ -53,8 +71,21 @@ func _ready():
 	glow_sprite.centered = false
 	add_child(glow_sprite)
 
+# --- CROP RESTORE ---
+	for cell in GlobalData.saved_crops.keys():
+		var info = GlobalData.saved_crops[cell]
+		var crop_data = load(info["data_path"]) as CropData
+		if crop_data == null:
+			continue
+		var crop = crop_scene.instantiate()
+		crop.data = crop_data
+		crop.stage = info["stage"]
+		var tile_pos = tile_layer.to_global(tile_layer.map_to_local(cell))
+		crop.global_position = tile_pos
+		add_child(crop)
+		planted_cells[cell] = crop
+
 	update_catnip_label()
-	
 # --- try plant ---
 func _try_interact():
 	if not glow_sprite.visible:
@@ -62,39 +93,47 @@ func _try_interact():
 
 	var cell = currently_glowing_cell
 
-	# Harvest if fully grown
 	if planted_cells.has(cell):
 		var crop = planted_cells[cell]
 		if crop.stage == crop.data.stage_rects.size():
 			crop.harvest()
 			planted_cells.erase(cell)
+			GlobalData.saved_crops.erase(cell)  # ← remove from save
 		else:
 			print("Not ready! Stage: ", crop.stage)
 		return
 
-	# --- Check selected hotbar item ---
-	var selected_item: InvItem = hotbar_node.get_selected_item()
+	var hotbar = hotbar_node
+	var selected_item: InvItem = hotbar.get_selected_item()
 
 	if selected_item == null or selected_item.crop_data == null:
 		print("No seed selected!")
 		return
 
-	# Consume one seed from inventory
 	var inv: Inv = cat_body.inventory
 	inv.remove(selected_item)
 
-	# Plant using the seed's crop data
 	var crop = crop_scene.instantiate()
 	crop.data = selected_item.crop_data
 	var tile_pos = tile_layer.to_global(tile_layer.map_to_local(cell))
 	crop.global_position = tile_pos
 	add_child(crop)
 	planted_cells[cell] = crop
-	print("Planted ", selected_item.name, " at: ", cell)
+
+	# ← save crop to GlobalData
+	GlobalData.saved_crops[cell] = {
+		"data_path": selected_item.crop_data.resource_path,
+		"stage": 1
+	}
 
 func _process(_delta):
 	if cat_body == null:
 		return
+	
+	GlobalData.last_position = cat_body.global_position
+	
+	for cell in planted_cells.keys():
+		GlobalData.saved_crops[cell]["stage"] = planted_cells[cell].stage	
 	
 	if Input.is_action_just_pressed("farm"):
 		_try_interact()
@@ -134,4 +173,8 @@ func _update_glow(cell: Vector2i):
 		glow_sprite.visible = false
 
 func update_catnip_label():
-	catnip_label.text = "🐾 " + str(GlobalData.catnips) + " catnips"
+	catnip_label.text = "$ " + str(GlobalData.catnips)
+
+func _notification(what):
+	if what == NOTIFICATION_WM_CLOSE_REQUEST:
+		GlobalData.create_save()

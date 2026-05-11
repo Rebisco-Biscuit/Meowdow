@@ -33,6 +33,16 @@ content_margin_bottom = 6.0
 texture = ExtResource("3_jxnfv")
 region_rect = Rect2(259, 180, 90, 25)
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xqe7s"]
+content_margin_left = 6.0
+content_margin_top = 6.0
+content_margin_right = 6.0
+content_margin_bottom = 6.0
+texture = ExtResource("3_jxnfv")
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+region_rect = Rect2(256, 176, 96, 32)
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jxnfv"]
 resource_local_to_scene = true
 content_margin_left = 6.0
@@ -59,6 +69,16 @@ content_margin_right = 6.0
 content_margin_bottom = 6.0
 texture = ExtResource("3_jxnfv")
 region_rect = Rect2(259, 180, 90, 25)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_n3nai"]
+content_margin_left = 6.0
+content_margin_top = 6.0
+content_margin_right = 6.0
+content_margin_bottom = 6.0
+texture = ExtResource("3_jxnfv")
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+region_rect = Rect2(256, 176, 96, 32)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xhlxe"]
 resource_local_to_scene = true
@@ -87,6 +107,16 @@ content_margin_bottom = 6.0
 texture = ExtResource("3_jxnfv")
 region_rect = Rect2(259, 180, 90, 25)
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_iifjg"]
+content_margin_left = 6.0
+content_margin_top = 6.0
+content_margin_right = 6.0
+content_margin_bottom = 6.0
+texture = ExtResource("3_jxnfv")
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+region_rect = Rect2(256, 176, 96, 32)
+
 [node name="MapMenu" type="Control" unique_id=251710403]
 process_mode = 3
 z_index = 11
@@ -97,10 +127,6 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.4, 0.4)
@@ -113,21 +139,23 @@ offset_bottom = 40.0
 
 [node name="Vinalore" type="Button" parent="VBoxContainer" unique_id=1140989543]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.95, 0.6729167, 0.285, 1)
+theme_override_colors/font_color = Color(0.79810715, 0.5419746, 0.14496288, 1)
 theme_override_fonts/font = ExtResource("2_r5awk")
 theme_override_font_sizes/font_size = 16
 theme_override_styles/normal = SubResource("StyleBoxTexture_qdv60")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_4k2b5")
 theme_override_styles/hover = SubResource("StyleBoxTexture_r5awk")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_xqe7s")
 text = "Vinalore"
 
 [node name="Aubrialis" type="Button" parent="VBoxContainer" unique_id=1164375400]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.42529908, 0.997034, 0.99999994, 1)
+theme_override_colors/font_color = Color(0, 0.5345485, 0.5390995, 1)
 theme_override_fonts/font = ExtResource("2_r5awk")
 theme_override_styles/normal = SubResource("StyleBoxTexture_jxnfv")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_4dm5r")
 theme_override_styles/hover = SubResource("StyleBoxTexture_taou0")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_n3nai")
 text = "Aubrialis"
 
 [node name="Rhollow" type="Button" parent="VBoxContainer" unique_id=331495645]
@@ -137,4 +165,5 @@ theme_override_fonts/font = ExtResource("2_r5awk")
 theme_override_styles/normal = SubResource("StyleBoxTexture_xhlxe")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_kwh1x")
 theme_override_styles/hover = SubResource("StyleBoxTexture_xdkx5")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_iifjg")
 text = "Rhollow"
