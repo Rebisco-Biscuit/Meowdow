@@ -1,9 +1,6 @@
 [style name="Town1"]
 join Thaw (Neutral) rightmost [animation="Bounce In"]
 # When mission in town is completed
-set {Thaw.quest_started} = true
-set {Thaw.frostbell_count} = 200.0
-set {Thaw.snowbloom_count} = 300.0
 if {Thaw.event_done} == true:
 	Thaw (Thaw Wwhy You Came Back): What brought you back here??
 	Thaw (Neutral): Your mission is done here traveller!

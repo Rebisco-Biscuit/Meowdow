@@ -48,12 +48,16 @@ directories/dtl_directory={
 "Echofalltalkafterplanting ": "res://Timelines/towns/Rhollow(Town3/Echofalltalkafterplanting .dtl",
 "Entitalks": "res://Timelines/towns/Entitalks/Entitalks.dtl",
 "Glow": "res://Timelines/towns/Rhollow(Town3/Glow.dtl",
+"Keeper": "res://Timelines/towns/Vinalore(Town1/Keeper.dtl",
 "KeeperIntroduction": "res://Timelines/towns/Aubrialis(Town2/KeeperIntroduction.dtl",
-"KeeperTalkNothing": "res://Timelines/towns/Vinalore(Town1/KeeperTalkNothing.dtl",
 "KeeperTalks": "res://Timelines/towns/Aubrialis(Town2/KeeperTalks.dtl",
 "NPC Talk": "res://Timelines/towns/Rhollow(Town3/NPC Talk.dtl",
+<<<<<<< Updated upstream
 "Quest1Done": "res://Timelines/towns/Vinalore(Town1/Quest1Done.dtl",
 "Quest1Not Done": "res://Timelines/towns/Vinalore(Town1/Quest1Not Done.dtl",
+=======
+"Quest": "res://Timelines/towns/Vinalore(Town1/Quest.dtl",
+>>>>>>> Stashed changes
 "Thaaw": "res://Timelines/towns/Aubrialis(Town2/Thaaw.dtl",
 "Town1_Start": "res://Timelines/towns/Town1_Start.dtl",
 "practice": "res://Timelines/practice.dtl"
@@ -99,8 +103,11 @@ variables={
 "Thaw": {
 "event_done": false,
 "frostbell_count": 0,
+"gigglegrain_count": 0,
 "quest_started": false,
-"snowbloom_count": 0
+"snowbloom_count": 0,
+"town1event": false,
+"wheepingwheat": false
 }
 }
 layout/style_list=["res://Timelines/towns/Town1.tres"]

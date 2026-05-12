@@ -1,0 +1,25 @@
+join Dewpaw rightmost
+Dewpaw (Neutral): Hello there!! you must be the traveller that cat was talking about!!
+Dewpaw: Are you done planting yet??
+if {Thaw.gigglegrain_count} < 100.0:
+	- I haven't planted enough yet.
+		Dewpaw (Neutral): Looks like you're not done planting enough Gigglegrain traveller.
+		Dewpaw: Come back when you're ready!!!!
+		Dewpaw (Dewpawwink): Bye bye!!
+		[end_timeline]
+if {Thaw.gigglegrain_count} >= 100.0:
+	- I haven't planted enough yet.
+		Dewpaw (Dewpawwink): Bye bye!!
+		Dewpaw (Neutral): Looks like you're not done planting enough Gigglegrain traveller.
+		Dewpaw: Come back when you're ready!!!!
+	- I did what that cat asked me already!
+		Dewpaw: You really did it.
+		Dewpaw: I cannot believe you actually did it.
+		Dewpaw (Neutral): Gigglegrain was our food of joy, but after the Great Stillness it was corrupted and became the food that makes us sad more.
+		Dewpaw (Neutral): The Keeper, Old Jerry will not accept your crop. But Using that amount of gigglegrain....and
+		Dewpaw (Dewpawcry): and.. a tear from a pure Vinalore cat.(sobs in tears). It creates wheeping wheat.
+		Dewpaw (Neutral): Go plant this Wheeping Wheat. Offer it to the Keeper and he might accept everything that has happened and finally let himself free from sorrow.
+		Dewpaw (Dewpawwink): Goodluck traveller!!!!!!!!
+		set {Thaw.wheepingwheat} = true
+		leave Dewpaw
+		[end_timeline]
