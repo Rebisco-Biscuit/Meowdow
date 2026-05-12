@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://ofo0me5w35v7"]
+
+[ext_resource type="Script" uid="uid://dkkidt3r8vxy7" path="res://door.gd" id="1_0phs7"]
+[ext_resource type="Texture2D" uid="uid://dccdfi6rlq4uw" path="res://assets/World-Sprites/GrassAssests/rhollow.png" id="1_v6xrn"]
+[ext_resource type="FontFile" uid="uid://temvh5pyi624" path="res://assets/Minecraft.ttf" id="2_0phs7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_50cdl"]
+atlas = ExtResource("1_v6xrn")
+region = Rect2(400, 160, 48, 40)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_y5njw"]
+radius = 24.020824
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4xadh"]
+bg_color = Color(0.16470589, 0.16470589, 0.16470589, 0.5882353)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[node name="Node2D" type="Node2D" unique_id=1151918267]
+script = ExtResource("1_0phs7")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=27506879]
+texture = SubResource("AtlasTexture_50cdl")
+
+[node name="InteractionZone" type="Area2D" parent="." unique_id=1374610924]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionZone" unique_id=1392278378]
+shape = SubResource("CircleShape2D_y5njw")
+
+[node name="Prompt" type="Label" parent="." unique_id=622737733]
+visible = false
+offset_right = 117.0
+offset_bottom = 15.0
+scale = Vector2(0.5, 0.5)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.3137255)
+theme_override_constants/shadow_outline_size = 5
+theme_override_fonts/font = ExtResource("2_0phs7")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxFlat_4xadh")
+text = "Press \"E\" to exit"
+
+[connection signal="body_entered" from="InteractionZone" to="." method="_on_interaction_zone_body_entered"]
+[connection signal="body_exited" from="InteractionZone" to="." method="_on_interaction_zone_body_exited"]

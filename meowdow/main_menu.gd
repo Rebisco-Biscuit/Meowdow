@@ -18,7 +18,7 @@ func _ready():
 
 func _on_continue_pressed():
 	GlobalData.load_save()	
-	get_tree().change_scene_to_file("res://Vinalore.tscn")
+	get_tree().change_scene_to_file(GlobalData.last_map)
 
 func _on_new_game_pressed():
 	get_tree().change_scene_to_file("res://selection_screen.tscn")

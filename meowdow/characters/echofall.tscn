@@ -5,64 +5,32 @@
 [ext_resource type="Texture2D" uid="uid://cqhw536mw1a0p" path="res://assets/Meow-Sprites/Free pack/echofall.png" id="2_7wqrj"]
 [ext_resource type="FontFile" uid="uid://temvh5pyi624" path="res://assets/Minecraft.ttf" id="3_00ktb"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_cihvr"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_cfdtg"]
 atlas = ExtResource("2_7wqrj")
-region = Rect2(0, 640, 32, 32)
+region = Rect2(192, 96, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_xe752"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_nd5el"]
 atlas = ExtResource("2_7wqrj")
-region = Rect2(32, 640, 32, 32)
+region = Rect2(0, 512, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_is8vd"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_nyhpn"]
 atlas = ExtResource("2_7wqrj")
-region = Rect2(64, 640, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_cqd74"]
-atlas = ExtResource("2_7wqrj")
-region = Rect2(96, 640, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_p52j5"]
-atlas = ExtResource("2_7wqrj")
-region = Rect2(128, 640, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8ye4l"]
-atlas = ExtResource("2_7wqrj")
-region = Rect2(160, 640, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_uxo6a"]
-atlas = ExtResource("2_7wqrj")
-region = Rect2(192, 640, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_5gqpx"]
-atlas = ExtResource("2_7wqrj")
-region = Rect2(224, 640, 32, 32)
+region = Rect2(32, 512, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_khe71"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_cihvr")
+"texture": SubResource("AtlasTexture_cfdtg")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_xe752")
+"texture": SubResource("AtlasTexture_nd5el")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_is8vd")
+"texture": SubResource("AtlasTexture_nyhpn")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_cqd74")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_p52j5")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8ye4l")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_uxo6a")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_5gqpx")
+"texture": SubResource("AtlasTexture_cfdtg")
 }],
 "loop": false,
 "name": &"default",
@@ -70,7 +38,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7wqrj"]
-radius = 18.110771
+radius = 27.018513
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5egy2"]
 bg_color = Color(0.16470589, 0.16470589, 0.16470589, 0.5882353)
@@ -88,12 +56,14 @@ script = ExtResource("1_7wqrj")
 
 [node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1674609189]
 modulate = Color(1, 1, 1, 0.37254903)
-position = Vector2(0, 8)
-scale = Vector2(0.34632042, 0.5422222)
+position = Vector2(0, 4.888889)
+scale = Vector2(0.34632042, 0.4711111)
 texture = ExtResource("1_bws04")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1914459732]
 sprite_frames = SubResource("SpriteFrames_khe71")
+frame = 2
+frame_progress = 1.0
 
 [node name="InteractionZone" type="Area2D" parent="." unique_id=851152015]
 

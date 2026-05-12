@@ -14,8 +14,6 @@ var has_talked = false
 var is_talking = false
 
 var bg_scene = preload("res://DialogueBackground.tscn")
-var carrot_seed_scene = preload("res://inventory/collectables/carrot_seed.tscn")
-var corn_seed_scene = preload("res://inventory/collectables/corn_seed.tscn")
 
 func _ready():
 	prompt.visible = false

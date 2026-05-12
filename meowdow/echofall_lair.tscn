@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://dua2223sje68"]
+
+[ext_resource type="Texture2D" uid="uid://e7i2vna0i6qi" path="res://assets/World-Sprites/TILESET VILLAGE TOP DOWN/HOUSE 1 - NIGHT.png" id="1_05y85"]
+[ext_resource type="Script" uid="uid://blbo781dt7g2f" path="res://echofall_lair.gd" id="1_6l2fe"]
+[ext_resource type="FontFile" uid="uid://temvh5pyi624" path="res://assets/Minecraft.ttf" id="2_6l2fe"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5w0ua"]
+atlas = ExtResource("1_05y85")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6l2fe"]
+size = Vector2(74, 37)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8bwrm"]
+bg_color = Color(0.16470589, 0.16470589, 0.16470589, 0.5882353)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[node name="Node2D" type="Node2D" unique_id=1172735538]
+script = ExtResource("1_6l2fe")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=432712482]
+visible = false
+texture = SubResource("AtlasTexture_5w0ua")
+
+[node name="InteractionZone" type="Area2D" parent="." unique_id=1774286057]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionZone" unique_id=1192126233]
+position = Vector2(1, 43.5)
+shape = SubResource("RectangleShape2D_6l2fe")
+
+[node name="Label" type="Label" parent="." unique_id=191460169]
+offset_left = -11.0
+offset_top = -26.0
+offset_right = 23.0
+offset_bottom = -11.0
+scale = Vector2(0.7, 0.7)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.3137255)
+theme_override_constants/shadow_outline_size = 5
+theme_override_fonts/font = ExtResource("2_6l2fe")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxFlat_8bwrm")
+text = "????"
+
+[node name="Prompt" type="Label" parent="." unique_id=646356960]
+visible = false
+offset_right = 130.0
+offset_bottom = 15.0
+scale = Vector2(0.5, 0.5)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.3137255)
+theme_override_constants/shadow_outline_size = 5
+theme_override_fonts/font = ExtResource("2_6l2fe")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxFlat_8bwrm")
+text = "Press \"E\" to enter"
+
+[connection signal="body_entered" from="InteractionZone" to="." method="_on_interaction_zone_body_entered"]
+[connection signal="body_exited" from="InteractionZone" to="." method="_on_interaction_zone_body_exited"]

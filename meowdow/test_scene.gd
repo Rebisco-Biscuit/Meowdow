@@ -1,6 +1,9 @@
 extends Node2D
 
 func _ready():
+	#GlobalData.playerCharPath = "res://OrangeCat.tscn"  # adjust to your actual path
+	#GlobalData.selectedCatType = "orange"  # or "black" or "white"	
+	
 	var playerCharPath = GlobalData.playerCharPath
 	var playerNode = load(playerCharPath).instantiate()
 	add_child(playerNode)
@@ -14,7 +17,7 @@ func _ready():
 	# --- CAMERA SETUP ---
 	var camera = cat_body.get_node("Camera2D")
 	camera.enabled = true
-	camera.zoom = Vector2(5, 5)
+	camera.zoom = Vector2(4, 4)
 
 	camera.position_smoothing_enabled = true
 	camera.position_smoothing_speed = 5.0

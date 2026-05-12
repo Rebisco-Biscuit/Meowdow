@@ -3,6 +3,7 @@ extends TileMap
 @onready var tile_layer: TileMapLayer = $TileMapLayer2
 @onready var catnip_label: Label = $CanvasLayer/CatnipLabel
 
+const MAP_NAME = "vinalore"
 const GLOW_ATLAS_COORDS = [Vector2i(18, 3), Vector2i(18, 4)]
 const SOURCE_ID = 0
 const ALT_ID = 0
@@ -18,13 +19,14 @@ var cat_body: CharacterBody2D
 
 func _ready():
 	get_tree().paused = false
-	
+	GlobalData.current_map = MAP_NAME
+
 	var in_game_menu = preload("res://in_gamemenu.tscn").instantiate()
 	$CanvasLayer.add_child(in_game_menu)
-	
+
 	hotbar_node = preload("res://inventory/hotbar.tscn").instantiate()
 	$CanvasLayer.add_child(hotbar_node)
-	
+
 	var playerCharPath = GlobalData.playerCharPath
 	var playerNode = load(playerCharPath).instantiate()
 	add_child(playerNode)
@@ -45,7 +47,7 @@ func _ready():
 	camera.position_smoothing_enabled = true
 	camera.position_smoothing_speed = 5.0
 
-	# --- INVENTORY RESTORE --- (after cat_body is assigned)
+	# --- INVENTORY RESTORE ---
 	if GlobalData.saved_slots.size() > 0:
 		var inventory: Inv = cat_body.inventory
 		for i in range(min(GlobalData.saved_slots.size(), inventory.slots.size())):
@@ -71,40 +73,44 @@ func _ready():
 	glow_sprite.centered = false
 	add_child(glow_sprite)
 
-# --- CROP RESTORE ---
-	for cell in GlobalData.saved_crops.keys():
-		var info = GlobalData.saved_crops[cell]
+	# --- CROP RESTORE ---
+	for key in GlobalData.saved_crops.keys():
+		var info = GlobalData.saved_crops[key]
+		if info["map"] != MAP_NAME:
+			continue
 		var crop_data = load(info["data_path"]) as CropData
 		if crop_data == null:
 			continue
+		var cell = info["cell"]
 		var crop = crop_scene.instantiate()
 		crop.data = crop_data
 		crop.stage = info["stage"]
 		var tile_pos = tile_layer.to_global(tile_layer.map_to_local(cell))
 		crop.global_position = tile_pos
 		add_child(crop)
-		planted_cells[cell] = crop
+		planted_cells[key] = crop
 
 	update_catnip_label()
+
 # --- try plant ---
 func _try_interact():
 	if not glow_sprite.visible:
 		return
 
 	var cell = currently_glowing_cell
+	var key = MAP_NAME + ":" + str(cell.x) + "," + str(cell.y)
 
-	if planted_cells.has(cell):
-		var crop = planted_cells[cell]
+	if planted_cells.has(key):
+		var crop = planted_cells[key]
 		if crop.stage == crop.data.stage_rects.size():
 			crop.harvest()
-			planted_cells.erase(cell)
-			GlobalData.saved_crops.erase(cell)  # ← remove from save
+			planted_cells.erase(key)
+			GlobalData.saved_crops.erase(key)
 		else:
 			print("Not ready! Stage: ", crop.stage)
 		return
 
-	var hotbar = hotbar_node
-	var selected_item: InvItem = hotbar.get_selected_item()
+	var selected_item: InvItem = hotbar_node.get_selected_item()
 
 	if selected_item == null or selected_item.crop_data == null:
 		print("No seed selected!")
@@ -118,10 +124,11 @@ func _try_interact():
 	var tile_pos = tile_layer.to_global(tile_layer.map_to_local(cell))
 	crop.global_position = tile_pos
 	add_child(crop)
-	planted_cells[cell] = crop
+	planted_cells[key] = crop
 
-	# ← save crop to GlobalData
-	GlobalData.saved_crops[cell] = {
+	GlobalData.saved_crops[key] = {
+		"map": MAP_NAME,
+		"cell": cell,
 		"data_path": selected_item.crop_data.resource_path,
 		"stage": 1
 	}
@@ -129,22 +136,21 @@ func _try_interact():
 func _process(_delta):
 	if cat_body == null:
 		return
-	
+
 	GlobalData.last_position = cat_body.global_position
-	
-	for cell in planted_cells.keys():
-		GlobalData.saved_crops[cell]["stage"] = planted_cells[cell].stage	
-	
+
+	for key in planted_cells.keys():
+		GlobalData.saved_crops[key]["stage"] = planted_cells[key].stage
+
 	if Input.is_action_just_pressed("farm"):
 		_try_interact()
 
 	var cell = tile_layer.local_to_map(tile_layer.to_local(cat_body.global_position))
 	_update_glow(cell)
 
-	# Pulse alpha when visible
 	if glow_sprite.visible:
 		glow_sprite.modulate.a = 0.3 + sin(Time.get_ticks_msec() * 0.005) * 0.2
-		
+
 	update_catnip_label()
 
 func _last_dir_to_vector(dir: String) -> Vector2:
@@ -167,7 +173,7 @@ func _update_glow(cell: Vector2i):
 
 	if source_id == SOURCE_ID and alt == ALT_ID and atlas_coord in GLOW_ATLAS_COORDS:
 		var tile_pos = tile_layer.to_global(tile_layer.map_to_local(cell))
-		glow_sprite.global_position = tile_pos - Vector2(8, 8)  # offset by half tile (16/2)
+		glow_sprite.global_position = tile_pos - Vector2(8, 8)
 		glow_sprite.visible = true
 	else:
 		glow_sprite.visible = false
