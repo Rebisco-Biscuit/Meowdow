@@ -18,6 +18,10 @@ boot_splash/stretch_mode=0
 boot_splash/image="uid://cxeamrc4acajh"
 config/icon="res://icon.svg"
 
+[audio]
+
+buses/default_bus_layout="uid://dhkcdr2i1t7cq"
+
 [autoload]
 
 GlobalData="*uid://bwcl6luxb50s7"

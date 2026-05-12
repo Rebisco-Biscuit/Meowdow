@@ -1,0 +1,332 @@
+[gd_scene format=3 uid="uid://genv6gt8fycm"]
+
+[ext_resource type="Texture2D" uid="uid://cfu6em5siq51d" path="res://assets/UI-Sprites.png" id="1_0cmel"]
+[ext_resource type="Script" uid="uid://clwrljy50vdtp" path="res://settings.gd" id="1_mlw3h"]
+[ext_resource type="FontFile" uid="uid://temvh5pyi624" path="res://assets/Minecraft.ttf" id="2_mlw3h"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8pph3"]
+texture = ExtResource("1_0cmel")
+region_rect = Rect2(837, 100, 22, 24)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_exc7q"]
+texture = ExtResource("1_0cmel")
+region_rect = Rect2(869, 102, 22, 22)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ajx48"]
+texture = ExtResource("1_0cmel")
+region_rect = Rect2(837, 100, 22, 24)
+modulate_color = Color(0.9098039, 0.8117647, 0.6509804, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_h437d"]
+texture = ExtResource("1_0cmel")
+region_rect = Rect2(276, 18, 7, 12)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2d6lb"]
+texture = ExtResource("1_0cmel")
+region_rect = Rect2(292, 18, 7, 12)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nxj4t"]
+texture = ExtResource("1_0cmel")
+region_rect = Rect2(292, 18, 7, 12)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_d0eu6"]
+texture = ExtResource("1_0cmel")
+region_rect = Rect2(2, 194, 44, 12)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fiqec"]
+texture = ExtResource("1_0cmel")
+expand_margin_left = 11.0
+expand_margin_top = 8.0
+expand_margin_right = 11.0
+expand_margin_bottom = 8.0
+region_rect = Rect2(65, 197, 14, 21)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0cmel"]
+texture = ExtResource("1_0cmel")
+expand_margin_left = 11.0
+expand_margin_top = 8.0
+expand_margin_right = 11.0
+expand_margin_bottom = 8.0
+region_rect = Rect2(65, 197, 14, 21)
+modulate_color = Color(0.9098039, 0.8117647, 0.6509804, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mlw3h"]
+texture = ExtResource("1_0cmel")
+expand_margin_left = 11.0
+expand_margin_top = 8.0
+expand_margin_right = 11.0
+expand_margin_bottom = 8.0
+region_rect = Rect2(65, 197, 14, 21)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2tlyv"]
+texture = ExtResource("1_0cmel")
+region_rect = Rect2(277, 2, 7, 12)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yl4dm"]
+texture = ExtResource("1_0cmel")
+region_rect = Rect2(293, 2, 7, 12)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ttjgw"]
+texture = ExtResource("1_0cmel")
+region_rect = Rect2(293, 2, 7, 12)
+
+[node name="SettingsMenu" type="Control" unique_id=1662617706]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1, 0.9950672)
+script = ExtResource("1_mlw3h")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1165266148]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0.11372549, 0.11372549, 0.11372549, 0)
+
+[node name="VBoxContainer" type="MarginContainer" parent="." unique_id=770715139]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="baseSettingsBox" type="NinePatchRect" parent="VBoxContainer" unique_id=1649300244]
+custom_minimum_size = Vector2(450, 500)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("1_0cmel")
+region_rect = Rect2(59, 59, 26, 26)
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="ExitButton" type="VBoxContainer" parent="VBoxContainer/baseSettingsBox" unique_id=1299979440]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -45.0
+offset_bottom = 45.0
+grow_horizontal = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/baseSettingsBox/ExitButton" unique_id=372672398]
+layout_mode = 2
+theme_override_constants/margin_top = -20
+theme_override_constants/margin_right = -21
+
+[node name="ExitButton" type="Button" parent="VBoxContainer/baseSettingsBox/ExitButton/MarginContainer" unique_id=585502482]
+custom_minimum_size = Vector2(70, 70)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxTexture_8pph3")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_exc7q")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ajx48")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/baseSettingsBox" unique_id=771496399]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 14.0
+offset_right = 440.0
+offset_bottom = 490.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 40
+
+[node name="Title" type="Label" parent="VBoxContainer/baseSettingsBox/VBoxContainer" unique_id=1538914544]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_mlw3h")
+theme_override_font_sizes/font_size = 40
+text = "SETTINGS"
+
+[node name="Master" type="HBoxContainer" parent="VBoxContainer/baseSettingsBox/VBoxContainer" unique_id=1084616531]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/baseSettingsBox/VBoxContainer/Master" unique_id=1470112875]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="Title" type="Label" parent="VBoxContainer/baseSettingsBox/VBoxContainer/Master/HBoxContainer" unique_id=436854132]
+custom_minimum_size = Vector2(140, 35)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_mlw3h")
+theme_override_font_sizes/font_size = 34
+text = "MASTER"
+
+[node name="MasterMinusButton" type="Button" parent="VBoxContainer/baseSettingsBox/VBoxContainer/Master/HBoxContainer" unique_id=1394136196]
+custom_minimum_size = Vector2(25, 45)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_h437d")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_2d6lb")
+theme_override_styles/hover = SubResource("StyleBoxTexture_nxj4t")
+
+[node name="MasterScrollBar" type="HScrollBar" parent="VBoxContainer/baseSettingsBox/VBoxContainer/Master/HBoxContainer" unique_id=896442984]
+custom_minimum_size = Vector2(190, 60)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_styles/scroll = SubResource("StyleBoxTexture_d0eu6")
+theme_override_styles/grabber = SubResource("StyleBoxTexture_fiqec")
+theme_override_styles/grabber_highlight = SubResource("StyleBoxTexture_0cmel")
+theme_override_styles/grabber_pressed = SubResource("StyleBoxTexture_mlw3h")
+theme_override_constants/padding_top = 3
+theme_override_constants/padding_bottom = 3
+max_value = 1.0
+step = 0.04
+page = 0.04
+value = 0.96
+
+[node name="MasterPlusButton" type="Button" parent="VBoxContainer/baseSettingsBox/VBoxContainer/Master/HBoxContainer" unique_id=1895828645]
+custom_minimum_size = Vector2(25, 45)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_2tlyv")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_yl4dm")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ttjgw")
+
+[node name="Meow" type="HBoxContainer" parent="VBoxContainer/baseSettingsBox/VBoxContainer" unique_id=1198140150]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/baseSettingsBox/VBoxContainer/Meow" unique_id=1120013730]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="Title" type="Label" parent="VBoxContainer/baseSettingsBox/VBoxContainer/Meow/HBoxContainer" unique_id=907616363]
+custom_minimum_size = Vector2(140, 35)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_mlw3h")
+theme_override_font_sizes/font_size = 34
+text = "MEOW"
+
+[node name="MeowMinusButton" type="Button" parent="VBoxContainer/baseSettingsBox/VBoxContainer/Meow/HBoxContainer" unique_id=264530249]
+custom_minimum_size = Vector2(25, 45)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_h437d")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_2d6lb")
+theme_override_styles/hover = SubResource("StyleBoxTexture_nxj4t")
+
+[node name="MeowScrollBar" type="HScrollBar" parent="VBoxContainer/baseSettingsBox/VBoxContainer/Meow/HBoxContainer" unique_id=1164688595]
+custom_minimum_size = Vector2(190, 60)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_styles/scroll = SubResource("StyleBoxTexture_d0eu6")
+theme_override_styles/grabber = SubResource("StyleBoxTexture_fiqec")
+theme_override_styles/grabber_highlight = SubResource("StyleBoxTexture_0cmel")
+theme_override_styles/grabber_pressed = SubResource("StyleBoxTexture_mlw3h")
+theme_override_constants/padding_top = 3
+theme_override_constants/padding_bottom = 3
+max_value = 1.0
+step = 0.04
+page = 0.04
+value = 0.96
+
+[node name="MeowPlusButton" type="Button" parent="VBoxContainer/baseSettingsBox/VBoxContainer/Meow/HBoxContainer" unique_id=1617346990]
+custom_minimum_size = Vector2(25, 45)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_2tlyv")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_yl4dm")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ttjgw")
+
+[node name="Music" type="HBoxContainer" parent="VBoxContainer/baseSettingsBox/VBoxContainer" unique_id=666486166]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/baseSettingsBox/VBoxContainer/Music" unique_id=163447097]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="Title" type="Label" parent="VBoxContainer/baseSettingsBox/VBoxContainer/Music/HBoxContainer" unique_id=98299870]
+custom_minimum_size = Vector2(140, 35)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_mlw3h")
+theme_override_font_sizes/font_size = 34
+text = "MUSIC"
+
+[node name="MusicMinusButton" type="Button" parent="VBoxContainer/baseSettingsBox/VBoxContainer/Music/HBoxContainer" unique_id=1923297169]
+custom_minimum_size = Vector2(25, 45)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_h437d")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_2d6lb")
+theme_override_styles/hover = SubResource("StyleBoxTexture_nxj4t")
+
+[node name="MusicScrollBar" type="HScrollBar" parent="VBoxContainer/baseSettingsBox/VBoxContainer/Music/HBoxContainer" unique_id=2042883261]
+custom_minimum_size = Vector2(190, 60)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_styles/scroll = SubResource("StyleBoxTexture_d0eu6")
+theme_override_styles/grabber = SubResource("StyleBoxTexture_fiqec")
+theme_override_styles/grabber_highlight = SubResource("StyleBoxTexture_0cmel")
+theme_override_styles/grabber_pressed = SubResource("StyleBoxTexture_mlw3h")
+theme_override_constants/padding_top = 3
+theme_override_constants/padding_bottom = 3
+max_value = 1.0
+step = 0.04
+page = 0.04
+value = 0.96
+
+[node name="MusicPlusButton" type="Button" parent="VBoxContainer/baseSettingsBox/VBoxContainer/Music/HBoxContainer" unique_id=891152531]
+custom_minimum_size = Vector2(25, 45)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_2tlyv")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_yl4dm")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ttjgw")
+
+[node name="SFX" type="HBoxContainer" parent="VBoxContainer/baseSettingsBox/VBoxContainer" unique_id=804567871]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/baseSettingsBox/VBoxContainer/SFX" unique_id=541108656]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="Title" type="Label" parent="VBoxContainer/baseSettingsBox/VBoxContainer/SFX/HBoxContainer" unique_id=337717645]
+custom_minimum_size = Vector2(140, 35)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_mlw3h")
+theme_override_font_sizes/font_size = 34
+text = "SFX"
+
+[node name="SFXMinusButton" type="Button" parent="VBoxContainer/baseSettingsBox/VBoxContainer/SFX/HBoxContainer" unique_id=450712876]
+custom_minimum_size = Vector2(25, 45)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_h437d")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_2d6lb")
+theme_override_styles/hover = SubResource("StyleBoxTexture_nxj4t")
+
+[node name="SFXScrollBar" type="HScrollBar" parent="VBoxContainer/baseSettingsBox/VBoxContainer/SFX/HBoxContainer" unique_id=1339118296]
+custom_minimum_size = Vector2(190, 60)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_styles/scroll = SubResource("StyleBoxTexture_d0eu6")
+theme_override_styles/grabber = SubResource("StyleBoxTexture_fiqec")
+theme_override_styles/grabber_highlight = SubResource("StyleBoxTexture_0cmel")
+theme_override_styles/grabber_pressed = SubResource("StyleBoxTexture_mlw3h")
+theme_override_constants/padding_top = 3
+theme_override_constants/padding_bottom = 3
+max_value = 1.0
+step = 0.04
+page = 0.04
+value = 0.96
+
+[node name="SFXPlusButton" type="Button" parent="VBoxContainer/baseSettingsBox/VBoxContainer/SFX/HBoxContainer" unique_id=1936667729]
+custom_minimum_size = Vector2(25, 45)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_2tlyv")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_yl4dm")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ttjgw")
+
+[connection signal="pressed" from="VBoxContainer/baseSettingsBox/ExitButton/MarginContainer/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/baseSettingsBox/VBoxContainer/Master/HBoxContainer/MasterMinusButton" to="." method="_on_master_minus_button_pressed"]
+[connection signal="value_changed" from="VBoxContainer/baseSettingsBox/VBoxContainer/Master/HBoxContainer/MasterScrollBar" to="." method="_on_master_scroll_bar_value_changed"]
+[connection signal="pressed" from="VBoxContainer/baseSettingsBox/VBoxContainer/Master/HBoxContainer/MasterPlusButton" to="." method="_on_master_plus_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/baseSettingsBox/VBoxContainer/Meow/HBoxContainer/MeowMinusButton" to="." method="_on_meow_minus_button_pressed"]
+[connection signal="value_changed" from="VBoxContainer/baseSettingsBox/VBoxContainer/Meow/HBoxContainer/MeowScrollBar" to="." method="_on_meow_scroll_bar_value_changed"]
+[connection signal="pressed" from="VBoxContainer/baseSettingsBox/VBoxContainer/Meow/HBoxContainer/MeowPlusButton" to="." method="_on_meow_plus_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/baseSettingsBox/VBoxContainer/Music/HBoxContainer/MusicMinusButton" to="." method="_on_music_minus_button_pressed"]
+[connection signal="value_changed" from="VBoxContainer/baseSettingsBox/VBoxContainer/Music/HBoxContainer/MusicScrollBar" to="." method="_on_music_scroll_bar_value_changed"]
+[connection signal="pressed" from="VBoxContainer/baseSettingsBox/VBoxContainer/Music/HBoxContainer/MusicPlusButton" to="." method="_on_music_plus_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/baseSettingsBox/VBoxContainer/SFX/HBoxContainer/SFXMinusButton" to="." method="_on_sfx_minus_button_pressed"]
+[connection signal="value_changed" from="VBoxContainer/baseSettingsBox/VBoxContainer/SFX/HBoxContainer/SFXScrollBar" to="." method="_on_sfx_scroll_bar_value_changed"]
+[connection signal="pressed" from="VBoxContainer/baseSettingsBox/VBoxContainer/SFX/HBoxContainer/SFXPlusButton" to="." method="_on_sfx_plus_button_pressed"]
