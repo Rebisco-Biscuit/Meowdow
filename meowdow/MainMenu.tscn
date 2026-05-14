@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://b18urafi62bah" path="res://assets/screen/orenscat.tscn" id="2_7r1g0"]
 [ext_resource type="FontFile" uid="uid://temvh5pyi624" path="res://assets/Minecraft.ttf" id="6_7r1g0"]
 [ext_resource type="Texture2D" uid="uid://cfu6em5siq51d" path="res://assets/UI-Sprites.png" id="7_e2xy7"]
+[ext_resource type="AudioStream" uid="uid://7dlmimkoysk5" path="res://meow-sic/Wonder by Chillpeach.mp3" id="8_e2xy7"]
 [ext_resource type="Texture2D" uid="uid://cxeamrc4acajh" path="res://assets/pakulonumber21.png" id="8_fimr5"]
 [ext_resource type="Texture2D" uid="uid://whwkjnn0tkrh" path="res://assets/pakulonumber3.png" id="8_u7cqb"]
 
@@ -162,6 +163,11 @@ offset_right = 845.0
 offset_bottom = 180.0
 scale = Vector2(0.7, 0.7)
 texture = SubResource("AtlasTexture_e2bvh")
+
+[node name="BGMusic" type="AudioStreamPlayer2D" parent="." unique_id=431309940]
+stream = ExtResource("8_e2xy7")
+autoplay = true
+bus = &"Music"
 
 [connection signal="pressed" from="VBoxContainer/Continue" to="." method="_on_continue_pressed"]
 [connection signal="pressed" from="VBoxContainer/NewGame" to="." method="_on_new_game_pressed"]

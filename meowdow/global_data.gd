@@ -27,6 +27,8 @@ var click = load("res://assets/arrowclick.png")
 var arrow_scaled: ImageTexture
 var click_scaled: ImageTexture
 
+var ui_sfx_player: AudioStreamPlayer
+
 func _ready():
 	arrow_scaled = scale_cursor(arrow, 3)
 	click_scaled = scale_cursor(click, 3)

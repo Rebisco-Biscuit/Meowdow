@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://7dlmimkoysk5"
+path="res://.godot/imported/Wonder by Chillpeach.mp3-bed8ab3d5e2a18308a506d3ecd469237.mp3str"
+
+[deps]
+
+source_file="res://meow-sic/Wonder by Chillpeach.mp3"
+dest_files=["res://.godot/imported/Wonder by Chillpeach.mp3-bed8ab3d5e2a18308a506d3ecd469237.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4
