@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ShopItem" format=3 uid="uid://cgynyhhlcikiw"]
+
+[ext_resource type="Texture2D" uid="uid://c3rc53ycdoenn" path="res://assets/World-Sprites/Garden_Planters_16x16Icons.png" id="1_86c8y"]
+[ext_resource type="Script" uid="uid://0pnc3beor1vn" path="res://shop/ShopItem.gd" id="1_y0r1e"]
+[ext_resource type="PackedScene" uid="uid://ck4paofom1tdd" path="res://inventory/collectables/carrot_seed.tscn" id="2_y1b54"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sfkah"]
+atlas = ExtResource("1_86c8y")
+region = Rect2(0, 16, 16, 16)
+
+[resource]
+script = ExtResource("1_y0r1e")
+item_scene = ExtResource("2_y1b54")
+icon = SubResource("AtlasTexture_sfkah")
+item_name = "Gigglerain"
+price = 4

@@ -2,6 +2,7 @@ extends Node2D
 
 @onready var sprite = $AnimatedSprite2D
 @onready var prompt = $Prompt
+var shop_instance = null
 
 var player = null
 
@@ -34,7 +35,18 @@ func _process(delta):
 
 	# --- Interaction ---
 	if player and not is_talking and Input.is_action_just_pressed("interact"):
-		print("asdwasdawa")
+		if shop_instance == null:
+			open_shop()
+
+func open_shop():
+	if GlobalData.quest_step == 0:
+		GlobalData.quest_step = 1 	
+	shop_instance = preload("res://shop.tscn").instantiate()
+	get_tree().root.add_child(shop_instance)
+	shop_instance.closed.connect(_on_shop_closed)
+
+func _on_shop_closed():
+	shop_instance = null
 
 # --- Interaction zone signals ---
 func _on_interaction_zone_body_entered(body):
@@ -48,3 +60,6 @@ func _on_interaction_zone_body_exited(body):
 	if body is CharacterBody2D:
 		player = null
 		prompt.visible = false
+		if shop_instance:
+			shop_instance.queue_free()
+			shop_instance = null		

@@ -4,28 +4,24 @@ extends Node2D
 @onready var prompt = $Prompt
 
 var player = null
+var bg_scene = preload("res://DialogueBackground.tscn")
 
 # --- Idle animation ---
 var idle_timer := 0.0
 var idle_interval := 5.0
 
 # --- Dialogue state ---
-var has_talked = false
 var is_talking = false
-
-var bg_scene = preload("res://DialogueBackground.tscn")
-
 
 func _ready():
 	prompt.visible = false
 	randomize()
 
-
 func _process(delta):
 	# --- Prompt animation ---
 	if prompt.visible:
-		prompt.position.y = -5 + sin(Time.get_ticks_msec() * 0.005) * 3	
-	
+		prompt.position.y = -5 + sin(Time.get_ticks_msec() * 0.005) * 3
+
 	# --- Idle animation ---
 	idle_timer += delta
 	if idle_timer >= idle_interval:
@@ -35,12 +31,42 @@ func _process(delta):
 
 	# --- Interaction ---
 	if player and not is_talking and Input.is_action_just_pressed("interact"):
-		var to_npc = (global_position - player.global_position).normalized()
-		var player_dir = player.velocity.normalized()
+		start_dialogue()
 
-		if player.velocity.length() == 0 or player_dir.dot(to_npc) > 0.5:
-			print("testsas")
+func start_dialogue():
+	is_talking = true
+	prompt.visible = false
 
+	var bg = bg_scene.instantiate()
+	get_tree().root.add_child(bg)
+
+	# Sync GlobalData → Dialogic before starting
+	GlobalData.sync_to_dialogic()
+
+	var dialog = Dialogic.start("res://Timelines/towns/Vinalore(Town1/Quest.dtl")
+	dialog.process_mode = Node.PROCESS_MODE_ALWAYS
+	for child in dialog.get_children():
+		child.process_mode = Node.PROCESS_MODE_ALWAYS
+
+	Dialogic.timeline_ended.connect(func():
+		# Sync Dialogic → GlobalData after ending
+		GlobalData.sync_from_dialogic()
+
+		is_talking = false
+		bg.queue_free()
+
+		if GlobalData.quest_step == 4:
+			# Give wheepingwheat (corn) seed
+			var seed = preload("res://inventory/collectables/corn_seed.tscn").instantiate()
+			if player and player.inventory:
+				player.inventory.insert(seed.item)
+				print("Wheepingwheat seed given!")
+			seed.queue_free()
+			GlobalData.quest_step = 5  # next: plant wheepingwheat
+			GlobalData.create_save()
+
+		prompt.visible = player != null
+	, CONNECT_ONE_SHOT)
 
 # --- Interaction zone signals ---
 func _on_interaction_zone_body_entered(body):
@@ -48,7 +74,6 @@ func _on_interaction_zone_body_entered(body):
 		player = body
 		if not is_talking:
 			prompt.visible = true
-
 
 func _on_interaction_zone_body_exited(body):
 	if body is CharacterBody2D:

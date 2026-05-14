@@ -1,8 +1,9 @@
-[gd_scene format=3 uid="uid://fyeyki33icjq"]
+[gd_scene format=3 uid="uid://hlvuumlrjid1"]
 
 [node name="CanvasLayer" type="CanvasLayer" unique_id=831769976]
 
 [node name="BG" type="ColorRect" parent="." unique_id=1319470394]
+z_index = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0

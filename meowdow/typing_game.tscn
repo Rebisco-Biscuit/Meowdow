@@ -1,0 +1,126 @@
+[gd_scene format=3 uid="uid://vjcthjuqepfo"]
+
+[ext_resource type="Script" uid="uid://fblf6nmj7mkv" path="res://typing_game.gd" id="1_o3efb"]
+[ext_resource type="FontFile" uid="uid://temvh5pyi624" path="res://assets/Minecraft.ttf" id="2_i5yno"]
+[ext_resource type="Texture2D" uid="uid://cfu6em5siq51d" path="res://assets/UI-Sprites.png" id="3_fnv16"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tw4ul"]
+texture = ExtResource("3_fnv16")
+region_rect = Rect2(160, 176, 96, 32)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jywba"]
+bg_color = Color(0.60776335, 0.61, 0.5429, 0.27450982)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+expand_margin_top = 10.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8jvet"]
+
+[node name="Control" type="Control" unique_id=503632404]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_o3efb")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=725493672]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -151.5
+offset_right = 250.0
+offset_bottom = 151.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="TimerLabel" type="Label" parent="VBoxContainer" unique_id=1895487401]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "⏱ 60s"
+
+[node name="WordLabel" type="Label" parent="VBoxContainer" unique_id=1859958440]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_i5yno")
+theme_override_font_sizes/font_size = 128
+
+[node name="InputField" type="LineEdit" parent="VBoxContainer" unique_id=1522204220]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.5686275, 0.47058824, 0.3647059, 1)
+theme_override_fonts/font = ExtResource("2_i5yno")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxTexture_tw4ul")
+
+[node name="SnakeBar" type="ProgressBar" parent="VBoxContainer" unique_id=839408136]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.5686275, 0.47058824, 0.3647059, 1)
+theme_override_fonts/font = ExtResource("2_i5yno")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/background = SubResource("StyleBoxFlat_jywba")
+theme_override_styles/fill = SubResource("StyleBoxFlat_8jvet")
+rounded = true
+
+[node name="ScoreLabel" type="Label" parent="VBoxContainer" unique_id=242775149]
+layout_mode = 2
+text = "🐍 Length: 0"
+
+[node name="StartButton" type="Button" parent="VBoxContainer" unique_id=1148893866]
+layout_mode = 2
+text = "Start"
+
+[node name="ResultPanel" type="Panel" parent="." unique_id=847402257]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="ResultPanel" unique_id=1907396455]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.47, 0.47, 0.47, 0.5019608)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ResultPanel" unique_id=2124837397]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -102.5
+offset_top = -60.0
+offset_right = 102.5
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ResultLabel" type="Label" parent="ResultPanel/VBoxContainer" unique_id=1233368756]
+layout_mode = 2
+text = "🐍 Snake Length: X words!"
+
+[node name="RewardLabel" type="Label" parent="ResultPanel/VBoxContainer" unique_id=392442698]
+layout_mode = 2
+text = "🌱 You earned X seeds!"
+
+[node name="PlayAgainButton" type="Button" parent="ResultPanel/VBoxContainer" unique_id=911905459]
+layout_mode = 2
+text = "Play Again"
+
+[node name="QuitButton" type="Button" parent="ResultPanel/VBoxContainer" unique_id=1748307102]
+layout_mode = 2
+text = "Back to Map"

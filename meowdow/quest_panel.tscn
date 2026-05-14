@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://bo0tsro5na11y"]
+
+[ext_resource type="Script" uid="uid://bnnvg6gnrpp8u" path="res://quest_panel.gd" id="1_heuoy"]
+[ext_resource type="FontFile" uid="uid://temvh5pyi624" path="res://assets/Minecraft.ttf" id="2_y7sms"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y7sms"]
+bg_color = Color(0, 0, 0, 0.19607843)
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=557518923]
+script = ExtResource("1_heuoy")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1963101560]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -106.0
+offset_top = -20.0
+offset_bottom = 20.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_y7sms")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=667346484]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer" unique_id=1996707699]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_y7sms")
+theme_override_font_sizes/font_size = 32
+text = "Quests"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="QuestList" type="VBoxContainer" parent="PanelContainer/VBoxContainer" unique_id=8330399]
+layout_mode = 2
+alignment = 2

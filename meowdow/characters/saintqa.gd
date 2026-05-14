@@ -16,12 +16,12 @@ var is_talking = false
 var bg_scene = preload("res://DialogueBackground.tscn")
 
 var seed_scenes = [
-	preload("res://inventory/collectables/carrot_seed.tscn"),
-	preload("res://inventory/collectables/corn_seed.tscn"),
-	preload("res://inventory/collectables/beetroot_seed.tscn"),
-	preload("res://inventory/collectables/berries_seed.tscn"),
-	preload("res://inventory/collectables/tomato_seed.tscn"),
-	preload("res://inventory/collectables/strawberry_seed.tscn"),
+	preload("res://inventory/collectables/carrot.tscn"),
+	#preload("res://inventory/collectables/corn_seed.tscn"),
+	#preload("res://inventory/collectables/beetroot_seed.tscn"),
+	#preload("res://inventory/collectables/berries_seed.tscn"),
+	#preload("res://inventory/collectables/tomato_seed.tscn"),
+	#preload("res://inventory/collectables/strawberry_seed.tscn"),
 ]
 
 func _ready():
@@ -58,7 +58,8 @@ func give_seed(seed_scene: PackedScene):
 	var seed_item = seed_scene.instantiate()
 
 	if seed_item.get("item") != null:
-		inventory.insert(seed_item.item)
+		for i in range(100):
+			inventory.insert(seed_item.item)
 		print(seed_item.item.name, " added to inventory!")
 	else:
 		print("Could not find item resource on seed scene.")

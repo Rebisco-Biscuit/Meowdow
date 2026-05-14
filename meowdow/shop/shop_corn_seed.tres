@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ShopItem" format=3 uid="uid://b10wkg3irbsq4"]
+
+[ext_resource type="Script" uid="uid://0pnc3beor1vn" path="res://shop/ShopItem.gd" id="1_k6xwg"]
+[ext_resource type="Texture2D" uid="uid://c3rc53ycdoenn" path="res://assets/World-Sprites/Garden_Planters_16x16Icons.png" id="1_m6dgs"]
+[ext_resource type="PackedScene" uid="uid://dtth42ubby10e" path="res://inventory/collectables/corn_seed.tscn" id="2_m2k78"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cq5yk"]
+atlas = ExtResource("1_m6dgs")
+region = Rect2(0, 48, 16, 16)
+
+[resource]
+script = ExtResource("1_k6xwg")
+item_scene = ExtResource("2_m2k78")
+icon = SubResource("AtlasTexture_cq5yk")
+item_name = "Poppingcorn"

@@ -1,5 +1,8 @@
 extends CanvasLayer
 
+var settings_instance = null
+
+
 func _ready():
 	var blur_material = ShaderMaterial.new()
 	blur_material.shader = load("res://shaders/blur.gdshader")
@@ -24,7 +27,16 @@ func _on_new_game_pressed():
 	get_tree().change_scene_to_file("res://selection_screen.tscn")
 
 func _on_settings_pressed():
-	pass  # hook up later
+	if settings_instance == null:
+		settings_instance = preload("res://settings_menu.tscn").instantiate()
+		add_child(settings_instance)
+		# Connect the close signal from settings back to here
+		settings_instance.closed.connect(_on_settings_closed)
+
+func _on_settings_closed():
+	if settings_instance:
+		settings_instance.queue_free()
+		settings_instance = null
 
 func _on_quit_pressed():
 	get_tree().quit()

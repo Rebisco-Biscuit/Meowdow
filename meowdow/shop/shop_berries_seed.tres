@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ShopItem" format=3 uid="uid://d2nowi1qd6yuq"]
+
+[ext_resource type="Script" uid="uid://0pnc3beor1vn" path="res://shop/ShopItem.gd" id="1_3j15v"]
+[ext_resource type="Texture2D" uid="uid://c3rc53ycdoenn" path="res://assets/World-Sprites/Garden_Planters_16x16Icons.png" id="1_dde1x"]
+[ext_resource type="PackedScene" uid="uid://c3rn0lpfliakd" path="res://inventory/collectables/berries_seed.tscn" id="2_tm2id"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_00t8y"]
+atlas = ExtResource("1_dde1x")
+region = Rect2(64, 112, 16, 16)
+
+[resource]
+script = ExtResource("1_3j15v")
+item_scene = ExtResource("2_tm2id")
+icon = SubResource("AtlasTexture_00t8y")
+item_name = "Frostbell"
+locked = true
+unlock_map = "aubrialis"

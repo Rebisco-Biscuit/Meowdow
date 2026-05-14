@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ShopItem" format=3 uid="uid://xxtjrs5uve1g"]
+
+[ext_resource type="Texture2D" uid="uid://c3rc53ycdoenn" path="res://assets/World-Sprites/Garden_Planters_16x16Icons.png" id="1_2h3fr"]
+[ext_resource type="Script" uid="uid://0pnc3beor1vn" path="res://shop/ShopItem.gd" id="1_7udhg"]
+[ext_resource type="PackedScene" uid="uid://cttwik23cysbf" path="res://inventory/collectables/strawberry.tscn" id="2_v4o1p"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0h12k"]
+atlas = ExtResource("1_2h3fr")
+region = Rect2(0, 144, 16, 16)
+
+[resource]
+script = ExtResource("1_7udhg")
+item_scene = ExtResource("2_v4o1p")
+icon = SubResource("AtlasTexture_0h12k")
+item_name = "Purpleberries"
+locked = true
+unlock_map = "rhollow"

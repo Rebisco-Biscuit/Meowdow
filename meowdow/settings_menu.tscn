@@ -70,24 +70,17 @@ region_rect = Rect2(293, 2, 7, 12)
 texture = ExtResource("1_0cmel")
 region_rect = Rect2(293, 2, 7, 12)
 
-[node name="SettingsMenu" type="Control" unique_id=1662617706]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="SettingsMenu" type="CanvasLayer" unique_id=2088044849]
 scale = Vector2(1, 0.9950672)
+transform = Transform2D(1, 0, 0, 0.9950672, 0, 0)
 script = ExtResource("1_mlw3h")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1165266148]
-layout_mode = 0
 offset_right = 1280.0
 offset_bottom = 720.0
-color = Color(0.11372549, 0.11372549, 0.11372549, 0)
+color = Color(0.11, 0.11, 0.11, 0.627451)
 
 [node name="VBoxContainer" type="MarginContainer" parent="." unique_id=770715139]
-layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0

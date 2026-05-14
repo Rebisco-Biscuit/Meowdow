@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://x1w8ivslxgrv" path="res://characters/catherine.gd" id="1_e2k01"]
 [ext_resource type="Texture2D" uid="uid://l5aa16ov2ls6" path="res://assets/Meow-Sprites/Free pack/guide.png" id="2_e2k01"]
 [ext_resource type="FontFile" uid="uid://temvh5pyi624" path="res://assets/Minecraft.ttf" id="3_n1unp"]
+[ext_resource type="Texture2D" uid="uid://cfu6em5siq51d" path="res://assets/UI-Sprites.png" id="5_dmy76"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tadd3"]
 atlas = ExtResource("2_e2k01")
@@ -94,6 +95,10 @@ expand_margin_top = 2.0
 expand_margin_right = 2.0
 expand_margin_bottom = 2.0
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_okkbb"]
+atlas = ExtResource("5_dmy76")
+region = Rect2(768, 128, 32, 32)
+
 [node name="Node2D" type="Node2D" unique_id=1297075727]
 script = ExtResource("1_e2k01")
 
@@ -114,10 +119,10 @@ position = Vector2(0, -3)
 shape = SubResource("CircleShape2D_gk103")
 
 [node name="Label" type="Label" parent="." unique_id=912045081]
-offset_left = -22.0
-offset_top = -28.000002
-offset_right = 43.0
-offset_bottom = -13.000002
+offset_left = -14.000004
+offset_top = -27.000004
+offset_right = 52.999996
+offset_bottom = -12.000004
 scale = Vector2(0.7, 0.7)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.3137255)
 theme_override_constants/shadow_outline_size = 5
@@ -137,6 +142,14 @@ theme_override_fonts/font = ExtResource("3_n1unp")
 theme_override_font_sizes/font_size = 14
 theme_override_styles/normal = SubResource("StyleBoxFlat_ljbqc")
 text = "Press \"E\" to sell all crops"
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=2138621409]
+offset_left = -32.0
+offset_top = -30.0
+offset_right = 8.0
+offset_bottom = 10.0
+scale = Vector2(0.4, 0.4)
+texture = SubResource("AtlasTexture_okkbb")
 
 [connection signal="body_entered" from="InteractionZone" to="." method="_on_interaction_zone_body_entered"]
 [connection signal="body_exited" from="InteractionZone" to="." method="_on_interaction_zone_body_exited"]

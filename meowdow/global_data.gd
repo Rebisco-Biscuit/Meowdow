@@ -10,6 +10,56 @@ var last_map: String = "res://Vinalore.tscn"
 var saved_slots: Array = []
 var saved_crops: Dictionary = {}
 var current_map: String = ""
+var has_received_starter_catnips: bool = false
+
+# --- QUEST SYSTEM ---
+var quest_step: int = 0
+var gigglerain_count: int = 0
+var wheepingwheat_count: int = 0
+var aubrialis_unlocked: bool = false
+var frostbell_count: int = 0
+var snowbloom_count: int = 0
+
+# --- CURSOR ---
+var arrow = load("res://assets/arrow.png")
+var click = load("res://assets/arrowclick.png")
+var arrow_scaled: ImageTexture
+var click_scaled: ImageTexture
+
+func _ready():
+	arrow_scaled = scale_cursor(arrow, 3)
+	click_scaled = scale_cursor(click, 3)
+	Input.set_custom_mouse_cursor(arrow_scaled)
+
+func _input(event):
+	if event is InputEventMouseButton:
+		if event.pressed:
+			Input.set_custom_mouse_cursor(click_scaled)
+		else:
+			Input.set_custom_mouse_cursor(arrow_scaled)
+
+func scale_cursor(texture: Texture2D, scale: int) -> ImageTexture:
+	var image = texture.get_image()
+	var new_size = image.get_size() * scale
+	image.resize(new_size.x, new_size.y, Image.INTERPOLATE_NEAREST)
+	return ImageTexture.create_from_image(image)
+
+# --- DIALOGIC SYNC ---
+func sync_to_dialogic():
+	Dialogic.VAR.Thaw.gigglerain_count = gigglerain_count
+	Dialogic.VAR.Thaw.wheepingwheat = wheepingwheat_count
+	Dialogic.VAR.Thaw.quest_started = quest_step > 0
+	Dialogic.VAR.Thaw.town1event = quest_step >= 4
+	Dialogic.VAR.Thaw.town1event2 = quest_step >= 7
+	Dialogic.VAR.Thaw.event_done = aubrialis_unlocked
+	Dialogic.VAR.Thaw.frostbell_count = frostbell_count
+	Dialogic.VAR.Thaw.snowbloom_count = snowbloom_count
+
+func sync_from_dialogic():
+	gigglerain_count = int(Dialogic.VAR.Thaw.gigglerain_count)
+	wheepingwheat_count = int(Dialogic.VAR.Thaw.wheepingwheat_count)
+	frostbell_count = int(Dialogic.VAR.Thaw.frostbell_count)
+	snowbloom_count = int(Dialogic.VAR.Thaw.snowbloom_count)
 
 func check_save():
 	has_save = FileAccess.file_exists(SAVE_PATH)
@@ -22,6 +72,14 @@ func create_save():
 	file.store_line(str(last_position.y))
 	file.store_line(str(catnips))
 	file.store_line(last_map)
+
+	# Save quest state
+	file.store_line(str(quest_step))
+	file.store_line(str(gigglerain_count))
+	file.store_line(str(wheepingwheat_count))
+	file.store_line(str(aubrialis_unlocked))
+	file.store_line(str(frostbell_count))
+	file.store_line(str(snowbloom_count))
 
 	# Save inventory
 	var inventory = get_player_inventory()
@@ -57,6 +115,14 @@ func load_save():
 	last_position.y = float(file.get_line())
 	catnips = int(file.get_line())
 	last_map = file.get_line()
+
+	# Load quest state
+	quest_step = int(file.get_line())
+	gigglerain_count = int(file.get_line())
+	wheepingwheat_count = int(file.get_line())
+	aubrialis_unlocked = file.get_line() == "true"
+	frostbell_count = int(file.get_line())
+	snowbloom_count = int(file.get_line())
 
 	# Load inventory and crops
 	saved_slots.clear()

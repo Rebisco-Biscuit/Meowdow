@@ -16,6 +16,7 @@ script = ExtResource("1_2hxyo")
 item = ExtResource("2_nslq4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1637400552]
+visible = false
 shape = SubResource("RectangleShape2D_wqxfy")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1867748719]

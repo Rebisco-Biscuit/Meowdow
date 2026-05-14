@@ -37,6 +37,13 @@ func _update_sprite():
 	shadow.offset = Vector2(-6, -region_rect.size.y / 1.0)  # tweak this for shadow position
 	
 func harvest():
+	if data.crop_name == "carrot":
+		GlobalData.gigglerain_count += 1
+		if GlobalData.gigglerain_count >= 3 and GlobalData.quest_step == 3:
+			GlobalData.quest_step = 4
+	if data.crop_name == "corn" and GlobalData.quest_step == 6:
+		GlobalData.wheepingwheat_harvested = true
+		GlobalData.quest_step = 7				
 	var item = data.harvestable_scene.instantiate()
 	item.global_position = global_position
 	get_parent().add_child(item)

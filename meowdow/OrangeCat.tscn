@@ -997,10 +997,13 @@ grow_vertical = 2
 
 [node name="FarmPlayer" type="AudioStreamPlayer2D" parent="CharacterBody2D" unique_id=1476591410]
 volume_db = -10.0
+bus = &"SFX"
 
 [node name="MeowPlayer" type="AudioStreamPlayer2D" parent="CharacterBody2D" unique_id=1658823946]
+bus = &"Meow"
 
 [node name="StepPlayer" type="AudioStreamPlayer2D" parent="CharacterBody2D" unique_id=550222884]
 volume_db = 10.0
+bus = &"SFX"
 
 [connection signal="animation_finished" from="CharacterBody2D/AnimatedSprite2D" to="CharacterBody2D" method="_on_animation_finished"]

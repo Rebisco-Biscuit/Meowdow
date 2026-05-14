@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://c43kkut5r31ac"]
+
+[ext_resource type="Texture2D" uid="uid://vx2ag7q2lki3" path="res://assets/screen/selection.png" id="1_lxest"]
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=669890453]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=569759983]
+z_index = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.015686275)
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=356745782]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_lxest")

@@ -26,6 +26,9 @@ func _ready():
 
 	hotbar_node = preload("res://inventory/hotbar.tscn").instantiate()
 	$CanvasLayer.add_child(hotbar_node)
+	
+	var quest_panel = preload("res://quest_panel.tscn").instantiate()
+	$CanvasLayer.add_child(quest_panel)	
 
 	var playerCharPath = GlobalData.playerCharPath
 	var playerNode = load(playerCharPath).instantiate()
@@ -100,7 +103,7 @@ func _try_interact():
 	var cell = currently_glowing_cell
 	var key = MAP_NAME + ":" + str(cell.x) + "," + str(cell.y)
 
-	if planted_cells.has(key):
+	if planted_cells.has(key):				
 		var crop = planted_cells[key]
 		if crop.stage == crop.data.stage_rects.size():
 			crop.harvest()
@@ -112,6 +115,12 @@ func _try_interact():
 
 	var selected_item: InvItem = hotbar_node.get_selected_item()
 
+	if GlobalData.quest_step == 2:
+		GlobalData.quest_step = 3
+		
+	if GlobalData.quest_step == 5 and selected_item.crop_data.crop_name == "corn":
+		GlobalData.quest_step = 6
+		
 	if selected_item == null or selected_item.crop_data == null:
 		print("No seed selected!")
 		return

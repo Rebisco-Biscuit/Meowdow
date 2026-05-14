@@ -92,8 +92,8 @@ join seeds left
 "NPC GUIDE" (neutral): Talk to the others.
 "NPC GUIDE" (happy): Listen carefully.
 
-"NPC GUIDE" (neutral): And… try planting something.Gigglegrain !!!!!
-"NPC GUIDE" (happy): hhmmmm......how many should you plant???
-"NPC GUIDE": How about 100 Gigglegrain crops??
-"NPC GUIDE" (happy): That's it 100.. and by the way!!! go to Dewpaw once you're done that cat might have something for you!
+"NPC GUIDE" (neutral): And… try planting something. Gigglegrain !!!!!
+"NPC GUIDE" (happy): hhmmmm......how many should you plant?
+"NPC GUIDE": How about 100 Gigglegrain crops?
+"NPC GUIDE" (happy): That's it 100.. and by the way! Go to Dewpaw once you're done that cat might have something for you!
 leave "NPC GUIDE"

@@ -15,13 +15,14 @@ var idle_interval := 5.0
 var has_talked = false
 var is_talking = false
 
-var bg_scene = preload("res://DialogueBackground.tscn")
-
+var bg_scene = preload("res://startdialogue.tscn")
 
 func _ready():
 	prompt.visible = false
 	randomize()
 
+	# Auto-trigger first dialogue if brand new game
+	# (called from selection_screen after scene loads)
 
 # --- Interaction zone signals ---
 func _on_interaction_zone_body_entered(body):
@@ -31,10 +32,9 @@ func _on_interaction_zone_body_entered(body):
 		if not is_talking:
 			prompt.visible = true
 
-
 func _on_interaction_zone_body_exited(body):
 	if body is CharacterBody2D:
-		player_inside = true		
+		player_inside = false  # fixed: was true
 		player = null
 		prompt.visible = false
 
@@ -42,7 +42,7 @@ func _process(delta):
 	# --- Prompt animation ---
 	if prompt.visible:
 		prompt.position.y = -5 + sin(Time.get_ticks_msec() * 0.005) * 3
-	
+
 	# --- Idle animation ---
 	idle_timer += delta
 	if idle_timer >= idle_interval:
@@ -58,7 +58,6 @@ func _process(delta):
 		if player.velocity.length() == 0 or player_dir.dot(to_npc) > 0.5:
 			talk()
 
-
 # --- Dialogue logic ---
 func talk():
 	is_talking = true
@@ -70,10 +69,9 @@ func talk():
 	else:
 		start_dialogue("res://Timelines/towns/Town1_Repeat.dtl")
 
-
 # --- Dialogic integration ---
 func start_dialogue(dialogue_path):
-	var cached_player = player  # cache in case player walks away mid-dialogue
+	var cached_player = player
 
 	cached_player.set_process(false)
 	cached_player.set_physics_process(false)
@@ -96,7 +94,11 @@ func start_dialogue(dialogue_path):
 		cached_player.set_physics_process(true)
 		cached_player.set_process_input(true)
 
-		if player:  # only show prompt if player is still in range
+		if GlobalData.quest_step == 0:
+			GlobalData.quest_step = 1  # next: find Luna
+			GlobalData.create_save()
+
+		if player_inside:
 			prompt.visible = true
 
 		bg.queue_free()

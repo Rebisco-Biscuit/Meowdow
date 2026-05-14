@@ -1,0 +1,100 @@
+[gd_scene format=3 uid="uid://44ta2s8dvxgs"]
+
+[ext_resource type="Script" uid="uid://bdsvtokxruhb5" path="res://shop/shop.gd" id="1_e7rdd"]
+[ext_resource type="Texture2D" uid="uid://cfu6em5siq51d" path="res://assets/UI-Sprites.png" id="2_blqjs"]
+[ext_resource type="FontFile" uid="uid://temvh5pyi624" path="res://assets/Minecraft.ttf" id="3_blqjs"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mrnko"]
+texture = ExtResource("2_blqjs")
+region_rect = Rect2(64, 64, 16, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gy7ao"]
+texture = ExtResource("2_blqjs")
+axis_stretch_vertical = 2
+region_rect = Rect2(160, 176, 96, 32)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q4g17"]
+texture = ExtResource("2_blqjs")
+region_rect = Rect2(256, 176, 96, 32)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2wf2a"]
+texture = ExtResource("2_blqjs")
+region_rect = Rect2(256, 176, 96, 32)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xad5q"]
+texture = ExtResource("2_blqjs")
+region_rect = Rect2(256, 176, 96, 32)
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=1425104162]
+script = ExtResource("1_e7rdd")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=674876579]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.47058824)
+
+[node name="Panel" type="Panel" parent="." unique_id=239462418]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -197.5
+offset_top = -190.0
+offset_right = 197.5
+offset_bottom = 190.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_mrnko")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=317136968]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -44.5
+offset_top = -27.0
+offset_right = 44.5
+offset_bottom = 27.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer" unique_id=1218397255]
+layout_mode = 2
+
+[node name="MerchantLabel" type="Label" parent="Panel/VBoxContainer/HBoxContainer" unique_id=695181946]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.76862746, 0.63529414, 0.49411765, 1)
+theme_override_fonts/font = ExtResource("3_blqjs")
+text = "Seed Merchant"
+vertical_alignment = 1
+
+[node name="CatnipLabel" type="Label" parent="Panel/VBoxContainer/HBoxContainer" unique_id=905787487]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.76862746, 0.63529414, 0.49411765, 1)
+theme_override_fonts/font = ExtResource("3_blqjs")
+text = "$"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="Panel/VBoxContainer" unique_id=282548186]
+layout_mode = 2
+columns = 3
+
+[node name="CloseButton" type="Button" parent="Panel/VBoxContainer" unique_id=2041583521]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.76862746, 0.63529414, 0.49411765, 1)
+theme_override_fonts/font = ExtResource("3_blqjs")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxTexture_gy7ao")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_q4g17")
+theme_override_styles/hover = SubResource("StyleBoxTexture_2wf2a")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_xad5q")
+text = "Close"
+
+[connection signal="pressed" from="Panel/VBoxContainer/CloseButton" to="." method="_on_close_button_pressed"]
