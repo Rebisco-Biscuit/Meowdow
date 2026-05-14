@@ -1,5 +1,4 @@
 join "Old Jerry" rightmost
-set {Thaw.wheepingwheat} = true
 "Old Jerry": Traveller!!! Is there anything I can help you?
 if {Thaw.wheepingwheat} == false:
 	- No nothing, just wanted to meet you!
