@@ -97,28 +97,6 @@ text = "asdads"
 horizontal_alignment = 2
 vertical_alignment = 1
 
-[node name="CloseButton" type="Button" parent="Panel" unique_id=2041583521]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -57.4375
-offset_top = -23.875
-offset_right = 56.5625
-offset_bottom = 8.125
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_colors/font_color = Color(0.76862746, 0.63529414, 0.49411765, 1)
-theme_override_fonts/font = ExtResource("3_blqjs")
-theme_override_font_sizes/font_size = 32
-theme_override_styles/normal = SubResource("StyleBoxTexture_gy7ao")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_q4g17")
-theme_override_styles/hover = SubResource("StyleBoxTexture_2wf2a")
-theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_xad5q")
-text = "Close"
-
 [node name="VBoxContainer" type="MarginContainer" parent="Panel" unique_id=224463685]
 custom_minimum_size = Vector2(400, 200)
 layout_mode = 1
@@ -140,5 +118,27 @@ size_flags_vertical = 4
 theme_override_constants/h_separation = 30
 theme_override_constants/v_separation = 30
 columns = 3
+
+[node name="CloseButton" type="Button" parent="Panel" unique_id=2041583521]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -57.4375
+offset_top = -23.875
+offset_right = 56.5625
+offset_bottom = 8.125
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.76862746, 0.63529414, 0.49411765, 1)
+theme_override_fonts/font = ExtResource("3_blqjs")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxTexture_gy7ao")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_q4g17")
+theme_override_styles/hover = SubResource("StyleBoxTexture_2wf2a")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_xad5q")
+text = "Close"
 
 [connection signal="pressed" from="Panel/CloseButton" to="." method="_on_close_button_pressed"]

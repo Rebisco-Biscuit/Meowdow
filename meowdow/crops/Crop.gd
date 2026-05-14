@@ -43,8 +43,15 @@ func harvest():
 			GlobalData.quest_step = 4
 	if data.crop_name == "corn" and GlobalData.quest_step == 6:
 		GlobalData.wheepingwheat_count += 1
-		GlobalData.quest_step = 7				
-	var item = data.harvestable_scene.instantiate()
-	item.global_position = global_position
-	get_parent().add_child(item)
+		GlobalData.quest_step = 7
+	
+	var amount = randi_range(1, 5)
+
+	for i in range(amount):
+		var item = data.harvestable_scene.instantiate()
+		item.global_position = global_position + Vector2(
+			randf_range(-8, 8),
+			randf_range(-8, 8)
+		)
+		get_parent().add_child(item)
 	queue_free()
