@@ -93,7 +93,9 @@ join seeds left
 "NPC GUIDE" (happy): Listen carefully.
 
 "NPC GUIDE" (neutral): And… try planting something. Gigglegrain !!!!!
-"NPC GUIDE" (happy): hhmmmm......how many should you plant?
+"NPC GUIDE" (happy): hhmmmm... how many should you plant?
 "NPC GUIDE": How about 100 Gigglegrain crops?
-"NPC GUIDE" (happy): That's it 100.. and by the way! Go to Dewpaw once you're done that cat might have something for you!
+- Wait, how should I get the seeds?
+	"NPC GUIDE" (happy hello): No worries, here's 60 catnips! Find Luna the seed merchant to buy some seed packs.
+"NPC GUIDE" (happy): That's it 100 Gigglegrain crops... and by the way! Go to Dewpaw once you're done that cat might have something for you!
 leave "NPC GUIDE"

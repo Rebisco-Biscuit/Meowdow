@@ -20,11 +20,20 @@ func _ready():
 	populate_grid()
 	update_catnip_label()
 
+func is_item_locked(shop_item: ShopItem) -> bool:
+	if not shop_item.locked:
+		return false
+	match shop_item.unlock_map.to_lower():
+		"aubrialis":
+			return not GlobalData.aubrialis_unlocked
+		"rhollow":
+			return not GlobalData.rhollow_unlocked
+	return false
+
 func populate_grid():
 	for child in grid.get_children():
 		child.queue_free()
 
-	# --- Shared StyleBoxFlat for icon background ---
 	var icon_style = StyleBoxFlat.new()
 	icon_style.bg_color = Color("#DCB98A")
 	icon_style.corner_radius_top_left = 8
@@ -35,15 +44,13 @@ func populate_grid():
 	var font_color = Color("#c4a27e")
 
 	for shop_item in shop_items:
-		var is_locked = shop_item.locked and GlobalData.current_map != shop_item.unlock_map
+		var is_locked = is_item_locked(shop_item)
 
-		# --- Outer container per item ---
 		var container = VBoxContainer.new()
 		container.alignment = BoxContainer.ALIGNMENT_CENTER
 		container.custom_minimum_size = Vector2(80, 110)
 		container.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 
-		# --- Icon Button ---
 		var btn = Button.new()
 		btn.custom_minimum_size = Vector2(64, 64)
 		btn.size_flags_horizontal = Control.SIZE_SHRINK_CENTER
@@ -58,30 +65,28 @@ func populate_grid():
 			btn.expand_icon = true
 
 		if is_locked:
-			btn.tooltip_text = "Unlock %s map first" % shop_item.unlock_map.capitalize()
+			btn.tooltip_text = "🔒 Unlock %s map first" % shop_item.unlock_map.capitalize()
 		else:
 			btn.tooltip_text = shop_item.item_name
 
 		btn.pressed.connect(_on_item_pressed.bind(shop_item))
 		container.add_child(btn)
 
-		# --- Item name ---
 		var name_label = Label.new()
 		name_label.text = shop_item.item_name
 		name_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-		name_label.vertical_alignment =VERTICAL_ALIGNMENT_CENTER		
+		name_label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
 		name_label.add_theme_font_override("font", font)
 		name_label.add_theme_font_size_override("font_size", 18)
 		name_label.add_theme_color_override("font_color", font_color)
 		name_label.size_flags_horizontal = Control.SIZE_SHRINK_CENTER
 		container.add_child(name_label)
 
-		# --- Price ---
 		var price_label = Label.new()
 		price_label.text = "$" + str(shop_item.price)
 		price_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-		price_label.vertical_alignment =VERTICAL_ALIGNMENT_CENTER		
-		price_label.add_theme_font_override("font", font)		
+		price_label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+		price_label.add_theme_font_override("font", font)
 		price_label.add_theme_font_size_override("font_size", 18)
 		price_label.add_theme_color_override("font_color", font_color)
 		price_label.size_flags_horizontal = Control.SIZE_SHRINK_CENTER
@@ -91,11 +96,8 @@ func populate_grid():
 			container.modulate = Color(0.5, 0.5, 0.5, 1.0)
 
 		grid.add_child(container)
+
 func _on_item_pressed(shop_item: ShopItem):
-	
-	if GlobalData.quest_step == 1:
-		GlobalData.quest_step = 2	
-	
 	if GlobalData.catnips < shop_item.price:
 		print("Not enough catnips!")
 		return
@@ -111,6 +113,11 @@ func _on_item_pressed(shop_item: ShopItem):
 		update_catnip_label()
 		print("Bought: ", shop_item.item_name)
 	seed.queue_free()
+
+	# Advance quest if on buying step
+	if GlobalData.quest_step == 1:
+		GlobalData.quest_step = 2
+		GlobalData.create_save()
 
 func update_catnip_label():
 	catnip_label.text = "$" + str(GlobalData.catnips)

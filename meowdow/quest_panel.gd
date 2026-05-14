@@ -64,10 +64,10 @@ func refresh():
 		var is_done = GlobalData.quest_step > quest["step"]
 
 		if is_done:
-			label.text = "✅ " + text
+			label.text = text
 			label.modulate = Color(0.6, 0.6, 0.6, 1.0)
 		else:
-			label.text = "▶ " + text
+			label.text = text
 			label.modulate = Color(1.0, 1.0, 1.0, 1.0)
 
 		label.add_theme_font_size_override("font_size", 16)

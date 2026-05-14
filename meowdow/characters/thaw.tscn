@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://baokpiq7os6do" path="res://assets/shadow.png" id="1_lq6fy"]
 [ext_resource type="Texture2D" uid="uid://b51tyv7aptbdq" path="res://assets/Meow-Sprites/Free pack/frostcribe.png" id="2_dj0bt"]
 [ext_resource type="FontFile" uid="uid://temvh5pyi624" path="res://assets/Minecraft.ttf" id="3_duybs"]
+[ext_resource type="Texture2D" uid="uid://cfu6em5siq51d" path="res://assets/UI-Sprites.png" id="5_mnd8b"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fb1rq"]
 atlas = ExtResource("2_dj0bt")
@@ -83,6 +84,10 @@ expand_margin_top = 2.0
 expand_margin_right = 2.0
 expand_margin_bottom = 2.0
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_kranh"]
+atlas = ExtResource("5_mnd8b")
+region = Rect2(640, 128, 32, 32)
+
 [node name="Node2D" type="Node2D" unique_id=1674586597]
 texture_filter = 1
 script = ExtResource("1_dj0bt")
@@ -103,17 +108,17 @@ position = Vector2(0, -3)
 shape = SubResource("CircleShape2D_dj0bt")
 
 [node name="Label" type="Label" parent="." unique_id=24179416]
-offset_left = -12.0
-offset_top = -27.0
-offset_right = 25.0
-offset_bottom = -12.0
+offset_left = -11.000002
+offset_top = -26.000002
+offset_right = 35.0
+offset_bottom = -11.000002
 scale = Vector2(0.7, 0.7)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.3137255)
 theme_override_constants/shadow_outline_size = 5
 theme_override_fonts/font = ExtResource("3_duybs")
 theme_override_font_sizes/font_size = 14
 theme_override_styles/normal = SubResource("StyleBoxFlat_dj0bt")
-text = "Thaw"
+text = "Thaaw"
 
 [node name="Prompt" type="Label" parent="." unique_id=133174856]
 visible = false
@@ -126,6 +131,14 @@ theme_override_fonts/font = ExtResource("3_duybs")
 theme_override_font_sizes/font_size = 14
 theme_override_styles/normal = SubResource("StyleBoxFlat_dj0bt")
 text = "Press \"E\" to interact"
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=607236666]
+offset_left = -28.0
+offset_top = -29.0
+offset_right = 12.0
+offset_bottom = 11.0
+scale = Vector2(0.4, 0.4)
+texture = SubResource("AtlasTexture_kranh")
 
 [connection signal="body_entered" from="InteractionZone" to="." method="_on_interaction_zone_body_entered"]
 [connection signal="body_exited" from="InteractionZone" to="." method="_on_interaction_zone_body_exited"]
