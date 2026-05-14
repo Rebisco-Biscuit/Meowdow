@@ -23,6 +23,7 @@ func start_dialogue():
 	is_talking = true
 	prompt.visible = false
 
+	print(GlobalData.wheepingwheat_count)
 	var bg = bg_scene.instantiate()
 	get_tree().root.add_child(bg)
 

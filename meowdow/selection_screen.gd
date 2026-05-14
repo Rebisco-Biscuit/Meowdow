@@ -39,6 +39,9 @@ func _on_button_pressed() -> void:
 	var bg = bg_scene.instantiate()
 	get_tree().root.add_child(bg)
 
+	var skip_btn = preload("res://skip_button.tscn").instantiate()
+	get_tree().root.add_child(skip_btn)
+
 	GlobalData.sync_to_dialogic()
 	var dialog = Dialogic.start("res://Timelines/towns/Town1_Start.dtl")
 	dialog.process_mode = Node.PROCESS_MODE_ALWAYS
@@ -51,6 +54,8 @@ func _on_button_pressed() -> void:
 		print("Guide gave 200 catnips!")
 
 	Dialogic.timeline_ended.connect(func():
+		if skip_btn and is_instance_valid(skip_btn):
+			skip_btn.queue_free()		
 		bg.queue_free()
 		GlobalData.last_map = "res://Vinalore.tscn"
 		GlobalData.create_save()  # ← save HERE after everything is set

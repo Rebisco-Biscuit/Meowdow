@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://dy4k3fub6k5gx" path="res://characters/npc_guide.gd" id="1_feuw2"]
 [ext_resource type="Texture2D" uid="uid://bhfm771vnsiy0" path="res://assets/Meow-Sprites/Free pack/cat 1.6.png" id="2_feuw2"]
 [ext_resource type="FontFile" uid="uid://temvh5pyi624" path="res://assets/Minecraft.ttf" id="5_83y8a"]
+[ext_resource type="Texture2D" uid="uid://cfu6em5siq51d" path="res://assets/UI-Sprites.png" id="5_i831r"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gajip"]
 atlas = ExtResource("2_feuw2")
@@ -97,6 +98,10 @@ expand_margin_top = 2.0
 expand_margin_right = 2.0
 expand_margin_bottom = 2.0
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_6gu5c"]
+atlas = ExtResource("5_i831r")
+region = Rect2(640, 128, 32, 32)
+
 [node name="Node2D" type="Node2D" unique_id=1764293959]
 texture_filter = 1
 script = ExtResource("1_feuw2")
@@ -116,24 +121,11 @@ sprite_frames = SubResource("SpriteFrames_4xiro")
 position = Vector2(0, -3)
 shape = SubResource("CircleShape2D_gajip")
 
-[node name="Exclaim" type="Label" parent="." unique_id=783260491]
-offset_left = -2.0
-offset_top = -38.0
-offset_right = 1.0
-offset_bottom = -22.0
-theme_override_colors/font_color = Color(0.9996894, 0.15995973, 0.1187766, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.3137255)
-theme_override_colors/font_outline_color = Color(0.90359825, 0.90359825, 0.9035982, 1)
-theme_override_constants/outline_size = 2
-theme_override_constants/shadow_outline_size = 5
-theme_override_fonts/font = ExtResource("5_83y8a")
-text = "!"
-
 [node name="Label" type="Label" parent="." unique_id=246667039]
-offset_left = -12.0
-offset_top = -23.0
-offset_right = 25.0
-offset_bottom = -8.0
+offset_left = -6.9999986
+offset_top = -22.999998
+offset_right = 30.000002
+offset_bottom = -7.999998
 scale = Vector2(0.7, 0.7)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.3137255)
 theme_override_constants/shadow_outline_size = 5
@@ -153,6 +145,14 @@ theme_override_fonts/font = ExtResource("5_83y8a")
 theme_override_font_sizes/font_size = 14
 theme_override_styles/normal = SubResource("StyleBoxFlat_83y8a")
 text = "Press \"E\" to interact"
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1095947689]
+offset_left = -24.0
+offset_top = -26.0
+offset_right = 16.0
+offset_bottom = 14.0
+scale = Vector2(0.4, 0.4)
+texture = SubResource("AtlasTexture_6gu5c")
 
 [connection signal="body_entered" from="InteractionZone" to="." method="_on_interaction_zone_body_entered"]
 [connection signal="body_exited" from="InteractionZone" to="." method="_on_interaction_zone_body_exited"]

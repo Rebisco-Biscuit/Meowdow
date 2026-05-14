@@ -2,7 +2,6 @@ extends Node2D
 
 @onready var sprite = $AnimatedSprite2D
 @onready var prompt = $Prompt
-@onready var ex = $Exclaim
 
 var player = null
 var player_inside = false
@@ -88,7 +87,6 @@ func start_dialogue(dialogue_path):
 
 	Dialogic.timeline_ended.connect(func():
 		is_talking = false
-		ex.visible = false
 
 		cached_player.set_process(true)
 		cached_player.set_physics_process(true)

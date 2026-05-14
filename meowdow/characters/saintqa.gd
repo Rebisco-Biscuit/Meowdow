@@ -15,15 +15,6 @@ var is_talking = false
 
 var bg_scene = preload("res://DialogueBackground.tscn")
 
-var seed_scenes = [
-	preload("res://inventory/collectables/carrot.tscn"),
-	#preload("res://inventory/collectables/corn_seed.tscn"),
-	#preload("res://inventory/collectables/beetroot_seed.tscn"),
-	#preload("res://inventory/collectables/berries_seed.tscn"),
-	#preload("res://inventory/collectables/tomato_seed.tscn"),
-	#preload("res://inventory/collectables/strawberry_seed.tscn"),
-]
-
 func _ready():
 	prompt.visible = false
 	randomize()
@@ -42,11 +33,10 @@ func _process(delta):
 
 	# --- Interaction ---
 	if player and not is_talking and Input.is_action_just_pressed("interact"):
-		for seed_scene in seed_scenes:
-			give_seed(seed_scene)
+		complete_quest1()
 
-# --- Generic seed giver ---
-func give_seed(seed_scene: PackedScene):
+# --- Demo: skip to end of quest 1 ---
+func complete_quest1():
 	if player == null:
 		return
 
@@ -55,16 +45,29 @@ func give_seed(seed_scene: PackedScene):
 		print("No inventory found on player.")
 		return
 
-	var seed_item = seed_scene.instantiate()
+	# --- Max out all quest counters ---
+	GlobalData.gigglerain_count = 100
+	GlobalData.wheepingwheat_count = 1
+	GlobalData.quest_step = 8
+	GlobalData.aubrialis_unlocked = true
+	GlobalData.has_received_starter_catnips = true
+	GlobalData.catnips += 200
 
-	if seed_item.get("item") != null:
-		for i in range(100):
-			inventory.insert(seed_item.item)
-		print(seed_item.item.name, " added to inventory!")
-	else:
-		print("Could not find item resource on seed scene.")
+	# --- Sync to Dialogic ---
+	GlobalData.sync_to_dialogic()
 
-	seed_item.queue_free()
+	# --- Give some crops for testing ---
+	var carrot = preload("res://inventory/collectables/carrot.tscn").instantiate()
+	if carrot.get("item") != null:
+		for i in range(5):
+			inventory.insert(carrot.item)
+	carrot.queue_free()
+
+	# --- Save ---
+	GlobalData.create_save()
+
+	print("✅ Quest 1 complete! quest_step=8, aubrialis unlocked.")
+	prompt.visible = false
 
 # --- Interaction zone signals ---
 func _on_interaction_zone_body_entered(body):

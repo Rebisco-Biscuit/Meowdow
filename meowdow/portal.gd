@@ -6,6 +6,12 @@ extends Area2D
 	"Rhollow": "res://Rhollow.tscn"
 }
 
+# Which maps require which unlock flag
+var map_locks = {
+	"Aubrialis": "aubrialis_unlocked",
+	"Rhollow": "rhollow_unlocked"
+}
+
 var player_inside = false
 var menu_instance = null
 var player = null
@@ -41,7 +47,7 @@ func open_map_menu():
 	get_tree().paused = true
 	var screen_pos = camera.get_screen_center_position() + (global_position - camera.global_position)
 	menu_instance.position = screen_pos + Vector2(20, -20)
-	menu_instance.setup(maps, get_tree().current_scene.name, self)
+	menu_instance.setup(maps, map_locks, get_tree().current_scene.name, self)
 
 func close_map_menu():
 	if menu_instance:
@@ -49,11 +55,10 @@ func close_map_menu():
 		menu_instance.queue_free()
 		menu_instance = null
 
-# Call this from map_menu.gd when a destination is selected
 func travel_to(scene_path: String):
 	close_map_menu()
-	GlobalData.last_position = Vector2.ZERO  # reset so new map uses its spawnpoint
-	GlobalData.last_map = scene_path         # remember which map we're going to
-	GlobalData.create_save()                 # save before switching
+	GlobalData.last_position = Vector2.ZERO
+	GlobalData.last_map = scene_path
+	GlobalData.create_save()
 	get_tree().paused = false
 	get_tree().change_scene_to_file(scene_path)

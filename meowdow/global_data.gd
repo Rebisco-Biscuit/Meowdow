@@ -17,6 +17,7 @@ var quest_step: int = 0
 var gigglerain_count: int = 0
 var wheepingwheat_count: int = 0
 var aubrialis_unlocked: bool = false
+var rhollow_unlocked: bool = false
 var frostbell_count: int = 0
 var snowbloom_count: int = 0
 
@@ -47,7 +48,7 @@ func scale_cursor(texture: Texture2D, scale: int) -> ImageTexture:
 # --- DIALOGIC SYNC ---
 func sync_to_dialogic():
 	Dialogic.VAR.Thaw.gigglerain_count = gigglerain_count
-	Dialogic.VAR.Thaw.wheepingwheat = wheepingwheat_count
+	Dialogic.VAR.Thaw.wheepingwheat_count = wheepingwheat_count  # fixed: was .wheepingwheat
 	Dialogic.VAR.Thaw.quest_started = quest_step > 0
 	Dialogic.VAR.Thaw.town1event = quest_step >= 4
 	Dialogic.VAR.Thaw.town1event2 = quest_step >= 7
@@ -78,6 +79,7 @@ func create_save():
 	file.store_line(str(gigglerain_count))
 	file.store_line(str(wheepingwheat_count))
 	file.store_line(str(aubrialis_unlocked))
+	file.store_line(str(rhollow_unlocked))
 	file.store_line(str(frostbell_count))
 	file.store_line(str(snowbloom_count))
 
@@ -121,6 +123,7 @@ func load_save():
 	gigglerain_count = int(file.get_line())
 	wheepingwheat_count = int(file.get_line())
 	aubrialis_unlocked = file.get_line() == "true"
+	rhollow_unlocked = file.get_line() == "true"  # fixed: was missing
 	frostbell_count = int(file.get_line())
 	snowbloom_count = int(file.get_line())
 

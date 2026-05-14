@@ -119,9 +119,9 @@ position = Vector2(0, -3)
 shape = SubResource("CircleShape2D_gk103")
 
 [node name="Label" type="Label" parent="." unique_id=912045081]
-offset_left = -14.000004
+offset_left = -15.000004
 offset_top = -27.000004
-offset_right = 52.999996
+offset_right = 51.999996
 offset_bottom = -12.000004
 scale = Vector2(0.7, 0.7)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.3137255)

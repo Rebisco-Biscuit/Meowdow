@@ -1,13 +1,12 @@
 join "Old Jerry" rightmost
 "Old Jerry": Traveller!!! Is there anything I can help you?
-if {Thaw.wheepingwheat_count} < 1.0:
+if {Thaw.wheepingwheat_count} == 0.0:
 	- No nothing, just wanted to meet you!
 		"Old Jerry" (Old Jerry Bye): Okay traveller!! Stay as you want and never let me see you grin, or you shall be executed!
 		[end_timeline]
-if {Thaw.wheepingwheat_count} >= 1.0:
+elif {Thaw.wheepingwheat_count} == 1.0:
 	- No nothing, just wanted to meet you!
 		"Old Jerry" (Old Jerry Bye): Okay traveller!! Stay as you want and never let me see you grin, or you shall be executed!
-		[end_timeline]
 	- I want to show you something!
 		"Old Jerry" (sang joy): Wow!!!! You are making me so happy ..Show me what is it that you have?
 		"Old Jerry": Wheeping wheat??! you want me to taste it?

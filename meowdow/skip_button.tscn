@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://c73k6pw7aj8y5"]
+
+[ext_resource type="FontFile" uid="uid://temvh5pyi624" path="res://assets/Minecraft.ttf" id="1_0m6f4"]
+[ext_resource type="Script" uid="uid://bqyt0qasyhfgl" path="res://skip_button.gd" id="1_wokdb"]
+[ext_resource type="Texture2D" uid="uid://cfu6em5siq51d" path="res://assets/UI-Sprites.png" id="2_wokdb"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6e6do"]
+texture = ExtResource("2_wokdb")
+expand_margin_left = 20.0
+expand_margin_top = 10.0
+expand_margin_right = 20.0
+expand_margin_bottom = 10.0
+region_rect = Rect2(160, 176, 96, 32)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pqlgo"]
+texture = ExtResource("2_wokdb")
+expand_margin_left = 20.0
+expand_margin_top = 10.0
+expand_margin_right = 20.0
+expand_margin_bottom = 10.0
+region_rect = Rect2(256, 176, 96, 32)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jr8ex"]
+texture = ExtResource("2_wokdb")
+expand_margin_left = 20.0
+expand_margin_top = 10.0
+expand_margin_right = 20.0
+expand_margin_bottom = 10.0
+region_rect = Rect2(256, 176, 96, 32)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_80cmk"]
+texture = ExtResource("2_wokdb")
+expand_margin_left = 20.0
+expand_margin_top = 10.0
+expand_margin_right = 20.0
+expand_margin_bottom = 10.0
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=1256160550]
+layer = 16
+script = ExtResource("1_wokdb")
+
+[node name="SkipButton" type="Button" parent="." unique_id=557109027]
+offset_left = 25.0
+offset_top = 15.0
+offset_right = 58.0
+offset_bottom = 38.0
+theme_override_colors/font_color = Color(0.76862746, 0.63529414, 0.49411765, 1)
+theme_override_fonts/font = ExtResource("1_0m6f4")
+theme_override_styles/normal = SubResource("StyleBoxTexture_6e6do")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_pqlgo")
+theme_override_styles/hover = SubResource("StyleBoxTexture_jr8ex")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_80cmk")
+text = "Skip"
