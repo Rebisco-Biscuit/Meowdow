@@ -41,6 +41,7 @@ func populate_grid():
 		var container = VBoxContainer.new()
 		container.alignment = BoxContainer.ALIGNMENT_CENTER
 		container.custom_minimum_size = Vector2(80, 110)
+		container.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 
 		# --- Icon Button ---
 		var btn = Button.new()
