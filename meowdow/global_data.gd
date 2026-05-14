@@ -22,17 +22,32 @@ var frostbell_count: int = 0
 var snowbloom_count: int = 0
 
 # --- CURSOR ---
-var arrow = load("res://assets/arrow.png")
-var click = load("res://assets/arrowclick.png")
+var arrow
+var click
 var arrow_scaled: ImageTexture
 var click_scaled: ImageTexture
 
 var ui_sfx_player: AudioStreamPlayer
 
 func _ready():
-	arrow_scaled = scale_cursor(arrow, 3)
-	click_scaled = scale_cursor(click, 3)
+	load_cursor_by_cat()
 	Input.set_custom_mouse_cursor(arrow_scaled)
+
+func load_cursor_by_cat():
+	var color = selectedCatType
+	print(color)
+	# fallback in case nothing is set (because humans forget things)
+	if color == "":
+		color = "white"
+
+	var arrow_path = "res://assets/arrow_%s.png" % color
+	var click_path = "res://assets/arrowclick_%s.png" % color
+
+	arrow = load(arrow_path)
+	click = load(click_path)
+
+	arrow_scaled = scale_cursor(arrow, 4)
+	click_scaled = scale_cursor(click, 4)
 
 func _input(event):
 	if event is InputEventMouseButton:
@@ -119,6 +134,9 @@ func load_save():
 	last_position.y = float(file.get_line())
 	catnips = int(file.get_line())
 	last_map = file.get_line()
+
+	load_cursor_by_cat()
+	Input.set_custom_mouse_cursor(arrow_scaled)
 
 	# Load quest state
 	quest_step = int(file.get_line())

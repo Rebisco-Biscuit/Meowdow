@@ -13,3 +13,4 @@ script = ExtResource("1_k6xwg")
 item_scene = ExtResource("2_m2k78")
 icon = SubResource("AtlasTexture_cq5yk")
 item_name = "Poppingcorn"
+price = 4

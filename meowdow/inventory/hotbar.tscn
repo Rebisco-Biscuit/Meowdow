@@ -2,7 +2,11 @@
 
 [ext_resource type="PackedScene" uid="uid://dhjkpiv2q12sj" path="res://inventory/hotbar_slot.tscn" id="1_aba1q"]
 [ext_resource type="Script" uid="uid://db8v04pthifiy" path="res://inventory/hotbar.gd" id="1_jxmj8"]
-[ext_resource type="Texture2D" uid="uid://dx6bv5frmv2s6" path="res://assets/icons/white_selector.png" id="3_g5ggu"]
+[ext_resource type="Texture2D" uid="uid://cfu6em5siq51d" path="res://assets/UI-Sprites.png" id="3_g5ggu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vnyxa"]
+atlas = ExtResource("3_g5ggu")
+region = Rect2(144, 144, 32, 32)
 
 [node name="Hotbar" type="Panel" unique_id=660909474]
 self_modulate = Color(1, 1, 1, 0)
@@ -45,5 +49,5 @@ layout_mode = 2
 [node name="Selector" type="Sprite2D" parent="." unique_id=898548680]
 texture_filter = 1
 scale = Vector2(0.5416667, 0.52)
-texture = ExtResource("3_g5ggu")
+texture = SubResource("AtlasTexture_vnyxa")
 centered = false

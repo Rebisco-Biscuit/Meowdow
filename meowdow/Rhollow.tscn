@@ -17,7 +17,9 @@
 [ext_resource type="PackedScene" uid="uid://80wyo4diqehq" path="res://characters/glow.tscn" id="13_7kkbp"]
 [ext_resource type="PackedScene" uid="uid://dopat1fk0pnmg" path="res://characters/guide.tscn" id="15_6o8mm"]
 [ext_resource type="PackedScene" uid="uid://bvwioq0mggfer" path="res://characters/saint_qa.tscn" id="16_lj66f"]
+[ext_resource type="PackedScene" uid="uid://cedq77kifamct" path="res://characters/luna.tscn" id="19_2k1q4"]
 [ext_resource type="PackedScene" uid="uid://dua2223sje68" path="res://echofall_lair.tscn" id="19_dk04j"]
+[ext_resource type="PackedScene" uid="uid://dxnlqut7on5op" path="res://characters/catherine.tscn" id="20_uli8u"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0uypl"]
 content_margin_top = 20.0
@@ -4671,10 +4673,18 @@ position = Vector2(814, 393)
 z_index = 6
 position = Vector2(272, 230)
 
-[node name="Node2D" parent="." unique_id=1024200494 instance=ExtResource("16_lj66f")]
+[node name="SaintQA" parent="." unique_id=1024200494 instance=ExtResource("16_lj66f")]
 z_index = 6
 position = Vector2(855, 147)
 
-[node name="Node2D2" parent="." unique_id=1172735538 instance=ExtResource("19_dk04j")]
+[node name="??" parent="." unique_id=1172735538 instance=ExtResource("19_dk04j")]
 z_index = 6
 position = Vector2(584, 488)
+
+[node name="Luna" parent="." unique_id=1291380832 instance=ExtResource("19_2k1q4")]
+z_index = 6
+position = Vector2(472, 257)
+
+[node name="Catherine" parent="." unique_id=1297075727 instance=ExtResource("20_uli8u")]
+z_index = 6
+position = Vector2(1041, 291)

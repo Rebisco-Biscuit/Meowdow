@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://r6v8vpm0x4bh"]
 
 [ext_resource type="Script" uid="uid://rrpocub34w87" path="res://selection_screen.gd" id="1_02ils"]
-[ext_resource type="AudioStream" uid="uid://7dlmimkoysk5" path="res://meow-sic/Wonder by Chillpeach.mp3" id="2_8opyg"]
+[ext_resource type="Texture2D" uid="uid://dp5myani3qarv" path="res://assets/screen/test-selection.png" id="2_h0dp4"]
 [ext_resource type="Texture2D" uid="uid://bj2bfids0vh1n" path="res://assets/icons/black_cat_icon.png" id="2_nf7ud"]
 [ext_resource type="PackedScene" uid="uid://bbf4xkn0hnkvx" path="res://characterSlot.tscn" id="2_yfmej"]
 [ext_resource type="FontFile" uid="uid://temvh5pyi624" path="res://assets/Minecraft.ttf" id="3_k1fcs"]
@@ -9,7 +9,6 @@
 [ext_resource type="Shader" uid="uid://cdriroptpmuf3" path="res://selection_screen.gdshader" id="4_nlcot"]
 [ext_resource type="Texture2D" uid="uid://dq5mbll4bdb3j" path="res://assets/icons/orange_cat_icon.png" id="5_yvk22"]
 [ext_resource type="Texture2D" uid="uid://dpj50dqtygcnp" path="res://assets/icons/white_cat_icon.png" id="6_k1fcs"]
-[ext_resource type="Texture2D" uid="uid://dx6bv5frmv2s6" path="res://assets/icons/white_selector.png" id="8_325y2"]
 [ext_resource type="Texture2D" uid="uid://bhfm771vnsiy0" path="res://assets/Meow-Sprites/Free pack/cat 1.6.png" id="8_h0dp4"]
 [ext_resource type="Texture2D" uid="uid://cfu6em5siq51d" path="res://assets/UI-Sprites.png" id="8_k1fcs"]
 [ext_resource type="Texture2D" uid="uid://digcbq5wyohpf" path="res://assets/Meow-Sprites/Free pack/cat 1.9.png" id="10_8opyg"]
@@ -520,6 +519,10 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_d5wys"]
+atlas = ExtResource("8_k1fcs")
+region = Rect2(144, 144, 32, 32)
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_h0dp4"]
 texture = ExtResource("8_k1fcs")
 region_rect = Rect2(535, 181, 17, 21)
@@ -663,29 +666,23 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_02ils")
 
-[node name="BGMusic" type="AudioStreamPlayer2D" parent="." unique_id=1711557475]
-position = Vector2(-42, -24)
-stream = ExtResource("2_8opyg")
-autoplay = true
-
-[node name="Background" type="TextureRect" parent="." unique_id=438942123]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=438942123]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("3_nlcot")
+texture = ExtResource("2_h0dp4")
 
-[node name="BlurOverlay" type="ColorRect" parent="." unique_id=803114626]
-visible = false
-material = SubResource("ShaderMaterial_8txwl")
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1355494929]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+color = Color(0, 0, 0, 0.39215687)
 
 [node name="Title" type="VBoxContainer" parent="." unique_id=929912281]
 layout_mode = 1
@@ -705,10 +702,10 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 1
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0.76862746, 0.63529414, 0.49411765, 1)
 theme_override_fonts/font = ExtResource("3_k1fcs")
 theme_override_font_sizes/font_size = 38
-text = "SELECT YOUR CAT"
+text = "Select your cat"
 horizontal_alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1970855710]
@@ -769,7 +766,7 @@ catType = "white"
 z_as_relative = false
 position = Vector2(125.99999, 1.0000105)
 scale = Vector2(4.749998, 4.360001)
-texture = ExtResource("8_325y2")
+texture = SubResource("AtlasTexture_d5wys")
 centered = false
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1486278129]
@@ -813,7 +810,7 @@ custom_minimum_size = Vector2(126, 48)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_colors/font_color = Color(0.25202727, 0.2520278, 0.25202736, 1)
+theme_override_colors/font_color = Color(0.76862746, 0.63529414, 0.49411765, 1)
 theme_override_colors/font_hover_color = Color(0.95, 0.95, 0.95, 1)
 theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("3_k1fcs")
@@ -822,7 +819,7 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_325y2")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_aays5")
 theme_override_styles/hover = SubResource("StyleBoxTexture_d5wys")
 action_mode = 0
-text = "START"
+text = "Start"
 
 [node name="PreviewCat" type="AnimatedSprite2D" parent="." unique_id=1657965358]
 position = Vector2(427.00003, 342.00003)

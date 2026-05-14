@@ -39,6 +39,7 @@ func _process(delta):
 			open_shop()
 
 func open_shop():
+	prompt.visible = false
 	if GlobalData.quest_step == 0:
 		GlobalData.quest_step = 1 	
 	shop_instance = preload("res://shop.tscn").instantiate()

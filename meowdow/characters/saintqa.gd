@@ -50,8 +50,8 @@ func complete_quest1():
 	GlobalData.wheepingwheat_count = 1
 	GlobalData.quest_step = 8
 	GlobalData.aubrialis_unlocked = true
+	GlobalData.rhollow_unlocked = true
 	GlobalData.has_received_starter_catnips = true
-	GlobalData.catnips += 200
 
 	# --- Sync to Dialogic ---
 	GlobalData.sync_to_dialogic()

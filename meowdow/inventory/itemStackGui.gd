@@ -3,7 +3,7 @@ extends Panel
 class_name ItemStackGui
 
 @onready var item_visual: Sprite2D = $item_display
-@onready var amountLabel: Label = $Label 
+@onready var amountLabel: Label = $Label
 
 var inventorySlot: InventorySlot
 

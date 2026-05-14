@@ -44,6 +44,7 @@ expand_margin_bottom = 20.0
 region_rect = Rect2(256, 176, 96, 32)
 
 [node name="CanvasLayer" type="CanvasLayer" unique_id=1425104162]
+layer = 8
 script = ExtResource("1_e7rdd")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=674876579]

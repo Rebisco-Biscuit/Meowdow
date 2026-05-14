@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://baokpiq7os6do" path="res://assets/shadow.png" id="2_pshlk"]
 [ext_resource type="Texture2D" uid="uid://chgev77qhxb6r" path="res://assets/Meow-Sprites/Free pack/saintqa.png" id="3_lmrk2"]
 [ext_resource type="FontFile" uid="uid://temvh5pyi624" path="res://assets/Minecraft.ttf" id="4_pee7b"]
+[ext_resource type="Texture2D" uid="uid://cfu6em5siq51d" path="res://assets/UI-Sprites.png" id="5_xjv8a"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ppywf"]
 atlas = ExtResource("3_lmrk2")
@@ -41,6 +42,10 @@ expand_margin_top = 2.0
 expand_margin_right = 2.0
 expand_margin_bottom = 2.0
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_r0fw7"]
+atlas = ExtResource("5_xjv8a")
+region = Rect2(704, 96, 32, 32)
+
 [node name="Node2D" type="Node2D" unique_id=1024200494]
 texture_filter = 1
 script = ExtResource("1_j65o0")
@@ -63,10 +68,10 @@ position = Vector2(0, -3)
 shape = SubResource("CircleShape2D_k3nhs")
 
 [node name="Label" type="Label" parent="." unique_id=1319117865]
-offset_left = -20.0
-offset_top = -27.999998
-offset_right = 39.0
-offset_bottom = -12.999998
+offset_left = -16.000004
+offset_top = -28.0
+offset_right = 42.999996
+offset_bottom = -13.0
 scale = Vector2(0.7, 0.7)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.3137255)
 theme_override_constants/shadow_outline_size = 5
@@ -86,6 +91,14 @@ theme_override_fonts/font = ExtResource("4_pee7b")
 theme_override_font_sizes/font_size = 14
 theme_override_styles/normal = SubResource("StyleBoxFlat_omrso")
 text = "Press \"E\" to interact"
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1467036910]
+offset_left = -33.0
+offset_top = -31.0
+offset_right = 7.0
+offset_bottom = 9.0
+scale = Vector2(0.4, 0.4)
+texture = SubResource("AtlasTexture_r0fw7")
 
 [connection signal="body_entered" from="InteractionZone" to="." method="_on_interaction_zone_body_entered"]
 [connection signal="body_exited" from="InteractionZone" to="." method="_on_interaction_zone_body_exited"]

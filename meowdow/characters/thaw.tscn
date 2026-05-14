@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bk8orcx70am7w"]
 
-[ext_resource type="Script" uid="uid://bxr7bowlc2acr" path="res://characters/dewpaw.gd" id="1_dj0bt"]
 [ext_resource type="Texture2D" uid="uid://baokpiq7os6do" path="res://assets/shadow.png" id="1_lq6fy"]
+[ext_resource type="Script" uid="uid://cypomw3fq8h13" path="res://characters/thaaw.gd" id="1_mnd8b"]
 [ext_resource type="Texture2D" uid="uid://b51tyv7aptbdq" path="res://assets/Meow-Sprites/Free pack/frostcribe.png" id="2_dj0bt"]
 [ext_resource type="FontFile" uid="uid://temvh5pyi624" path="res://assets/Minecraft.ttf" id="3_duybs"]
 [ext_resource type="Texture2D" uid="uid://cfu6em5siq51d" path="res://assets/UI-Sprites.png" id="5_mnd8b"]
@@ -90,7 +90,7 @@ region = Rect2(640, 128, 32, 32)
 
 [node name="Node2D" type="Node2D" unique_id=1674586597]
 texture_filter = 1
-script = ExtResource("1_dj0bt")
+script = ExtResource("1_mnd8b")
 
 [node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1326524604]
 modulate = Color(1, 1, 1, 0.37254903)

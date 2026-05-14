@@ -24,6 +24,9 @@ func _on_continue_pressed():
 	get_tree().change_scene_to_file(GlobalData.last_map)
 
 func _on_new_game_pressed():
+	if FileAccess.file_exists(GlobalData.SAVE_PATH):
+		DirAccess.remove_absolute(GlobalData.SAVE_PATH)
+
 	get_tree().change_scene_to_file("res://selection_screen.tscn")
 
 func _on_settings_pressed():

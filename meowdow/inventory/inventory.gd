@@ -55,3 +55,12 @@ func use_item_at_index(index: int) -> void:
 		return
 		
 	remove_at_index(index)
+
+func get_item_count(item: InvItem) -> int:
+	var total := 0
+	
+	for slot in slots:
+		if slot.item == item:
+			total += slot.amount
+			
+	return total

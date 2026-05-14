@@ -10,15 +10,15 @@ const QUESTS = [
 	},
 	{
 		"step": 1,
-		"text": "Buy carrot seeds from Luna"
+		"text": "Buy Gigglegrain seeds from Luna"
 	},
 	{
 		"step": 2,
-		"text": "Find the field and plant a carrot (F)"
+		"text": "Find the field and plant a Gigglegrain (F)"
 	},
 	{
 		"step": 3,
-		"text": "Harvest 3 carrots (%d/3)"
+		"text": "Harvest 100 Gigglegrains (%d/100)"
 	},
 	{
 		"step": 4,
@@ -26,7 +26,7 @@ const QUESTS = [
 	},
 	{
 		"step": 5,
-		"text": "Plant the Wheepingwheat (corn) seed (F)"
+		"text": "Plant the Wheepingwheat seed (F)"
 	},
 	{
 		"step": 6,
@@ -67,7 +67,7 @@ func refresh():
 			label.text = text
 			label.modulate = Color(0.6, 0.6, 0.6, 1.0)
 		else:
-			label.text = text
+			label.text = 	text
 			label.modulate = Color(1.0, 1.0, 1.0, 1.0)
 
 		label.add_theme_font_size_override("font_size", 16)

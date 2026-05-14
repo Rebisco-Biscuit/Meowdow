@@ -6,7 +6,7 @@ extends Control
 
 var bg_scene = preload("res://startdialogue.tscn")
 
-func _ready():
+func _ready():	
 	indicator.visible = false
 
 func _input(event):
@@ -40,6 +40,9 @@ func _on_button_pressed() -> void:
 	if not GlobalData.playerCharPath:
 		return
 
+	GlobalData.load_cursor_by_cat()
+	Input.set_custom_mouse_cursor(GlobalData.arrow_scaled)
+
 	var bg = bg_scene.instantiate()
 	get_tree().root.add_child(bg)
 
@@ -66,5 +69,5 @@ func _on_button_pressed() -> void:
 		get_tree().change_scene_to_file("res://Vinalore.tscn")
 	, CONNECT_ONE_SHOT)
 
-func _on_back_button_pressed() -> void:
+func _on_back_button_pressed() -> void:	
 	get_tree().change_scene_to_file("res://MainMenu.tscn")
