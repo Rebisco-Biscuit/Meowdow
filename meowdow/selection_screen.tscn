@@ -678,6 +678,7 @@ grow_vertical = 2
 texture = ExtResource("3_nlcot")
 
 [node name="BlurOverlay" type="ColorRect" parent="." unique_id=803114626]
+visible = false
 material = SubResource("ShaderMaterial_8txwl")
 layout_mode = 1
 anchors_preset = 15

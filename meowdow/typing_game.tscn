@@ -4,9 +4,7 @@
 [ext_resource type="FontFile" uid="uid://temvh5pyi624" path="res://assets/Minecraft.ttf" id="2_i5yno"]
 [ext_resource type="Texture2D" uid="uid://cfu6em5siq51d" path="res://assets/UI-Sprites.png" id="3_fnv16"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tw4ul"]
-texture = ExtResource("3_fnv16")
-region_rect = Rect2(160, 176, 96, 32)
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i5yno"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jywba"]
 bg_color = Color(0.60776335, 0.61, 0.5429, 0.27450982)
@@ -36,9 +34,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -250.0
-offset_top = -151.5
+offset_top = -190.5
 offset_right = 250.0
-offset_bottom = 151.5
+offset_bottom = 190.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 10
@@ -53,14 +51,45 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("2_i5yno")
 theme_override_font_sizes/font_size = 128
 
-[node name="InputField" type="LineEdit" parent="VBoxContainer" unique_id=1522204220]
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer" unique_id=557111251]
+layout_mode = 2
+theme_override_constants/separation = 92
+
+[node name="NinePatchRect" type="NinePatchRect" parent="VBoxContainer/VBoxContainer" unique_id=1596929548]
+custom_minimum_size = Vector2(600, 70)
+layout_mode = 2
+texture = ExtResource("3_fnv16")
+region_rect = Rect2(59, 59, 26.132797, 26)
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/VBoxContainer/NinePatchRect" unique_id=797796078]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="InputField" type="LineEdit" parent="VBoxContainer/VBoxContainer/NinePatchRect/MarginContainer" unique_id=1522204220]
+custom_minimum_size = Vector2(500, 40)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.5686275, 0.47058824, 0.3647059, 1)
 theme_override_fonts/font = ExtResource("2_i5yno")
 theme_override_font_sizes/font_size = 32
-theme_override_styles/normal = SubResource("StyleBoxTexture_tw4ul")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_i5yno")
 
-[node name="SnakeBar" type="ProgressBar" parent="VBoxContainer" unique_id=839408136]
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/VBoxContainer" unique_id=322799787]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="SnakeBar" type="ProgressBar" parent="VBoxContainer/VBoxContainer/VBoxContainer" unique_id=839408136]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.5686275, 0.47058824, 0.3647059, 1)
 theme_override_fonts/font = ExtResource("2_i5yno")
@@ -69,11 +98,11 @@ theme_override_styles/background = SubResource("StyleBoxFlat_jywba")
 theme_override_styles/fill = SubResource("StyleBoxFlat_8jvet")
 rounded = true
 
-[node name="ScoreLabel" type="Label" parent="VBoxContainer" unique_id=242775149]
+[node name="ScoreLabel" type="Label" parent="VBoxContainer/VBoxContainer/VBoxContainer" unique_id=242775149]
 layout_mode = 2
 text = "🐍 Length: 0"
 
-[node name="StartButton" type="Button" parent="VBoxContainer" unique_id=1148893866]
+[node name="StartButton" type="Button" parent="VBoxContainer/VBoxContainer/VBoxContainer" unique_id=1148893866]
 layout_mode = 2
 text = "Start"
 
