@@ -2,6 +2,7 @@ extends Control
 
 @onready var character_selection_box = $VBoxContainer/Panel/HBoxContainer
 @onready var indicator = $VBoxContainer/Panel/Indicator
+@onready var preview_cat = $PreviewCat
 
 var bg_scene = preload("res://startdialogue.tscn")
 
@@ -27,6 +28,9 @@ func _set_char_selected(charNode):
 
 	indicator.visible = true
 	indicator.position = charNode.position
+	
+	preview_cat.sprite_frames = charNode.previewFrames
+	preview_cat.play("idle")
 
 	for node in character_selection_box.get_children():
 		var isSelected = charNode == node
