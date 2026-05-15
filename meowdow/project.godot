@@ -108,6 +108,15 @@ variables={
 "town1event": false,
 "town1event2": false,
 "wheepingwheat_count": 0
+},
+"town1": {
+"town_done": false
+},
+"town2": {
+"town_done": false
+},
+"town3": {
+"town_done": false
 }
 }
 layout/style_list=["res://Timelines/towns/Town1.tres"]

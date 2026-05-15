@@ -1,6 +1,9 @@
 [style name="Town1"]
 join Frostcribe rightmost [animation="Bounce In"]
-set {Thaw.event_done} = true
+if {town2.town_done} == true:
+	Frostcribe (Frost Cribe Soft): Oh dearest rawr!! You must be back for a reason!
+	Frostcribe (Neutral): Whatever it is.. Feel free to stay in m domain! You are welcome all the time.
+	Frostcribe: Thank you for making me feel the warmth despite the kingdom I keep.
 Frostcribe (Neutral): And who might you be?
 if {Thaw.event_done} == false:
 	- Hello, I am new here.
@@ -43,3 +46,5 @@ if {Thaw.event_done} == true:
 		Frostcribe (Frost Cribe Soft): Keep that flower safe.
 		Frostcribe (Frost Cribe Soft): And do not let the others see this picture yet.
 		Frostcribe (Frost Cribe Soft): Here's the seed of Memory! You must move on to my brother's town. Please do not do anything bad to him. After all, he is my brother!
+		set {town2.town_done} = true
+		[end_timeline]
