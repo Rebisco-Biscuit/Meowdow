@@ -61,6 +61,54 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8jvet"]
+texture = ExtResource("3_fnv16")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+region_rect = Rect2(11, 59, 26, 28)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8c64r"]
+texture = ExtResource("3_fnv16")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+region_rect = Rect2(107, 59, 26, 26)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_a7nw4"]
+texture = ExtResource("3_fnv16")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+region_rect = Rect2(59, 59, 26, 26)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ur7wl"]
+texture = ExtResource("3_fnv16")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+region_rect = Rect2(11, 59, 26, 28)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_50aox"]
+texture = ExtResource("3_fnv16")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+region_rect = Rect2(107, 59, 26, 26)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_h7nxv"]
+texture = ExtResource("3_fnv16")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+region_rect = Rect2(59, 59, 26, 26)
+
 [node name="Control" type="Control" unique_id=503632404]
 layout_mode = 3
 anchors_preset = 15
@@ -353,8 +401,20 @@ text = "🌱 You earned X seeds!"
 
 [node name="PlayAgainButton" type="Button" parent="ResultPanel/VBoxContainer" unique_id=911905459]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.42509362, 0.27698937, 0.14011863, 1)
+theme_override_fonts/font = ExtResource("2_i5yno")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxTexture_8jvet")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_8c64r")
+theme_override_styles/hover = SubResource("StyleBoxTexture_a7nw4")
 text = "Play Again"
 
 [node name="QuitButton" type="Button" parent="ResultPanel/VBoxContainer" unique_id=1748307102]
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_i5yno")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxTexture_ur7wl")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_50aox")
+theme_override_styles/hover = SubResource("StyleBoxTexture_h7nxv")
 text = "Back to Map"
