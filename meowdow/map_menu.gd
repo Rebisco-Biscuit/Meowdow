@@ -26,7 +26,7 @@ func setup(map_dict, locks_dict, current, portal):
 			var is_unlocked = GlobalData.get(flag)
 			if not is_unlocked:
 				button.disabled = true
-				button.tooltip_text = "🔒 Locked"
+				button.tooltip_text = "Locked"
 			else:
 				button.disabled = false
 				button.tooltip_text = ""
@@ -38,5 +38,11 @@ func setup(map_dict, locks_dict, current, portal):
 
 func teleport(map_name):
 	var scene_path = maps[map_name]
+	if map_name == "Aubrialis" and GlobalData.quest_step == 8:
+		GlobalData.quest_step = 9
+		GlobalData.create_save()
+	if map_name == "Rhollow" and GlobalData.quest_step == 15:
+		GlobalData.quest_step = 16
+		GlobalData.create_save()
 	portal_ref.travel_to(scene_path)
 	queue_free()

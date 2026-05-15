@@ -26,6 +26,9 @@ func _ready():
 
 	hotbar_node = preload("res://inventory/hotbar.tscn").instantiate()
 	$CanvasLayer.add_child(hotbar_node)
+	
+	var quest_panel = preload("res://quest_panel.tscn").instantiate()
+	$CanvasLayer.add_child(quest_panel)	
 
 	var playerCharPath = GlobalData.playerCharPath
 	var playerNode = load(playerCharPath).instantiate()

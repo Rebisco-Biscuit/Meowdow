@@ -1,4 +1,11 @@
-join Echofall (Echofall Sit In Throne) center
-Echofall: You have come to kill me??
-Echofall: I can see you have the seeds.
-Echofall (Echofall Mad): Let's end this
+if {Thaw.gloomberry_count} >= 1.0:
+	join Echofall (Echofall Sit In Throne) center
+	Echofall: ...
+	Echofall: You have come to kill me?
+	Echofall: I can see you have the seeds.
+	Echofall (Echofall Mad): Let's end this
+	set {Thaw.echofall_defeated} = true
+elif {Thaw.gloomberry_count} < 1.0:
+	join Echofall (Echofall Sit In Throne) center
+	Echofall: ...
+	Echofall: Scram.

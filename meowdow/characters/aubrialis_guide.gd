@@ -10,7 +10,9 @@ var player_inside = false
 var idle_timer := 0.0
 var idle_interval := 5.0
 
+# --- Dialogue state ---
 var is_talking = false
+
 var bg_scene = preload("res://DialogueBackground.tscn")
 
 func _ready():
@@ -47,13 +49,13 @@ func start_dialogue():
 		child.process_mode = Node.PROCESS_MODE_ALWAYS
 
 	Dialogic.timeline_ended.connect(func():
+		print(GlobalData.quest_step)
 		GlobalData.sync_from_dialogic()
 		is_talking = false
 		bg.queue_free()
 
-		# Advance quest after intro
-		if GlobalData.quest_step == 8:
-			GlobalData.quest_step = 9  # next: talk to Frostcribe
+		if GlobalData.quest_step == 9:
+			GlobalData.quest_step = 10  # next: talk to Frostcribe
 			GlobalData.create_save()
 
 		prompt.visible = player_inside

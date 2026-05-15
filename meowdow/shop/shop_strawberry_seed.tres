@@ -12,6 +12,6 @@ region = Rect2(0, 144, 16, 16)
 script = ExtResource("1_7udhg")
 item_scene = ExtResource("2_v4o1p")
 icon = SubResource("AtlasTexture_0h12k")
-item_name = "Purpleberries"
+item_name = "Gloomberry"
 locked = true
 unlock_map = "rhollow"

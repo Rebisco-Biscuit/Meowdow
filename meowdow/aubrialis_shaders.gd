@@ -27,10 +27,14 @@ func _ready():
 	hotbar_node = preload("res://inventory/hotbar.tscn").instantiate()
 	$CanvasLayer.add_child(hotbar_node)
 
+	var quest_panel = preload("res://quest_panel.tscn").instantiate()
+	$CanvasLayer.add_child(quest_panel)	
+	
+	
 	var playerCharPath = GlobalData.playerCharPath
 	var playerNode = load(playerCharPath).instantiate()
 	add_child(playerNode)
-
+	
 	if GlobalData.last_position != Vector2.ZERO:
 		playerNode.global_position = GlobalData.last_position
 	else:
@@ -103,6 +107,7 @@ func _try_interact():
 	if planted_cells.has(key):
 		var crop = planted_cells[key]
 		if crop.stage == crop.data.stage_rects.size():
+			# Quest progress is handled by GlobalData.count_crop_in_inventory (called deferred from Crop.harvest)
 			crop.harvest()
 			planted_cells.erase(key)
 			GlobalData.saved_crops.erase(key)
@@ -136,7 +141,7 @@ func _try_interact():
 func _process(_delta):
 	if cat_body == null:
 		return
-
+	
 	GlobalData.last_position = cat_body.global_position
 
 	for key in planted_cells.keys():

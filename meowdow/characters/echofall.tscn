@@ -1,9 +1,10 @@
 [gd_scene format=3 uid="uid://cobe0pyodbssc"]
 
-[ext_resource type="Script" uid="uid://bxr7bowlc2acr" path="res://characters/dewpaw.gd" id="1_7wqrj"]
 [ext_resource type="Texture2D" uid="uid://baokpiq7os6do" path="res://assets/shadow.png" id="1_bws04"]
+[ext_resource type="Script" uid="uid://v6pkioejs64d" path="res://characters/echofall.gd" id="1_nd5el"]
 [ext_resource type="Texture2D" uid="uid://cqhw536mw1a0p" path="res://assets/Meow-Sprites/Free pack/echofall.png" id="2_7wqrj"]
 [ext_resource type="FontFile" uid="uid://temvh5pyi624" path="res://assets/Minecraft.ttf" id="3_00ktb"]
+[ext_resource type="Texture2D" uid="uid://cfu6em5siq51d" path="res://assets/UI-Sprites.png" id="5_nd5el"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cfdtg"]
 atlas = ExtResource("2_7wqrj")
@@ -51,8 +52,12 @@ expand_margin_top = 2.0
 expand_margin_right = 2.0
 expand_margin_bottom = 2.0
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_unt7v"]
+atlas = ExtResource("5_nd5el")
+region = Rect2(640, 128, 32, 32)
+
 [node name="Node2D" type="Node2D" unique_id=879051880]
-script = ExtResource("1_7wqrj")
+script = ExtResource("1_nd5el")
 
 [node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1674609189]
 modulate = Color(1, 1, 1, 0.37254903)
@@ -73,10 +78,10 @@ position = Vector2(0, -3)
 shape = SubResource("CircleShape2D_7wqrj")
 
 [node name="Label" type="Label" parent="." unique_id=755275719]
-offset_left = -19.0
-offset_top = -27.000002
-offset_right = 37.0
-offset_bottom = -12.000002
+offset_left = -11.000004
+offset_top = -27.000004
+offset_right = 44.999996
+offset_bottom = -12.000004
 scale = Vector2(0.7, 0.7)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.3137255)
 theme_override_constants/shadow_outline_size = 5
@@ -96,6 +101,14 @@ theme_override_fonts/font = ExtResource("3_00ktb")
 theme_override_font_sizes/font_size = 14
 theme_override_styles/normal = SubResource("StyleBoxFlat_5egy2")
 text = "Press \"E\" to interact"
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=180049704]
+offset_left = -29.0
+offset_top = -30.0
+offset_right = 11.0
+offset_bottom = 10.0
+scale = Vector2(0.4, 0.4)
+texture = SubResource("AtlasTexture_unt7v")
 
 [connection signal="body_entered" from="InteractionZone" to="." method="_on_interaction_zone_body_entered"]
 [connection signal="body_exited" from="InteractionZone" to="." method="_on_interaction_zone_body_exited"]

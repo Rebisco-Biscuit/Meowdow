@@ -1,13 +1,13 @@
 join Dewpaw rightmost
 Dewpaw (Neutral): Hello there!! you must be the traveller that cat was talking about!!
 Dewpaw: Are you done planting yet??
-if {Thaw.gigglerain_count} < 100.0:
+if {Thaw.gigglegrain_count} < 100.0:
 	- I haven't planted enough yet.
 		Dewpaw (Neutral): Looks like you're not done planting enough Gigglerains traveller.
 		Dewpaw: Come back when you're ready!!!!
 		Dewpaw (Dewpawwink): Bye bye!!
 		[end_timeline]
-elif {Thaw.gigglerain_count} == 100.0:
+elif {Thaw.gigglegrain_count} >= 100.0:
 	- I haven't planted enough yet.
 		Dewpaw (Neutral): Looks like you're not done planting enough Gigglegrain traveller.
 		Dewpaw: Come back when you're ready!!!!

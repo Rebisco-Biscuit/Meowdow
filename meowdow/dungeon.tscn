@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://13bqcwaqg8y3" path="res://assets/World of Solaria Demo Pack Update 04/Solaria Palette.png" id="2_noicg"]
 [ext_resource type="PackedScene" uid="uid://cobe0pyodbssc" path="res://characters/echofall.tscn" id="3_orq0m"]
 [ext_resource type="PackedScene" uid="uid://ofo0me5w35v7" path="res://door.tscn" id="5_my81p"]
+[ext_resource type="PackedScene" uid="uid://ccu4568spkpig" path="res://entity.tscn" id="6_vol8w"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qu0b2"]
 texture = ExtResource("1_6elmv")
@@ -1571,7 +1572,7 @@ randomness = 1.0
 trail_lifetime = 6.0
 process_material = SubResource("ParticleProcessMaterial_vol8w")
 
-[node name="Node2D" parent="." unique_id=879051880 instance=ExtResource("3_orq0m")]
+[node name="Echofall" parent="." unique_id=879051880 instance=ExtResource("3_orq0m")]
 position = Vector2(855, 548)
 
 [node name="playerSpawnPoint" type="Marker2D" parent="." unique_id=1996394948]
@@ -1585,3 +1586,7 @@ position = Vector2(408, 20)
 stream = SubResource("AudioStreamMP3_my81p")
 volume_db = -1.0
 autoplay = true
+
+[node name="Entity" parent="." unique_id=299663916 instance=ExtResource("6_vol8w")]
+visible = false
+position = Vector2(952, 625)

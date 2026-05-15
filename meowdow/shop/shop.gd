@@ -115,7 +115,7 @@ func _on_item_pressed(shop_item: ShopItem):
 	seed.queue_free()
 
 	# Advance quest if on buying step
-	if GlobalData.quest_step == 1:
+	if GlobalData.quest_step == 1 and shop_item.item_name.to_lower() == "gigglegrain":
 		GlobalData.quest_step = 2
 		GlobalData.create_save()
 

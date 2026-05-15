@@ -46,11 +46,11 @@ func complete_quest1():
 		return
 
 	# --- Max out all quest counters ---
-	GlobalData.gigglerain_count = 100
+	GlobalData.gigglegrain_count = 100
 	GlobalData.wheepingwheat_count = 1
 	GlobalData.quest_step = 8
 	GlobalData.aubrialis_unlocked = true
-	GlobalData.rhollow_unlocked = true
+	GlobalData.rhollow_unlocked = false
 	GlobalData.has_received_starter_catnips = true
 
 	# --- Sync to Dialogic ---

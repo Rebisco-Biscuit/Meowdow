@@ -4,13 +4,14 @@ if {Thaw.wheepingwheat_count} == 0.0:
 	- No nothing, just wanted to meet you!
 		"Old Jerry" (Old Jerry Bye): Okay traveller!! Stay as you want and never let me see you grin, or you shall be executed!
 		[end_timeline]
-elif {Thaw.wheepingwheat_count} == 1.0:
+elif {Thaw.wheepingwheat_count} >= 1.0:
 	- No nothing, just wanted to meet you!
 		"Old Jerry" (Old Jerry Bye): Okay traveller!! Stay as you want and never let me see you grin, or you shall be executed!
 	- I want to show you something!
 		"Old Jerry" (sang joy): Wow!!!! You are making me so happy ..Show me what is it that you have?
 		"Old Jerry": Wheeping wheat??! you want me to taste it?
 		- Yes of course
+			set {Thaw.keeper_choice1} = true
 			"Old Jerry": This is the most tasty crop I have ever tasted
 			"Old Jerry" (Old Jerrry Cry): But..but.."I couldn't save her. So I tried to make everyone forget. I'm sorry."
 			"Old Jerry" (Old Jery So Cry): Thank you for making me realize how acceptance makes everything feel lighter than isolation.
@@ -19,5 +20,7 @@ elif {Thaw.wheepingwheat_count} == 1.0:
 			"Old Jerry" (Old Jerry Bye): Bye bye!!
 			[end_timeline]
 		- No,nothing!!
-			join "Old Jerry" rightmost
-			jump end
+			set {Thaw.keeper_choice1} = false
+			"Old Jerry" (Old Jerry Bye): Bye!
+			leave "Old Jerry"
+			[end_timeline]

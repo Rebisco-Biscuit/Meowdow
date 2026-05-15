@@ -3,6 +3,7 @@ extends TileMap
 const MAP_NAME = "dungeon"
 var hotbar_node
 var cat_body = CharacterBody2D
+@onready var posa = $Entity
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	get_tree().paused = false
@@ -13,6 +14,12 @@ func _ready():
 
 	hotbar_node = preload("res://inventory/hotbar.tscn").instantiate()
 	$CanvasLayer.add_child(hotbar_node)
+
+	var quest_panel = preload("res://quest_panel.tscn").instantiate()
+	$CanvasLayer.add_child(quest_panel)	
+	
+	if GlobalData.echofall_defeated == true and GlobalData.quest_step == 20:
+		posa.visible = true
 
 	var playerCharPath = GlobalData.playerCharPath
 	var playerNode = load(playerCharPath).instantiate()

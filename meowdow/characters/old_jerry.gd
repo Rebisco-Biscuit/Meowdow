@@ -36,15 +36,16 @@ func start_dialogue():
 		child.process_mode = Node.PROCESS_MODE_ALWAYS
 
 	Dialogic.timeline_ended.connect(func():
-		# Sync Dialogic → GlobalData after ending
+		# Sync Dialogic → GlobalData after ending		
 		GlobalData.sync_from_dialogic()
 
 		is_talking = false
 		bg.queue_free()
 
 		if GlobalData.quest_step == 7:
-			GlobalData.aubrialis_unlocked = true
-			GlobalData.quest_step = 8  # next: find statue to Aubrialis
+			if GlobalData.old_jerry_choice == true:
+				GlobalData.aubrialis_unlocked = true
+				GlobalData.quest_step = 8
 			GlobalData.create_save()
 			print("Aubrialis unlocked!")
 

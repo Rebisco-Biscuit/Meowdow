@@ -1,87 +1,71 @@
 [style name="Town1"]
 join Thaw (Neutral) rightmost [animation="Bounce In"]
-# When mission in town is completed
-if {Thaw.event_done} == true:
+
+# When mission is completed
+if {Thaw.thaaw_quest} == true:
 	Thaw (Thaw Wwhy You Came Back): What brought you back here??
 	Thaw (Neutral): Your mission is done here traveller!
-	
 	Thaw (Neutral): Rhollow held stillness.
 	Thaw (Thaw Happy): Go to the next town to complete this mission of yours!
 	Thaw (Bye): Goodbye and Goodluck!!!!
 	[end_timeline]
+
 # When mission not started yet
-if {Thaw.quest_started} == false:
+if {Thaw.thaaw_quest} == false and {Thaw.thaaw_quest_start} == false:
 	Thaw (Bye): You… are new.
-	
 	Thaw (Neutral): I am Thaw. I draw warmth into things that should not exist. atleast here!
-	
 	Thaw (Neutral): This town does not need new growth.
-	
 	Thaw (Thaw Happy): But if you insist on staying…
-	
-	Thaw (Thaw Happy): Plant 150 Frostbell and 150 Snowbloom.
-	
+	Thaw (Thaw Happy): Plant 150 Frostbells and 150 Snowblooms.
 	Thaw (Neutral): They are just ingredients. Nothing more.
+	- 150?! But I don't have enough money to buy seeds!
+		Thaw (Thaw Happy): Oh!
+		Thaw (Neutral): Sell your crops to Catherine.
 	Thaw (Bye): Goodbye and Goodluck!!!
-	
-	set {Thaw.quest_started} = true
+	set {Thaw.thaaw_quest_start} = true
 	[end_timeline]
-# When mission started
-if {Thaw.quest_started} == true:
-	if {Thaw.frostbell_count} < 150.0:
-		if {Thaw.snowbloom_count} < 150.0:
-			Thaw (Thaw Happy): Seem's like someone is back!!
-			Thaw (Thaw Should Come Back): What brings you here?? I'm pretty sure you're not done yet! Are you?
-			- I haven't finished yet.
-				Thaw (Thaw Happy): Then return when you are done.
-				Thaw (Thaw Should Come Back): 150 Frostbell. 150 Snowbloom.
-				[end_timeline]
-if {Thaw.quest_started} == true:
-	if {Thaw.frostbell_count} >= 150.0:
-		if {Thaw.snowbloom_count} >= 150.0:
-			Thaw (Thaw Happy): Seem's like someone is back!!
-			Thaw (Thaw Should Come Back): What brings you here?? I'm pretty sure you're not done yet! Are you?
-			- I haven't finished yet.
-				Thaw (Thaw Happy): Then return when you are done.
-				Thaw (Thaw Should Come Back): 150 Frostbell. 150 Snowbloom.
-				[end_timeline]
-			- I have completed it.
-				Thaw (Thaw Shocked): …So you actually did it.
-				
-				Thaw (Neutral): Good. Then listen carefully.
-				
-				Thaw (Neutral): Those plants were never ingredients.
-				
-				Thaw (Thaw Happy): I only wanted to see how far you would go.
-				
-				[show image three_keepers.png]
-				
-				Thaw (Thaw Sad): She never drew Morvain after he left.
-				Thaw (Thaw Sad): She erased him from memory.
-				Thaw (Thaw Sad): That is why she is frozen.
-				
-				Thaw (Neutral): She is not preserving music.
-				Thaw (Thaw Sad): She is running from pain.
-				
-				Thaw (Thaw Sad): The Three Keepers…
-				
-				Thaw (Thaw Shocked): Before everything broke.
-				
-				Thaw (Neutral): Rhollow held stillness.
-				Thaw (Neutral): Aubralis held warmth.
-				Thaw (Neutral): And the third carried memory.
-				
-				Thaw (Thaw Happy): Now listen.
-				
-				Thaw (Thaw Happy): Here's a thawbloom. I've been hiding it for someone courageous like you
-				
-				Thaw (Thaw Happy): It is not an ingredient.
-				
-				Thaw (Neutral): It is a reminder.
-				
-				(Gives you thawbloom plant and the image of the three keepers together)
-				
-				Thaw (Thaw Happy): Bye Byee
-				
-				set {Thaw.event_done} = true
-				[end_timeline]
+
+# When mission started but not complete
+elif {Thaw.thaaw_quest_start} == true and {Thaw.thaaw_quest} == false:
+	if {Thaw.frostbell_count} < 150.0 or {Thaw.snowbloom_count} < 150.0:
+		Thaw (Thaw Happy): Seem's like someone is back!!
+		Thaw (Thaw Should Come Back): What brings you here?? I'm pretty sure you're not done yet! Are you?
+		- I haven't finished yet.
+			Thaw (Thaw Happy): Then return when you are done.
+			Thaw (Thaw Should Come Back): 150 Frostbells. 150 Snowblooms.
+			- 150?! But I don't have enough money to buy seeds!
+				Thaw (Thaw Happy): Oh!
+				Thaw (Neutral): Sell your crops to Catherine.
+			[end_timeline]
+	elif {Thaw.frostbell_count} >= 150.0 and {Thaw.snowbloom_count} >= 150.0:
+		Thaw (Thaw Happy): Seem's like someone is back!!
+		Thaw (Thaw Should Come Back): What brings you here?? I'm pretty sure you're not done yet! Are you?
+		- I haven't finished yet.
+			Thaw (Thaw Happy): Then return when you are done.
+			Thaw (Thaw Should Come Back): 150 Frostbells. 150 Snowblooms.
+			[end_timeline]
+		- I have completed it.
+			Thaw (Thaw Shocked): …So you actually did it.
+			Thaw (Neutral): Good. Then listen carefully.
+			Thaw (Neutral): Those plants were never ingredients.
+			Thaw (Thaw Happy): I only wanted to see how far you would go.
+			[show image three_keepers.png]
+			Thaw (Thaw Sad): She never drew Morvain after he left.
+			Thaw (Thaw Sad): She erased him from memory.
+			Thaw (Thaw Sad): That is why she is frozen.
+			Thaw (Neutral): She is not preserving music.
+			Thaw (Thaw Sad): She is running from pain.
+			Thaw (Thaw Sad): The Three Keepers…
+			Thaw (Thaw Shocked): Before everything broke.
+			Thaw (Neutral): Rhollow held stillness.
+			Thaw (Neutral): Aubralis held warmth.
+			Thaw (Neutral): And the third carried memory.
+			Thaw (Thaw Happy): Now listen.
+			Thaw (Thaw Happy): Here's a thawbloom. I've been hiding it for someone courageous like you
+			Thaw (Thaw Happy): It is not an ingredient.
+			Thaw (Neutral): It is a reminder.
+			(Gives you thawbloom plant and the image of the three keepers together)
+			Thaw (Thaw Happy): Bye Byee
+			set {Thaw.thaaw_quest} = true
+			set {Thaw.frostcribe_first_interaction} = false
+			[end_timeline]

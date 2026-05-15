@@ -1,12 +1,17 @@
-join Entity center
-Entity: Hello traveller!You have done great in defeating what must be eliminated
-Entity: You can choose to go back to the world where you belong
-Entity: or choose a different path for this story
-- Finish the story
-	Entity: May the First Gardener bless you with all your kindness
-	Entity: Goodbye!
-- Rewrite the story
-	Entity: Since you've chosen to rewrite your story
-	Entity: Go back with this Seed of Kagaguhan
-	Entity: This will help you rewrite your encounter with Echofall.
-	Entity: and possibly, end this story in a way no one is hurt
+if {Thaw.echofall_defeated} == true:
+	join Entity center
+	Entity: Hello traveller! You have done great in defeating what must be eliminated
+	Entity: You can choose to go back to the world where you belong
+	Entity: or choose a different path for this story
+	- Finish the story
+		set {Thaw.entity_choice} = false
+		Entity: May the First Gardener bless you with all your kindness
+		Entity: Goodbye!
+		[end_timeline]
+	- Rewrite the story
+		set {Thaw.entity_choice} = true
+		Entity: Since you've chosen to rewrite your story
+		Entity: Go back with this Seed of Rhomato
+		Entity: This will help you rewrite your encounter with Echofall.
+		Entity: and possibly, end this story in a way no one is hurt
+		[end_timeline]

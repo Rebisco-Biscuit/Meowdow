@@ -1,14 +1,13 @@
 [style name="Town1"]
 join Frostcribe rightmost [animation="Bounce In"]
-set {Thaw.event_done} = true
 Frostcribe (Neutral): And who might you be?
-if {Thaw.event_done} == false:
+if {Thaw.frostcribe_first_interaction} == true:
 	- Hello, I am new here.
 		Frostcribe (Neutral): I can see... Everything in this town is under my control.
 		Frostcribe (Neutral): I have preserved every note the First Gardener ever sang.
 		Frostcribe (Neutral): We do not need new music. We have the old.
 		Frostcribe (Neutral): Stay as long as you like. But do not plant anything warm.
-if {Thaw.event_done} == true:
+if {Thaw.thaaw_quest} == true and {Thaw.frostcribe_first_interaction} == false:
 	- Hello, I am new here.
 		Frostcribe (Neutral): I can see... Everything in this town is under my control.
 		Frostcribe (Neutral): I have preserved every note the First Gardener ever sang.

@@ -6,6 +6,5 @@ join Glow rightmost [animation="Slide From Right" length="1.0"]
 Who are you
 Glow: .........
 Are you not going to speak?
-join  center
 Glow: ......
 leave Glow [animation="Slide To Right" length="1.0"]

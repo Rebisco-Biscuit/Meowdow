@@ -12,10 +12,10 @@ func _ready():
 	shadow = Sprite2D.new()
 	shadow.region_enabled = true
 	shadow.centered = false
-	shadow.modulate = Color(0, 0, 0, 0.4)  # black, semi-transparent
-	shadow.z_index = -1  # always behind crop
+	shadow.modulate = Color(0, 0, 0, 0.4)
+	shadow.z_index = -1
 	add_child(shadow)
-		
+
 	region_enabled = true
 	texture = data.spritesheet
 	_update_sprite()
@@ -30,23 +30,16 @@ func _process(delta):
 
 func _update_sprite():
 	region_rect = data.stage_rects[stage - 1]
-	offset = Vector2(0, -region_rect.size.y / 2.0)	
+	offset = Vector2(0, -region_rect.size.y / 2.0)
 
 	shadow.texture = data.spritesheet
 	shadow.region_rect = data.stage_rects[stage - 1]
-	shadow.offset = Vector2(-6, -region_rect.size.y / 1.0)  # tweak this for shadow position
-	
+	shadow.offset = Vector2(-6, -region_rect.size.y / 1.0)
+
 func harvest():
-	if data.crop_name == "carrot":
-		GlobalData.gigglerain_count += 1
-		if GlobalData.gigglerain_count >= 100 and GlobalData.quest_step == 3:
-			GlobalData.quest_step = 4
-	if data.crop_name == "corn" and GlobalData.quest_step == 6:
-		GlobalData.wheepingwheat_count += 1
-		GlobalData.quest_step = 7
-	
 	var amount = randi_range(1, 5)
 
+	# --- Spawn collectables ---
 	for i in range(amount):
 		var item = data.harvestable_scene.instantiate()
 		item.global_position = global_position + Vector2(
@@ -54,4 +47,11 @@ func harvest():
 			randf_range(-8, 8)
 		)
 		get_parent().add_child(item)
+
+	# --- Count how many actually went into inventory ---
+	# We read the inventory AFTER spawning so collectables
+	# that get auto-collected register correctly.
+	# Use amount as the count since each collectable = 1 insert.
+	GlobalData.on_crop_harvested(data.crop_name, amount)
+
 	queue_free()

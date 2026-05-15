@@ -14,12 +14,21 @@ var has_received_starter_catnips: bool = false
 
 # --- QUEST SYSTEM ---
 var quest_step: int = 0
-var gigglerain_count: int = 0
+var gigglegrain_count: int = 0
 var wheepingwheat_count: int = 0
 var aubrialis_unlocked: bool = false
 var rhollow_unlocked: bool = false
 var frostbell_count: int = 0
 var snowbloom_count: int = 0
+var gloomberry_count: int = 0
+var rhomato_count: int = 0
+
+# --- INTERACTIONS ---
+var old_jerry_choice: bool = false
+var thaaw_quest_done: bool = false
+var thaaw_quest_start: bool = false
+var echofall_defeated: bool = false
+var entity_choice: bool = false
 
 # --- CURSOR ---
 var arrow
@@ -35,8 +44,6 @@ func _ready():
 
 func load_cursor_by_cat():
 	var color = selectedCatType
-	print(color)
-	# fallback in case nothing is set (because humans forget things)
 	if color == "":
 		color = "white"
 
@@ -62,22 +69,79 @@ func scale_cursor(texture: Texture2D, scale: int) -> ImageTexture:
 	image.resize(new_size.x, new_size.y, Image.INTERPOLATE_NEAREST)
 	return ImageTexture.create_from_image(image)
 
+# --- QUEST ADVANCEMENT ---
+func on_crop_harvested(crop_name: String, amount: int):
+	match crop_name:
+		"carrot":
+			gigglegrain_count += amount
+			if gigglegrain_count >= 100 and quest_step == 3:
+				quest_step = 4
+				create_save()
+				print("Quest step 4: Talk to Dewpaw!")
+
+		"corn":
+			wheepingwheat_count += amount
+			if wheepingwheat_count >= 1 and quest_step == 6:
+				quest_step = 7  # talk to Old Jerry
+				create_save()
+				print("Quest step 7: Talk to Old Jerry!")
+
+		"beetroot":  # snowbloom
+			snowbloom_count += amount
+			_check_aubrialis_farming()
+
+		"berries":  # frostbell
+			frostbell_count += amount
+			_check_aubrialis_farming()
+			
+		"strawberry":
+			gloomberry_count += amount
+			if gloomberry_count >= 1 and quest_step == 18:
+				quest_step = 19
+				create_save()
+		
+		"tomato":
+			rhomato_count += amount
+			if rhomato_count >= 1 and quest_step == 22:
+				quest_step = 23
+				create_save()
+
+func _check_aubrialis_farming():
+	if quest_step == 12 and frostbell_count >= 150 and snowbloom_count >= 150:
+		quest_step = 13
+		create_save()
+		print("Quest step 12: Talk to Thaaw again!")
+
 # --- DIALOGIC SYNC ---
 func sync_to_dialogic():
-	Dialogic.VAR.Thaw.gigglerain_count = gigglerain_count
-	Dialogic.VAR.Thaw.wheepingwheat_count = wheepingwheat_count  # fixed: was .wheepingwheat
+	Dialogic.VAR.Thaw.gigglegrain_count = gigglegrain_count
+	Dialogic.VAR.Thaw.wheepingwheat_count = wheepingwheat_count
 	Dialogic.VAR.Thaw.quest_started = quest_step > 0
 	Dialogic.VAR.Thaw.town1event = quest_step >= 4
-	Dialogic.VAR.Thaw.town1event2 = quest_step >= 7
+	Dialogic.VAR.Thaw.town1event2 = quest_step >= 23
 	Dialogic.VAR.Thaw.event_done = aubrialis_unlocked
 	Dialogic.VAR.Thaw.frostbell_count = frostbell_count
 	Dialogic.VAR.Thaw.snowbloom_count = snowbloom_count
+	Dialogic.VAR.Thaw.rhomato_count = rhomato_count
+	Dialogic.VAR.Thaw.gloomberry_count = gloomberry_count	
+	Dialogic.VAR.Thaw.keeper_choice1 = old_jerry_choice
+	Dialogic.VAR.Thaw.thaaw_quest_start = thaaw_quest_start
+	Dialogic.VAR.Thaw.thaaw_quest = thaaw_quest_done
+	Dialogic.VAR.Thaw.echofall_defeated = echofall_defeated
+	Dialogic.VAR.Thaw.entity_cgoice = entity_choice
 
 func sync_from_dialogic():
-	gigglerain_count = int(Dialogic.VAR.Thaw.gigglerain_count)
+	gigglegrain_count = int(Dialogic.VAR.Thaw.gigglegrain_count)
 	wheepingwheat_count = int(Dialogic.VAR.Thaw.wheepingwheat_count)
 	frostbell_count = int(Dialogic.VAR.Thaw.frostbell_count)
 	snowbloom_count = int(Dialogic.VAR.Thaw.snowbloom_count)
+	gloomberry_count = int(Dialogic.VAR.Thaw.gloomberry_count)
+	rhomato_count = int(Dialogic.VAR.Thaw.rhomato_count)	
+	old_jerry_choice = bool(Dialogic.VAR.Thaw.keeper_choice1)
+	thaaw_quest_done = bool(Dialogic.VAR.Thaw.thaaw_quest)
+	thaaw_quest_start = bool(Dialogic.VAR.Thaw.thaaw_quest_start)
+	echofall_defeated = bool(Dialogic.VAR.Thaw.echofall_defeated)
+	entity_choice = bool(Dialogic.VAR.Thaw.entity_choice)
 
 func check_save():
 	has_save = FileAccess.file_exists(SAVE_PATH)
@@ -93,12 +157,19 @@ func create_save():
 
 	# Save quest state
 	file.store_line(str(quest_step))
-	file.store_line(str(gigglerain_count))
+	file.store_line(str(gigglegrain_count))
 	file.store_line(str(wheepingwheat_count))
 	file.store_line(str(aubrialis_unlocked))
 	file.store_line(str(rhollow_unlocked))
 	file.store_line(str(frostbell_count))
 	file.store_line(str(snowbloom_count))
+	file.store_line(str(rhomato_count))
+	file.store_line(str(gloomberry_count))	
+	file.store_line(str(old_jerry_choice))
+	file.store_line(str(thaaw_quest_done))
+	file.store_line(str(thaaw_quest_start))
+	file.store_line(str(echofall_defeated))
+	file.store_line(str(entity_choice))
 
 	# Save inventory
 	var inventory = get_player_inventory()
@@ -140,12 +211,19 @@ func load_save():
 
 	# Load quest state
 	quest_step = int(file.get_line())
-	gigglerain_count = int(file.get_line())
+	gigglegrain_count = int(file.get_line())
 	wheepingwheat_count = int(file.get_line())
 	aubrialis_unlocked = file.get_line() == "true"
-	rhollow_unlocked = file.get_line() == "true"  # fixed: was missing
+	rhollow_unlocked = file.get_line() == "true"
 	frostbell_count = int(file.get_line())
 	snowbloom_count = int(file.get_line())
+	rhomato_count = int(file.get_line())
+	gloomberry_count = int(file.get_line())	
+	old_jerry_choice = (file.get_line()) == "true"
+	thaaw_quest_done = (file.get_line()) == "true"	
+	thaaw_quest_start = (file.get_line()) == "true"
+	echofall_defeated = (file.get_line()) == "true"
+	entity_choice = (file.get_line()) == "true"
 
 	# Load inventory and crops
 	saved_slots.clear()
@@ -185,3 +263,30 @@ func get_player_inventory() -> Inv:
 	if cat_body == null:
 		return null
 	return cat_body.inventory
+
+# --- RESET DATA ---
+func reset():
+	playerCharPath = ""
+	selectedCatType = ""
+	catnips = 0
+	has_save = false
+	last_position = Vector2.ZERO
+	last_map = "res://Vinalore.tscn"
+	saved_slots = []
+	saved_crops = {}
+	current_map = ""
+	has_received_starter_catnips = false
+	quest_step = 0
+	gigglegrain_count = 0
+	wheepingwheat_count = 0
+	aubrialis_unlocked = false
+	rhollow_unlocked = false
+	frostbell_count = 0
+	snowbloom_count = 0
+	rhomato_count = 0
+	gloomberry_count = 0	
+	old_jerry_choice = false
+	thaaw_quest_done = false
+	thaaw_quest_start = false
+	echofall_defeated = false
+	entity_choice = false

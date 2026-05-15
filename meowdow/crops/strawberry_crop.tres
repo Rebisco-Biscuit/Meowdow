@@ -10,7 +10,7 @@ region = Rect2(32, 272, 128, 16)
 
 [resource]
 script = ExtResource("2_o8tgn")
-crop_name = "radish"
+crop_name = "strawberry"
 spritesheet = SubResource("AtlasTexture_87ni2")
 stage_rects = Array[Rect2]([Rect2(0, 0, 16, 16), Rect2(32, 0, 32, 16), Rect2(64, 0, 32, 16), Rect2(96, 0, 32, 16)])
 harvestable_scene = ExtResource("1_7xfqg")

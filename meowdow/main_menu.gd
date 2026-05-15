@@ -27,6 +27,7 @@ func _on_new_game_pressed():
 	if FileAccess.file_exists(GlobalData.SAVE_PATH):
 		DirAccess.remove_absolute(GlobalData.SAVE_PATH)
 
+	GlobalData.reset()
 	get_tree().change_scene_to_file("res://selection_screen.tscn")
 
 func _on_settings_pressed():
