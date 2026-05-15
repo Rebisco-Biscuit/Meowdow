@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://cfu6em5siq51d" path="res://assets/UI-Sprites.png" id="8_k1fcs"]
 [ext_resource type="Texture2D" uid="uid://digcbq5wyohpf" path="res://assets/Meow-Sprites/Free pack/cat 1.9.png" id="10_8opyg"]
 [ext_resource type="Texture2D" uid="uid://3ihr0hixomly" path="res://assets/Meow-Sprites/Free pack/cat 1.png" id="10_aays5"]
+[ext_resource type="AudioStream" uid="uid://7dlmimkoysk5" path="res://meow-sic/Wonder by Chillpeach.mp3" id="12_h0dp4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oo3vv"]
 atlas = ExtResource("10_aays5")
@@ -822,6 +823,11 @@ position = Vector2(427.00003, 342.00003)
 scale = Vector2(14, 14)
 sprite_frames = SubResource("SpriteFrames_h0dp4")
 centered = false
+
+[node name="BGMusic" type="AudioStreamPlayer2D" parent="." unique_id=486414954]
+stream = ExtResource("12_h0dp4")
+autoplay = true
+bus = &"Music"
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="MarginContainer2/Button" to="." method="_on_button_pressed"]
