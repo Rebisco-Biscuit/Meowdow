@@ -1,4 +1,9 @@
 join Echofall rightmost
+if {town3.town_done} == true:
+	Echofall: I may be the keeper of Stillnes
+	Echofall: But I will forever be moving forward for this kingdom my creator left me with
+	Echofall: Thank you!
+	[end_timeline]
 Echofall: Why have you planted this?
 Player: I'm not sure but it seems you can sense it from afar.
 Player: I'm sensing it has something to do with you. Echofall
@@ -14,3 +19,4 @@ Echofall: Daughter..
 Player: She is your daugther?
 Echofall: I'm sorry for what I have done to you my daughter
 Echofall: I thought if I became powerful enough, I could fix everything. But I was never meant to fix anything alone. I was meant to be part of… three.
+set {town3.town_done} = true
