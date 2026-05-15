@@ -1,5 +1,10 @@
 join "Old Jerry" rightmost
 "Old Jerry": Traveller!!! Is there anything I can help you?
+if {town1.town_done} == true:
+	"Old Jerry" (sang joy): Hello again traveller!!
+	"Old Jerry" (Old Jerrry Cry): Thank you for making me feel that it was never a sin to grieve and accept unfortunate events
+	"Old Jerry" (Old Jerry Bye): Until we meet again!!
+	[end_timeline]
 if {Thaw.wheepingwheat_count} == 0.0:
 	- No nothing, just wanted to meet you!
 		"Old Jerry" (Old Jerry Bye): Okay traveller!! Stay as you want and never let me see you grin, or you shall be executed!
@@ -18,6 +23,7 @@ elif {Thaw.wheepingwheat_count} >= 1.0:
 			"Old Jerry" (Neutral): Here's the Seed of Joy, one of the fragments left by the First Gardener after he faded.
 			"Old Jerry" (Neutral): Go to Aubrialis  their keeper froze everything because she thinks memory is enough. It's not. She needs to feel again.
 			"Old Jerry" (Old Jerry Bye): Bye bye!!
+			set {town1.town_done} = true
 			[end_timeline]
 		- No,nothing!!
 			set {Thaw.keeper_choice1} = false

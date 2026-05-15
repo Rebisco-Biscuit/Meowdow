@@ -1,4 +1,5 @@
 join "NPC GUIDE" rightmost [animation="Bounce In"]
+if {town2.town_done} == true:
 "NPC GUIDE" (happy hello): Hello again traveller!! You have arrived to your second desination.
 "NPC GUIDE" (happy): This is Aubrialis. Everything here is so cold.. Colder since the Great Stillness
 "NPC GUIDE" (sad): This towns aura is always cold but it was of comfort. Now it's just unbearable cold.
