@@ -129,63 +129,16 @@ text = "🐍 Length: 0"
 horizontal_alignment = 1
 
 [node name="StartButton" type="Button" parent="VBoxContainer2/VBoxContainer" unique_id=1148893866]
-custom_minimum_size = Vector2(100, 45)
+custom_minimum_size = Vector2(200, 45)
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_colors/font_color = Color(0.21230447, 0.21230504, 0.21230465, 1)
 theme_override_fonts/font = ExtResource("2_i5yno")
+theme_override_font_sizes/font_size = 23
 theme_override_styles/normal = SubResource("StyleBoxTexture_fnv16")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_tw4ul")
 theme_override_styles/hover = SubResource("StyleBoxTexture_jywba")
 text = "Start"
-
-[node name="ResultPanel" type="Panel" parent="." unique_id=847402257]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="ColorRect" type="ColorRect" parent="ResultPanel" unique_id=1907396455]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.47, 0.47, 0.47, 0.5019608)
-
-[node name="VBoxContainer" type="VBoxContainer" parent="ResultPanel" unique_id=2124837397]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -102.5
-offset_top = -60.0
-offset_right = 102.5
-offset_bottom = 60.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="ResultLabel" type="Label" parent="ResultPanel/VBoxContainer" unique_id=1233368756]
-layout_mode = 2
-text = "🐍 Snake Length: X words!"
-
-[node name="RewardLabel" type="Label" parent="ResultPanel/VBoxContainer" unique_id=392442698]
-layout_mode = 2
-text = "🌱 You earned X seeds!"
-
-[node name="PlayAgainButton" type="Button" parent="ResultPanel/VBoxContainer" unique_id=911905459]
-layout_mode = 2
-text = "Play Again"
-
-[node name="QuitButton" type="Button" parent="ResultPanel/VBoxContainer" unique_id=1748307102]
-layout_mode = 2
-text = "Back to Map"
 
 [node name="PlayerSide" type="VBoxContainer" parent="." unique_id=70754405]
 layout_mode = 1
@@ -238,11 +191,11 @@ theme_override_fonts/font = ExtResource("2_i5yno")
 theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxEmpty_i5yno")
 
-[node name="Label" type="MarginContainer" parent="PlayerSide" unique_id=148609007]
+[node name="Label" type="VBoxContainer" parent="PlayerSide" unique_id=290583604]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 10
-theme_override_constants/margin_bottom = 60
+theme_override_constants/separation = 18
 
 [node name="PlayerLabel" type="Label" parent="PlayerSide/Label" unique_id=1668171529]
 layout_mode = 2
@@ -252,6 +205,18 @@ theme_override_fonts/font = ExtResource("2_i5yno")
 theme_override_font_sizes/font_size = 60
 text = "YOU"
 horizontal_alignment = 1
+
+[node name="WordCount" type="Label" parent="PlayerSide/Label" unique_id=304731640]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("2_i5yno")
+theme_override_font_sizes/font_size = 60
+text = "words: $"
+horizontal_alignment = 1
+
+[node name="Control" type="Control" parent="PlayerSide/Label" unique_id=1251292241]
+layout_mode = 2
 
 [node name="Player" type="AnimatedSprite2D" parent="PlayerSide" unique_id=1672102583]
 position = Vector2(2, 126)
@@ -319,13 +284,13 @@ scale = Vector2(15, 15)
 sprite_frames = SubResource("SpriteFrames_jywba")
 centered = false
 
-[node name="Label" type="MarginContainer" parent="DevSide" unique_id=1379710586]
+[node name="Label2" type="VBoxContainer" parent="DevSide" unique_id=316037366]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 10
-theme_override_constants/margin_bottom = 60
+theme_override_constants/separation = 18
 
-[node name="PlayerLabel" type="Label" parent="DevSide/Label" unique_id=1802249432]
+[node name="PlayerLabel" type="Label" parent="DevSide/Label2" unique_id=1958259014]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
@@ -333,3 +298,63 @@ theme_override_fonts/font = ExtResource("2_i5yno")
 theme_override_font_sizes/font_size = 60
 text = "DevName"
 horizontal_alignment = 1
+
+[node name="WordCount" type="Label" parent="DevSide/Label2" unique_id=1677879013]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("2_i5yno")
+theme_override_font_sizes/font_size = 60
+text = "words: $"
+horizontal_alignment = 1
+
+[node name="Control" type="Control" parent="DevSide/Label2" unique_id=1933911634]
+layout_mode = 2
+
+[node name="ResultPanel" type="Panel" parent="." unique_id=847402257]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="ResultPanel" unique_id=1907396455]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.47, 0.47, 0.47, 0.5019608)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ResultPanel" unique_id=2124837397]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -102.5
+offset_top = -60.0
+offset_right = 102.5
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ResultLabel" type="Label" parent="ResultPanel/VBoxContainer" unique_id=1233368756]
+layout_mode = 2
+text = "🐍 Snake Length: X words!"
+
+[node name="RewardLabel" type="Label" parent="ResultPanel/VBoxContainer" unique_id=392442698]
+layout_mode = 2
+text = "🌱 You earned X seeds!"
+
+[node name="PlayAgainButton" type="Button" parent="ResultPanel/VBoxContainer" unique_id=911905459]
+layout_mode = 2
+text = "Play Again"
+
+[node name="QuitButton" type="Button" parent="ResultPanel/VBoxContainer" unique_id=1748307102]
+layout_mode = 2
+text = "Back to Map"
