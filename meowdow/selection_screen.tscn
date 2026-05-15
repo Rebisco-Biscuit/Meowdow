@@ -1,22 +1,16 @@
 [gd_scene format=3 uid="uid://r6v8vpm0x4bh"]
 
 [ext_resource type="Script" uid="uid://rrpocub34w87" path="res://selection_screen.gd" id="1_02ils"]
-[ext_resource type="Texture2D" uid="uid://dp5myani3qarv" path="res://assets/screen/test-selection.png" id="2_h0dp4"]
 [ext_resource type="Texture2D" uid="uid://bj2bfids0vh1n" path="res://assets/icons/black_cat_icon.png" id="2_nf7ud"]
 [ext_resource type="PackedScene" uid="uid://bbf4xkn0hnkvx" path="res://characterSlot.tscn" id="2_yfmej"]
 [ext_resource type="FontFile" uid="uid://temvh5pyi624" path="res://assets/Minecraft.ttf" id="3_k1fcs"]
 [ext_resource type="Texture2D" uid="uid://dp5myani3qarv" path="res://assets/screen/test-selection.png" id="3_nlcot"]
-[ext_resource type="Shader" uid="uid://cdriroptpmuf3" path="res://selection_screen.gdshader" id="4_nlcot"]
 [ext_resource type="Texture2D" uid="uid://dq5mbll4bdb3j" path="res://assets/icons/orange_cat_icon.png" id="5_yvk22"]
 [ext_resource type="Texture2D" uid="uid://dpj50dqtygcnp" path="res://assets/icons/white_cat_icon.png" id="6_k1fcs"]
 [ext_resource type="Texture2D" uid="uid://bhfm771vnsiy0" path="res://assets/Meow-Sprites/Free pack/cat 1.6.png" id="8_h0dp4"]
 [ext_resource type="Texture2D" uid="uid://cfu6em5siq51d" path="res://assets/UI-Sprites.png" id="8_k1fcs"]
 [ext_resource type="Texture2D" uid="uid://digcbq5wyohpf" path="res://assets/Meow-Sprites/Free pack/cat 1.9.png" id="10_8opyg"]
 [ext_resource type="Texture2D" uid="uid://3ihr0hixomly" path="res://assets/Meow-Sprites/Free pack/cat 1.png" id="10_aays5"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_8txwl"]
-shader = ExtResource("4_nlcot")
-shader_parameter/blur_strength = 4.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oo3vv"]
 atlas = ExtResource("10_aays5")
@@ -673,7 +667,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_h0dp4")
+texture = ExtResource("3_nlcot")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1355494929]
 layout_mode = 1
@@ -764,10 +758,12 @@ catType = "white"
 
 [node name="Indicator" type="Sprite2D" parent="VBoxContainer/Panel" unique_id=877056138]
 z_as_relative = false
-position = Vector2(125.99999, 1.0000105)
-scale = Vector2(4.749998, 4.360001)
+position = Vector2(128, 1.66893e-06)
+scale = Vector2(4.5641026, 4.359999)
 texture = SubResource("AtlasTexture_d5wys")
 centered = false
+region_enabled = true
+region_rect = Rect2(4, 4, 24, 25)
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1486278129]
 layout_mode = 1

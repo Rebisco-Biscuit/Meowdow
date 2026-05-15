@@ -3,8 +3,7 @@
 [ext_resource type="Script" uid="uid://fblf6nmj7mkv" path="res://typing_game.gd" id="1_o3efb"]
 [ext_resource type="FontFile" uid="uid://temvh5pyi624" path="res://assets/Minecraft.ttf" id="2_i5yno"]
 [ext_resource type="Texture2D" uid="uid://cfu6em5siq51d" path="res://assets/UI-Sprites.png" id="3_fnv16"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i5yno"]
+[ext_resource type="Texture2D" uid="uid://bhfm771vnsiy0" path="res://assets/Meow-Sprites/Free pack/cat 1.6.png" id="4_fnv16"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jywba"]
 bg_color = Color(0.60776335, 0.61, 0.5429, 0.27450982)
@@ -16,6 +15,51 @@ expand_margin_top = 10.0
 expand_margin_bottom = 10.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8jvet"]
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fnv16"]
+texture = ExtResource("3_fnv16")
+texture_margin_left = 3.0
+texture_margin_top = 3.0
+texture_margin_right = 3.0
+texture_margin_bottom = 3.0
+region_rect = Rect2(11, 59, 26, 28)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tw4ul"]
+texture = ExtResource("3_fnv16")
+texture_margin_left = 3.0
+texture_margin_top = 3.0
+texture_margin_right = 3.0
+texture_margin_bottom = 3.0
+region_rect = Rect2(107, 59, 26, 26)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jywba"]
+texture = ExtResource("3_fnv16")
+texture_margin_left = 3.0
+texture_margin_top = 3.0
+texture_margin_right = 3.0
+texture_margin_bottom = 3.0
+region_rect = Rect2(59, 59, 26, 26)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i5yno"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oyyw8"]
+atlas = ExtResource("4_fnv16")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jywba"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oyyw8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Control" type="Control" unique_id=503632404]
 layout_mode = 3
@@ -27,69 +71,49 @@ grow_vertical = 2
 script = ExtResource("1_o3efb")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=725493672]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -250.0
-offset_top = -190.5
-offset_right = 250.0
-offset_bottom = 190.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 10
+custom_minimum_size = Vector2(502, 356)
+layout_mode = 0
+offset_left = 365.0
+offset_top = 67.0
+offset_right = 908.0
+offset_bottom = 423.0
+theme_override_constants/separation = 200
 
 [node name="TimerLabel" type="Label" parent="VBoxContainer" unique_id=1895487401]
 layout_mode = 2
 size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("2_i5yno")
+theme_override_font_sizes/font_size = 28
 text = "⏱ 60s"
 
 [node name="WordLabel" type="Label" parent="VBoxContainer" unique_id=1859958440]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_i5yno")
-theme_override_font_sizes/font_size = 128
+theme_override_font_sizes/font_size = 100
+horizontal_alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer" unique_id=557111251]
-layout_mode = 2
+[node name="VBoxContainer2" type="VBoxContainer" parent="." unique_id=557111251]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -250.0
+offset_top = -110.0
+offset_right = 250.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 8
 theme_override_constants/separation = 92
 
-[node name="NinePatchRect" type="NinePatchRect" parent="VBoxContainer/VBoxContainer" unique_id=1596929548]
-custom_minimum_size = Vector2(600, 70)
-layout_mode = 2
-texture = ExtResource("3_fnv16")
-region_rect = Rect2(59, 59, 26.132797, 26)
-patch_margin_left = 6
-patch_margin_top = 6
-patch_margin_right = 6
-patch_margin_bottom = 6
-
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/VBoxContainer/NinePatchRect" unique_id=797796078]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 10
-
-[node name="InputField" type="LineEdit" parent="VBoxContainer/VBoxContainer/NinePatchRect/MarginContainer" unique_id=1522204220]
-custom_minimum_size = Vector2(500, 40)
-layout_mode = 2
-theme_override_colors/font_color = Color(0.5686275, 0.47058824, 0.3647059, 1)
-theme_override_fonts/font = ExtResource("2_i5yno")
-theme_override_font_sizes/font_size = 32
-theme_override_styles/normal = SubResource("StyleBoxEmpty_i5yno")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/VBoxContainer" unique_id=322799787]
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer2" unique_id=322799787]
 layout_mode = 2
 theme_override_constants/separation = 20
 
-[node name="SnakeBar" type="ProgressBar" parent="VBoxContainer/VBoxContainer/VBoxContainer" unique_id=839408136]
+[node name="SnakeBar" type="ProgressBar" parent="VBoxContainer2/VBoxContainer" unique_id=839408136]
+visible = false
 layout_mode = 2
 theme_override_colors/font_color = Color(0.5686275, 0.47058824, 0.3647059, 1)
 theme_override_fonts/font = ExtResource("2_i5yno")
@@ -98,12 +122,21 @@ theme_override_styles/background = SubResource("StyleBoxFlat_jywba")
 theme_override_styles/fill = SubResource("StyleBoxFlat_8jvet")
 rounded = true
 
-[node name="ScoreLabel" type="Label" parent="VBoxContainer/VBoxContainer/VBoxContainer" unique_id=242775149]
+[node name="ScoreLabel" type="Label" parent="VBoxContainer2/VBoxContainer" unique_id=242775149]
+visible = false
 layout_mode = 2
 text = "🐍 Length: 0"
+horizontal_alignment = 1
 
-[node name="StartButton" type="Button" parent="VBoxContainer/VBoxContainer/VBoxContainer" unique_id=1148893866]
+[node name="StartButton" type="Button" parent="VBoxContainer2/VBoxContainer" unique_id=1148893866]
+custom_minimum_size = Vector2(100, 45)
 layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.21230447, 0.21230504, 0.21230465, 1)
+theme_override_fonts/font = ExtResource("2_i5yno")
+theme_override_styles/normal = SubResource("StyleBoxTexture_fnv16")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_tw4ul")
+theme_override_styles/hover = SubResource("StyleBoxTexture_jywba")
 text = "Start"
 
 [node name="ResultPanel" type="Panel" parent="." unique_id=847402257]
@@ -153,3 +186,150 @@ text = "Play Again"
 [node name="QuitButton" type="Button" parent="ResultPanel/VBoxContainer" unique_id=1748307102]
 layout_mode = 2
 text = "Back to Map"
+
+[node name="PlayerSide" type="VBoxContainer" parent="." unique_id=70754405]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 476.0
+grow_vertical = 2
+theme_override_constants/separation = 40
+
+[node name="Control" type="Control" parent="PlayerSide" unique_id=484349498]
+layout_mode = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="PlayerSide" unique_id=953501629]
+custom_minimum_size = Vector2(400, 70)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("3_fnv16")
+region_rect = Rect2(59, 59, 26.132797, 26)
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="MarginContainer" type="MarginContainer" parent="PlayerSide/NinePatchRect" unique_id=1348507702]
+custom_minimum_size = Vector2(397, 70)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -198.0
+offset_top = -34.0
+offset_right = 199.0
+offset_bottom = 36.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="InputField" type="LineEdit" parent="PlayerSide/NinePatchRect/MarginContainer" unique_id=2055773043]
+custom_minimum_size = Vector2(300, 40)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0.5686275, 0.47058824, 0.3647059, 1)
+theme_override_fonts/font = ExtResource("2_i5yno")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxEmpty_i5yno")
+
+[node name="Label" type="MarginContainer" parent="PlayerSide" unique_id=148609007]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 10
+theme_override_constants/margin_bottom = 60
+
+[node name="PlayerLabel" type="Label" parent="PlayerSide/Label" unique_id=1668171529]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("2_i5yno")
+theme_override_font_sizes/font_size = 60
+text = "YOU"
+horizontal_alignment = 1
+
+[node name="Player" type="AnimatedSprite2D" parent="PlayerSide" unique_id=1672102583]
+position = Vector2(2, 126)
+scale = Vector2(15, 15)
+sprite_frames = SubResource("SpriteFrames_jywba")
+centered = false
+
+[node name="DevSide" type="VBoxContainer" parent="." unique_id=2068474865]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 804.0
+offset_top = 2.0
+offset_right = 1280.0
+offset_bottom = 2.0
+grow_vertical = 2
+theme_override_constants/separation = 40
+
+[node name="Control" type="Control" parent="DevSide" unique_id=1740237620]
+layout_mode = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="DevSide" unique_id=1722279120]
+custom_minimum_size = Vector2(400, 70)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("3_fnv16")
+region_rect = Rect2(59, 59, 26.132797, 26)
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="MarginContainer" type="MarginContainer" parent="DevSide/NinePatchRect" unique_id=759046753]
+custom_minimum_size = Vector2(397, 70)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -198.0
+offset_top = -34.0
+offset_right = 199.0
+offset_bottom = 36.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="DevInputField" type="LineEdit" parent="DevSide/NinePatchRect/MarginContainer" unique_id=1917021281]
+custom_minimum_size = Vector2(300, 40)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0.5686275, 0.47058824, 0.3647059, 1)
+theme_override_fonts/font = ExtResource("2_i5yno")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxEmpty_i5yno")
+
+[node name="Dev" type="AnimatedSprite2D" parent="DevSide" unique_id=1147271340]
+position = Vector2(2, 126)
+scale = Vector2(15, 15)
+sprite_frames = SubResource("SpriteFrames_jywba")
+centered = false
+
+[node name="Label" type="MarginContainer" parent="DevSide" unique_id=1379710586]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 10
+theme_override_constants/margin_bottom = 60
+
+[node name="PlayerLabel" type="Label" parent="DevSide/Label" unique_id=1802249432]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("2_i5yno")
+theme_override_font_sizes/font_size = 60
+text = "DevName"
+horizontal_alignment = 1

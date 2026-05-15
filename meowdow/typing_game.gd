@@ -34,16 +34,16 @@ var return_scene: String = ""
 
 # --- NODES ---
 @onready var word_label: Label = $VBoxContainer/WordLabel
-@onready var input_field: LineEdit = $VBoxContainer/VBoxContainer/NinePatchRect/MarginContainer/InputField
+@onready var input_field: LineEdit = $PlayerSide/NinePatchRect/MarginContainer/InputField
 @onready var timer_label: Label = $VBoxContainer/TimerLabel
-@onready var score_label: Label = $VBoxContainer/VBoxContainer/VBoxContainer/ScoreLabel
-@onready var start_button: Button = $VBoxContainer/VBoxContainer/VBoxContainer/StartButton
+@onready var score_label: Label = $VBoxContainer2/VBoxContainer/ScoreLabel
+@onready var start_button: Button = $VBoxContainer2/VBoxContainer/StartButton
 @onready var result_panel: Panel = $ResultPanel
 @onready var result_label: Label = $ResultPanel/VBoxContainer/ResultLabel
 @onready var reward_label: Label = $ResultPanel/VBoxContainer/RewardLabel
 @onready var play_again_button: Button = $ResultPanel/VBoxContainer/PlayAgainButton
 @onready var quit_button: Button = $ResultPanel/VBoxContainer/QuitButton
-@onready var snake_bar: ProgressBar = $VBoxContainer/VBoxContainer/VBoxContainer/SnakeBar
+@onready var snake_bar: ProgressBar = $VBoxContainer2/VBoxContainer/SnakeBar
 
 func _ready():
 	return_scene = GlobalData.last_map
