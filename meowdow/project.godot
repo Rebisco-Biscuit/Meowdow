@@ -48,17 +48,17 @@ directories/dch_directory={
 "seeds": "res://assets/Meow-Sprites/lore/seeds.dch"
 }
 directories/dtl_directory={
-"Echofall talk before fight": "res://Timelines/towns/Rhollow(Town3/Echofall talk before fight.dtl",
-"Echofalltalkafterplanting ": "res://Timelines/towns/Rhollow(Town3/Echofalltalkafterplanting .dtl",
+"Aubrialis(Town2/KeeperIntroduction": "res://Timelines/towns/Aubrialis(Town2/KeeperIntroduction.dtl",
+"Aubrialis(Town2/KeeperTalks": "res://Timelines/towns/Aubrialis(Town2/KeeperTalks.dtl",
+"Aubrialis(Town2/Thaaw": "res://Timelines/towns/Aubrialis(Town2/Thaaw.dtl",
 "Entitalks": "res://Timelines/towns/Entitalks/Entitalks.dtl",
-"Glow": "res://Timelines/towns/Rhollow(Town3/Glow.dtl",
-"Keeper": "res://Timelines/towns/Vinalore(Town1/Keeper.dtl",
-"KeeperIntroduction": "res://Timelines/towns/Aubrialis(Town2/KeeperIntroduction.dtl",
-"KeeperTalks": "res://Timelines/towns/Aubrialis(Town2/KeeperTalks.dtl",
-"NPC Talk": "res://Timelines/towns/Rhollow(Town3/NPC Talk.dtl",
-"Quest": "res://Timelines/towns/Vinalore(Town1/Quest.dtl",
-"Thaaw": "res://Timelines/towns/Aubrialis(Town2/Thaaw.dtl",
+"Rhollow(Town3/Echofall talk before fight": "res://Timelines/towns/Rhollow(Town3/Echofall talk before fight.dtl",
+"Rhollow(Town3/Echofalltalkafterplanting ": "res://Timelines/towns/Rhollow(Town3/Echofalltalkafterplanting .dtl",
+"Rhollow(Town3/Glow": "res://Timelines/towns/Rhollow(Town3/Glow.dtl",
+"Rhollow(Town3/NPC Talk": "res://Timelines/towns/Rhollow(Town3/NPC Talk.dtl",
 "Town1_Start": "res://Timelines/towns/Town1_Start.dtl",
+"Vinalore(Town1/Keeper": "res://Timelines/towns/Vinalore(Town1/Keeper.dtl",
+"Vinalore(Town1/Quest": "res://Timelines/towns/Vinalore(Town1/Quest.dtl",
 "practice": "res://Timelines/practice.dtl"
 }
 layout/style_directory={
@@ -100,8 +100,6 @@ audio/channel_defaults={
 }
 variables={
 "Thaw": {
-"echofall_defeated": false,
-"entity_choice": false,
 "event_done": false,
 "frostbell_count": 0.0,
 "frostcribe_first_interaction": true,
