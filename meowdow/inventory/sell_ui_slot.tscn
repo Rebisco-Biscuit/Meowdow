@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://cvb0yi8snxhfa"]
+
+[ext_resource type="Script" uid="uid://ncnd080oo3l4" path="res://inventory/sell_ui_slot.gd" id="1_twwxk"]
+[ext_resource type="Texture2D" uid="uid://cfu6em5siq51d" path="res://assets/UI-Sprites.png" id="2_eqsti"]
+
+[node name="sell_UI_slot" type="Button" unique_id=2011711941]
+self_modulate = Color(1, 1, 1, 0)
+texture_filter = 1
+custom_minimum_size = Vector2(65, 65)
+offset_right = 65.0
+offset_bottom = 65.0
+script = ExtResource("1_twwxk")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1839897286]
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("2_eqsti")
+centered = false
+region_enabled = true
+region_rect = Rect2(59, 155, 26, 26)
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1270417248]
+custom_minimum_size = Vector2(130, 130)
+layout_mode = 1
+offset_right = 130.0
+offset_bottom = 130.0
+scale = Vector2(0.5, 0.5)
+localize_numeral_system = false

@@ -11,3 +11,4 @@ region = Rect2(16, 128, 16, 16)
 script = ExtResource("1_1uaha")
 name = "strawberry"
 texture = SubResource("AtlasTexture_d1kyy")
+price = 6

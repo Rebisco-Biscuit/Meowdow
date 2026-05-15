@@ -1,0 +1,281 @@
+[gd_scene format=3 uid="uid://c04q8oyyumlw5"]
+
+[ext_resource type="Texture2D" uid="uid://cfu6em5siq51d" path="res://assets/UI-Sprites.png" id="1_8tcxa"]
+[ext_resource type="Script" uid="uid://52y2nqlbd24n" path="res://sell_ui.gd" id="1_q5dcw"]
+[ext_resource type="PackedScene" uid="uid://cvb0yi8snxhfa" path="res://inventory/sell_ui_slot.tscn" id="2_uoikd"]
+[ext_resource type="FontFile" uid="uid://temvh5pyi624" path="res://assets/Minecraft.ttf" id="3_q5dcw"]
+[ext_resource type="Texture2D" uid="uid://bm7k1fjixgjlm" path="res://assets/icons/carrot_icon.png" id="4_5q41q"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rukqa"]
+texture = ExtResource("1_8tcxa")
+region_rect = Rect2(837, 164, 22, 24)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_df6u5"]
+texture = ExtResource("1_8tcxa")
+region_rect = Rect2(869, 166, 22, 22)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ipc7r"]
+texture = ExtResource("1_8tcxa")
+region_rect = Rect2(869, 166, 22, 22)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bq14d"]
+texture = ExtResource("1_8tcxa")
+region_rect = Rect2(837, 132, 22, 24)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_88c4h"]
+texture = ExtResource("1_8tcxa")
+region_rect = Rect2(869, 134, 22, 22)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_g06b5"]
+texture = ExtResource("1_8tcxa")
+region_rect = Rect2(869, 134, 22, 22)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8qqox"]
+texture = ExtResource("1_8tcxa")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+expand_margin_left = 4.0
+expand_margin_top = 4.0
+expand_margin_right = 4.0
+expand_margin_bottom = 4.0
+region_rect = Rect2(163, 178, 90, 27)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hudpl"]
+texture = ExtResource("1_8tcxa")
+region_rect = Rect2(837, 100, 22, 24)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_go4bf"]
+texture = ExtResource("1_8tcxa")
+region_rect = Rect2(869, 102, 22, 22)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8p3f8"]
+texture = ExtResource("1_8tcxa")
+region_rect = Rect2(869, 102, 22, 22)
+
+[node name="SellShopUI" type="CanvasLayer" unique_id=1855539564]
+script = ExtResource("1_q5dcw")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1234057684]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.43137255)
+
+[node name="Inv" type="NinePatchRect" parent="." unique_id=640348383]
+custom_minimum_size = Vector2(96, 64)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -339.0
+offset_top = -224.0
+offset_right = -31.0
+offset_bottom = 224.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_8tcxa")
+region_rect = Rect2(11, 59, 26, 28)
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="GridContainer" type="GridContainer" parent="Inv" unique_id=533083059]
+custom_minimum_size = Vector2(81, 47)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -117.5
+offset_top = -192.5
+offset_right = 117.5
+offset_bottom = 192.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 20
+theme_override_constants/v_separation = 15
+columns = 3
+
+[node name="inv_UI_slot" parent="Inv/GridContainer" unique_id=2011711941 instance=ExtResource("2_uoikd")]
+layout_mode = 2
+
+[node name="inv_UI_slot2" parent="Inv/GridContainer" unique_id=1611134124 instance=ExtResource("2_uoikd")]
+layout_mode = 2
+
+[node name="inv_UI_slot3" parent="Inv/GridContainer" unique_id=1014131396 instance=ExtResource("2_uoikd")]
+layout_mode = 2
+
+[node name="inv_UI_slot4" parent="Inv/GridContainer" unique_id=70851464 instance=ExtResource("2_uoikd")]
+layout_mode = 2
+
+[node name="inv_UI_slot5" parent="Inv/GridContainer" unique_id=1352704032 instance=ExtResource("2_uoikd")]
+layout_mode = 2
+
+[node name="inv_UI_slot6" parent="Inv/GridContainer" unique_id=1521493661 instance=ExtResource("2_uoikd")]
+layout_mode = 2
+
+[node name="inv_UI_slot7" parent="Inv/GridContainer" unique_id=645949838 instance=ExtResource("2_uoikd")]
+layout_mode = 2
+
+[node name="inv_UI_slot8" parent="Inv/GridContainer" unique_id=1330190513 instance=ExtResource("2_uoikd")]
+layout_mode = 2
+
+[node name="inv_UI_slot9" parent="Inv/GridContainer" unique_id=176371799 instance=ExtResource("2_uoikd")]
+layout_mode = 2
+
+[node name="inv_UI_slot10" parent="Inv/GridContainer" unique_id=1876178293 instance=ExtResource("2_uoikd")]
+layout_mode = 2
+
+[node name="inv_UI_slot11" parent="Inv/GridContainer" unique_id=590777262 instance=ExtResource("2_uoikd")]
+layout_mode = 2
+
+[node name="inv_UI_slot12" parent="Inv/GridContainer" unique_id=1263988064 instance=ExtResource("2_uoikd")]
+layout_mode = 2
+
+[node name="inv_UI_slot13" parent="Inv/GridContainer" unique_id=668976909 instance=ExtResource("2_uoikd")]
+layout_mode = 2
+
+[node name="inv_UI_slot14" parent="Inv/GridContainer" unique_id=1891429162 instance=ExtResource("2_uoikd")]
+layout_mode = 2
+
+[node name="inv_UI_slot15" parent="Inv/GridContainer" unique_id=306498022 instance=ExtResource("2_uoikd")]
+layout_mode = 2
+
+[node name="SellInfo" type="NinePatchRect" parent="." unique_id=1849058043]
+custom_minimum_size = Vector2(96, 64)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -2.0
+offset_top = -226.0
+offset_right = 306.0
+offset_bottom = 222.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_8tcxa")
+region_rect = Rect2(11, 59, 26, 28)
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="MarginContainer" type="MarginContainer" parent="SellInfo" unique_id=817388479]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SellInfo/MarginContainer" unique_id=2405736]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="Control" type="Control" parent="SellInfo/MarginContainer/VBoxContainer" unique_id=566175963]
+layout_mode = 2
+
+[node name="ItemName" type="Label" parent="SellInfo/MarginContainer/VBoxContainer" unique_id=257077908]
+custom_minimum_size = Vector2(200, 31)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("3_q5dcw")
+theme_override_font_sizes/font_size = 28
+text = "Name"
+horizontal_alignment = 1
+
+[node name="NinePatchRect" type="NinePatchRect" parent="SellInfo/MarginContainer/VBoxContainer" unique_id=1654841419]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+texture = ExtResource("1_8tcxa")
+region_rect = Rect2(153, 9, 30, 30)
+
+[node name="ItemTexture" type="TextureRect" parent="SellInfo/MarginContainer/VBoxContainer/NinePatchRect" unique_id=621359204]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 0
+offset_left = 94.0
+offset_top = 50.0
+offset_right = 194.0
+offset_bottom = 150.0
+texture = ExtResource("4_5q41q")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SellInfo/MarginContainer/VBoxContainer" unique_id=1002548817]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 39
+
+[node name="SubtractButton" type="Button" parent="SellInfo/MarginContainer/VBoxContainer/HBoxContainer" unique_id=850305656]
+custom_minimum_size = Vector2(45, 45)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/normal = SubResource("StyleBoxTexture_rukqa")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_df6u5")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ipc7r")
+
+[node name="Quantity" type="Label" parent="SellInfo/MarginContainer/VBoxContainer/HBoxContainer" unique_id=782569333]
+custom_minimum_size = Vector2(60, 32)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_q5dcw")
+theme_override_font_sizes/font_size = 32
+text = "1"
+horizontal_alignment = 1
+
+[node name="AddButton" type="Button" parent="SellInfo/MarginContainer/VBoxContainer/HBoxContainer" unique_id=391355625]
+custom_minimum_size = Vector2(45, 45)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_bq14d")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_88c4h")
+theme_override_styles/hover = SubResource("StyleBoxTexture_g06b5")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="SellInfo/MarginContainer/VBoxContainer" unique_id=289895375]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 38
+
+[node name="Total" type="Label" parent="SellInfo/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1460541309]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("3_q5dcw")
+theme_override_font_sizes/font_size = 29
+text = "Total:"
+
+[node name="Amount" type="Label" parent="SellInfo/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=2100391072]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("3_q5dcw")
+theme_override_font_sizes/font_size = 32
+text = "999"
+
+[node name="SellButton" type="Button" parent="SellInfo/MarginContainer/VBoxContainer" unique_id=1572555900]
+custom_minimum_size = Vector2(200, 30)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_q5dcw")
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = SubResource("StyleBoxTexture_8qqox")
+text = "SELL"
+
+[node name="CloseButton" type="Button" parent="." unique_id=418405065]
+custom_minimum_size = Vector2(75, 75)
+offset_left = 894.0
+offset_top = 115.0
+offset_right = 969.0
+offset_bottom = 190.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_hudpl")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_go4bf")
+theme_override_styles/hover = SubResource("StyleBoxTexture_8p3f8")

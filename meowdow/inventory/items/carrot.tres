@@ -12,4 +12,5 @@ resource_name = "carrot"
 script = ExtResource("1_ixq38")
 name = "carrot"
 texture = SubResource("AtlasTexture_ih064")
+price = 1
 metadata/_custom_type_script = "uid://dhje1jivdtxyf"

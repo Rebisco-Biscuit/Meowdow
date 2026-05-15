@@ -4,7 +4,11 @@ class_name Inv
 
 signal updated
 
-@export var slots: Array[InventorySlot]
+@export var slots: Array[InventorySlot] = []
+
+func _init():
+	if slots == null:
+		slots = []
 
 func insert(item: InvItem):
 	var itemSlots = slots.filter(func(slot): return slot.item == item and slot.amount < item.maxAmountPerStack)

@@ -11,3 +11,4 @@ region = Rect2(80, 64, 16, 16)
 script = ExtResource("1_q27fp")
 name = "beetroot"
 texture = SubResource("AtlasTexture_ae77e")
+price = 4
