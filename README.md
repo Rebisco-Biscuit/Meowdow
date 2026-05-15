@@ -23,9 +23,9 @@ You play as a small cat who moves into a quiet countryside village full of other
 <img width="650" height="419" alt="image" src="https://github.com/user-attachments/assets/4eb12035-a6b5-4a7f-9a69-57ee378837c2" />
 <img width="650" height="419" alt="image" src="https://github.com/user-attachments/assets/f7adc68f-f5e0-4a14-ac6c-b642826343ab" />
 
-#### 2026 MAY 08 (05/11-?)
+#### 2026 MAY 08 (05/11-16)
 - [x] Add majority of town dialogues (towns 2-3)
 - [x] Prettify world & menu UI
-- [-] Plan for minigame/s (Typing game in progress)
+- [x] Plan for minigame/s (Typing game in progress)
 - [x] Add game currency for transactions
-- [ ] Add house interior designing mechanic (for end game)
+- [ ] Add house interior designing mechanic (for end game) - Cancelled
