@@ -527,7 +527,7 @@ script = ExtResource("1_yco5m")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=788841552]
 scale = Vector2(0.4, 0.4)
 sprite_frames = SubResource("SpriteFrames_72rs5")
-frame_progress = 0.41029435
+frame_progress = 0.59849465
 
 [node name="InteractionZone" type="Area2D" parent="." unique_id=1504424205]
 

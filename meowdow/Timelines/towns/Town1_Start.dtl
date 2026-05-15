@@ -1,7 +1,7 @@
 [style name="Town1"]
 join "NPC GUIDE" rightmost
 
-"NPC GUIDE" (happy hello): Hello traveller, you look new!!
+"NPC GUIDE" (happy hello): Hello traveller, you look new!
 "NPC GUIDE" (happy hello): Welcome to Vinalore—the town of laughter, song, and endless celebration!
 
 "NPC GUIDE" (sad): ...At least, that's what it's supposed to be.
@@ -96,6 +96,6 @@ join seeds left
 "NPC GUIDE" (happy): hhmmmm... how many should you plant?
 "NPC GUIDE": How about 100 Gigglegrain crops?
 - Wait, how should I get the seeds?
-	"NPC GUIDE" (happy hello): No worries, here's 60 catnips! Find Luna the seed merchant to buy some seed packs.
+	"NPC GUIDE" (happy hello): No worries, here's 200 catnips! Find Luna the seed merchant to buy some seed packs.
 "NPC GUIDE" (happy): That's it 100 Gigglegrain crops... and by the way! Go to Dewpaw once you're done that cat might have something for you!
 leave "NPC GUIDE"

@@ -1,6 +1,7 @@
 extends Node
 
 var playerCharPath: String = ""
+var dev_wpm: int = 0
 var selectedCatType: String = ""
 var catnips: int = 0
 const SAVE_PATH = "user://save.dat"
@@ -11,6 +12,8 @@ var saved_slots: Array = []
 var saved_crops: Dictionary = {}
 var current_map: String = ""
 var has_received_starter_catnips: bool = false
+var dev_sprite_frames: SpriteFrames = null
+var dev_name: String = ""
 
 # --- QUEST SYSTEM ---
 var quest_step: int = 0

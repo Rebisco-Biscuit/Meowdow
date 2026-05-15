@@ -12,5 +12,4 @@ region = Rect2(0, 48, 16, 16)
 script = ExtResource("1_k6xwg")
 item_scene = ExtResource("2_m2k78")
 icon = SubResource("AtlasTexture_cq5yk")
-item_name = "Poppingcorn"
-price = 4
+item_name = "Wheepingwheat"

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://vlcjs6jsn2il"]
 
-[ext_resource type="Script" uid="uid://ds0ag6643hy1q" path="res://characters/dev_1.gd" id="1_ie3yg"]
+[ext_resource type="Script" uid="uid://cf13n2ivqnqvj" path="res://characters/dev_2.gd" id="1_ie3yg"]
 [ext_resource type="Texture2D" uid="uid://db1vqdku48abh" path="res://assets/Meow-Sprites/dev1.png" id="2_ie3yg"]
 [ext_resource type="FontFile" uid="uid://temvh5pyi624" path="res://assets/Minecraft.ttf" id="3_nmi66"]
 [ext_resource type="Texture2D" uid="uid://cfu6em5siq51d" path="res://assets/UI-Sprites.png" id="4_fe007"]
@@ -238,7 +238,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1ppni"]
-radius = 31.016125
+radius = 26.019224
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_re5a7"]
 bg_color = Color(0.16470589, 0.16470589, 0.16470589, 0.5882353)
@@ -272,7 +272,7 @@ script = ExtResource("1_ie3yg")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2029525101]
 scale = Vector2(0.4, 0.4)
 sprite_frames = SubResource("SpriteFrames_3m7sp")
-frame_progress = 0.20117201
+frame_progress = 0.33365592
 
 [node name="InteractionZone" type="Area2D" parent="." unique_id=1504424205]
 

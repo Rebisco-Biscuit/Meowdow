@@ -13,4 +13,3 @@ script = ExtResource("1_y0r1e")
 item_scene = ExtResource("2_y1b54")
 icon = SubResource("AtlasTexture_sfkah")
 item_name = "Gigglegrain"
-price = 4

@@ -5,6 +5,9 @@ const GAME_DURATION = 60.0
 const MAX_SEEDS = 15
 const MIN_SEEDS = 10
 
+# --- WPM config (set by dev NPC before adding to tree) ---
+var dev_wpm: int = 60  # overridden from GlobalData in _ready()
+
 # --- WORD LIST ---
 const WORDS = [
 	"cat", "paw", "seed", "grow", "farm", "soil", "rain", "sun", "leaf", "root",
@@ -36,15 +39,17 @@ var current_word: String = ""
 var dev_score := 0
 var dev_current_word: String = ""
 
-# typing animation
+# Typing animation
 var dev_typing_text := ""
 var dev_typing_index := 0
 var dev_typing_timer := 0.0
-var dev_typing_speed := 0.03
+var dev_typing_speed := 0.03  # overridden in start_game() based on dev_wpm
 
 # AI timing
 var ai_timer := 0.0
 var ai_target_time := 0.0
+var ai_interval_min := 0.7   # overridden in start_game() based on dev_wpm
+var ai_interval_max := 1.3   # overridden in start_game() based on dev_wpm
 
 var game_active: bool = false
 var return_scene: String = ""
@@ -71,26 +76,31 @@ var return_scene: String = ""
 @onready var dev_word_count = $DevSide/Label2/WordCount
 
 @onready var dev_input_field = $DevSide/NinePatchRect/MarginContainer/DevInputField
-
+@onready var dev_sprite = $DevSide/AnimatedSprite2D
+@onready var dev_name = $DevSide/Label2/PlayerLabel
 
 func _ready():
 	return_scene = GlobalData.last_map
+	dev_wpm = GlobalData.dev_wpm
+	if GlobalData.dev_sprite_frames:
+		dev_sprite.sprite_frames = GlobalData.dev_sprite_frames
+		dev_sprite.play("default")
 
 	result_panel.visible = false
 	input_field.editable = false
 	dev_input_field.editable = false
 	dev_input_field.focus_mode = Control.FOCUS_NONE
 	dev_input_field.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	dev_name.text = GlobalData.dev_name
 
-	# UI setup
 	word_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	word_label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
 	word_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	word_label.add_theme_font_size_override("font_size", 32)
 	word_label.text = "Press Start to play!"
 
-	score_label.text = "🐍 Length: 0"
-	timer_label.text = "⏱ 60s"
+	score_label.text = "Length: 0"
+	timer_label.text = "60s"
 
 	player_word_count.text = "Words: 0"
 	dev_word_count.text = "Words: 0"
@@ -109,7 +119,7 @@ func _process(delta):
 		return
 
 	time_left -= delta
-	timer_label.text = "⏱ " + str(int(ceil(time_left))) + "s"
+	timer_label.text = str(int(ceil(time_left))) + "s"
 
 	# --- DEV TYPING ANIMATION ---
 	if dev_typing_index < dev_typing_text.length():
@@ -163,7 +173,7 @@ func start_game():
 	start_button.visible = false
 	result_panel.visible = false
 
-	score_label.text = "🐍 Length: 0"
+	score_label.text = "Length: 0"
 
 	player_word_count.text = "Words: 0"
 	dev_word_count.text = "Words: 0"
@@ -171,6 +181,14 @@ func start_game():
 	snake_bar.value = 0
 
 	word_label.add_theme_font_size_override("font_size", 75)
+
+	# --- Apply WPM to AI speed ---
+	# Seconds per word = 60 / wpm
+	# Typing speed per char = seconds_per_word / avg_word_length (5)
+	var seconds_per_word = 60.0 / float(dev_wpm)
+	dev_typing_speed = seconds_per_word / 5.0
+	ai_interval_min  = seconds_per_word * 0.85
+	ai_interval_max  = seconds_per_word * 1.2
 
 	next_player_word()
 	next_dev_word()
@@ -181,7 +199,7 @@ func start_game():
 
 
 func set_next_ai_time():
-	ai_target_time = randf_range(0.7, 1.3) + (dev_current_word.length() * 0.06)
+	ai_target_time = randf_range(ai_interval_min, ai_interval_max) + (dev_current_word.length() * 0.01)
 	ai_timer = 0.0
 
 
@@ -240,10 +258,12 @@ func end_game():
 	result_panel.visible = true
 
 	if snake_length > dev_score:
-		result_label.text = "🎉 You beat the Dev!"
-		reward_label.text = "🌱 You earned %d random seeds!" % seed_count
+		result_label.text = "You beat the Dev!"
+		reward_label.text = "You earned $10!"
+		GlobalData.catnips += 10
+		GlobalData.create_save()
 	else:
-		result_label.text = "💀 The Dev defeated you!"
+		result_label.text = "The Dev defeated you!"
 		reward_label.text = "Better luck next time!"
 
 	start_button.visible = false
