@@ -1,0 +1,113 @@
+[gd_scene format=3 uid="uid://cq7eei4mb7cn8"]
+
+[ext_resource type="Script" uid="uid://6qua8pc4p2k3" path="res://test_boss.gd" id="1_si8s1"]
+[ext_resource type="AudioStream" uid="uid://cen003sukbl4k" path="res://meow-sic/bossmusic2.wav" id="2_y0omj"]
+[ext_resource type="Texture2D" uid="uid://b507v3xcel3y2" path="res://assets/bossbg.png" id="3_ou3tb"]
+[ext_resource type="Texture2D" uid="uid://bd1cnevt42l6i" path="res://assets/Meow-Sprites/lore/echofall mad.png" id="4_jwhdn"]
+[ext_resource type="FontFile" uid="uid://temvh5pyi624" path="res://assets/Minecraft.ttf" id="5_jwhdn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jwhdn"]
+bg_color = Color(0.68, 0.0816, 0.0816, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[node name="Node2D" type="Control" unique_id=1530571182]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_si8s1")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1785195750]
+stream = ExtResource("2_y0omj")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=2074937543]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_ou3tb")
+
+[node name="EchofallSitInThrone" type="TextureRect" parent="." unique_id=1426864310]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -536.0
+offset_top = -236.0
+offset_bottom = 236.0
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(1.3133048, 1.3133047)
+texture = ExtResource("4_jwhdn")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1216737165]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.29411766)
+
+[node name="TargetContainer" type="Control" parent="." unique_id=290886119]
+layout_mode = 1
+anchor_top = 0.377
+anchor_right = 0.59000003
+anchor_bottom = 1.0
+offset_top = -271.44
+offset_right = 524.7999
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BossLabel" type="Label" parent="." unique_id=806151877]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -109.0
+offset_top = 40.0
+offset_right = 109.0
+offset_bottom = 80.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("5_jwhdn")
+theme_override_font_sizes/font_size = 40
+text = "ECHOFALL"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=937906542]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -380.0
+offset_top = 95.0
+offset_bottom = 115.0
+grow_horizontal = 2
+scale = Vector2(2, 2)
+theme_override_fonts/font = ExtResource("5_jwhdn")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/fill = SubResource("StyleBoxFlat_jwhdn")
+value = 100.0
+
+[node name="EndLabel" type="Label" parent="." unique_id=110327977]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -67.5
+offset_top = 200.0
+offset_right = 67.5
+offset_bottom = 283.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("5_jwhdn")
+theme_override_font_sizes/font_size = 40

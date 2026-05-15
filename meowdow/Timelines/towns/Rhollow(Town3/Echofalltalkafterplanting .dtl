@@ -1,3 +1,9 @@
+if {Thaw.town3_done} == true and {Thaw.echofall_defeated} == true:
+	join Echofall (Neutral) center
+	Echofall: I may be the keeper of Stillnes
+	Echofall: But I will forever be moving forward for this kingdom my creator left me with
+	Echofall: Thank you!
+	[end_timeline]
 if {Thaw.rhomato_count} >= 1.0:
 	join Echofall rightmost
 	Echofall: Why have you planted this?
@@ -15,6 +21,7 @@ if {Thaw.rhomato_count} >= 1.0:
 	Player: She's your daugther?
 	Echofall: I'm sorry for what I have done to you my daughter
 	Echofall: I thought if I became powerful enough, I could fix everything. But I was never meant to fix anything alone. I was meant to be part of… three.
+	set {Thaw.town3_done} = true
 	[end_timeline]
 elif {Thaw.rhomato_count} < 1.0:
 	join Echofall (Echofall Mad) rightmost

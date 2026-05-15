@@ -62,8 +62,25 @@ func start_dialogue():
 			GlobalData.create_save()
 
 		if GlobalData.quest_step == 13:
-			GlobalData.quest_step = 14 #Talk to frostcribe
-			GlobalData.create_save()
+			var berry_item   = preload("res://inventory/items/berries.tres")
+			var beetroot_item = preload("res://inventory/items/beetroot.tres")
+
+			if player and player.inventory:
+				var berry_count    = player.inventory.get_item_count(berry_item)
+				var beetroot_count = player.inventory.get_item_count(beetroot_item)
+
+				if berry_count >= 150 and beetroot_count >= 150:
+					for i in 150:
+						player.inventory.remove(berry_item)
+					for i in 150:
+						player.inventory.remove(beetroot_item)
+
+					print("Berries and beetroot taken!")
+
+					GlobalData.quest_step = 14  # Talk to frostcribe
+					GlobalData.create_save()
+				else:
+					print("Not enough berries or beetroot!")
 
 		prompt.visible = player_inside
 	, CONNECT_ONE_SHOT)

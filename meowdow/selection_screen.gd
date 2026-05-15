@@ -56,7 +56,7 @@ func _on_button_pressed() -> void:
 		child.process_mode = Node.PROCESS_MODE_ALWAYS
 
 	if not GlobalData.has_received_starter_catnips:
-		GlobalData.catnips += 200
+		GlobalData.catnips += 9999
 		GlobalData.has_received_starter_catnips = true
 		print("Guide gave 200 catnips!")
 

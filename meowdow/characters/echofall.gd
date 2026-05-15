@@ -27,11 +27,10 @@ func _process(delta):
 		idle_interval = randf_range(4.0, 7.0)
 
 	if player and not is_talking and Input.is_action_just_pressed("interact"):
-		if GlobalData.quest_step == 19:
-			# Before fight — in dungeon
+		if GlobalData.quest_step == 19 or GlobalData.quest_step == 20:
+			print(GlobalData.echofall_defeated)
 			start_dialogue_before_fight()
-		elif GlobalData.quest_step == 23:
-			# After planting — rewrite ending
+		elif GlobalData.quest_step >= 23:
 			start_dialogue_after_planting()
 
 func start_dialogue_before_fight():
@@ -51,12 +50,14 @@ func start_dialogue_before_fight():
 		GlobalData.sync_from_dialogic()
 		is_talking = false
 		bg.queue_free()
-		# Battle starts — handled by dungeon logic
+
 		if GlobalData.quest_step == 19:
 			GlobalData.quest_step = 20
 			GlobalData.create_save()
-		
-		prompt.visible = player_inside
+
+		# Transition to boss fight
+		get_tree().change_scene_to_file("res://test_boss.tscn")
+
 	, CONNECT_ONE_SHOT)
 
 func start_dialogue_after_planting():
@@ -76,7 +77,6 @@ func start_dialogue_after_planting():
 		GlobalData.sync_from_dialogic()
 		is_talking = false
 		bg.queue_free()
-		# Story complete!
 		GlobalData.quest_step = 24
 		GlobalData.create_save()
 		print("Story complete!")

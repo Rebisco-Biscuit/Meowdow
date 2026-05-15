@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://cbtvs6anvihy7"]
+
+[ext_resource type="Texture2D" uid="uid://cfu6em5siq51d" path="res://assets/UI-Sprites.png" id="1_ugq0v"]
+[ext_resource type="Script" uid="uid://c8hbavre466l5" path="res://boss_button-test.gd" id="1_v22yh"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_p72hx"]
+texture = ExtResource("1_ugq0v")
+region_rect = Rect2(8, 56, 32, 32)
+modulate_color = Color(0.5872171, 0.41156033, 0.5867472, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ugq0v"]
+texture = ExtResource("1_ugq0v")
+region_rect = Rect2(56, 104, 32, 32)
+modulate_color = Color(0.3019608, 0.19215687, 0.3019608, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kxuqr"]
+texture = ExtResource("1_ugq0v")
+region_rect = Rect2(56, 104, 32, 32)
+modulate_color = Color(0.3019608, 0.19215687, 0.3019608, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vf0oy"]
+texture = ExtResource("1_ugq0v")
+region_rect = Rect2(56, 104, 32, 32)
+modulate_color = Color(0.3019608, 0.19215687, 0.3019608, 1)
+
+[node name="Button" type="Button" unique_id=73986878]
+z_index = 5
+offset_right = 8.0
+offset_bottom = 8.0
+scale = Vector2(12, 12)
+theme_override_styles/normal = SubResource("StyleBoxTexture_p72hx")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ugq0v")
+theme_override_styles/hover = SubResource("StyleBoxTexture_kxuqr")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_vf0oy")
+script = ExtResource("1_v22yh")

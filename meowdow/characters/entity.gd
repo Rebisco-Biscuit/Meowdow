@@ -1,13 +1,11 @@
 extends Node2D
 
-@onready var sprite = $AnimatedSprite2D
+@onready var sprite = $Sprite2D
 @onready var prompt = $Prompt
 
 var player = null
 var player_inside = false
 
-var idle_timer := 0.0
-var idle_interval := 5.0
 var is_talking = false
 
 var bg_scene = preload("res://DialogueBackground.tscn")
@@ -18,20 +16,15 @@ func _ready():
 	# Entity only appears after defeating Echofall
 	visible = GlobalData.quest_step >= 20
 
-func _process(delta):
+func _process(_delta):
 	visible = GlobalData.quest_step >= 20
 
 	if prompt.visible:
 		prompt.position.y = -5 + sin(Time.get_ticks_msec() * 0.005) * 3
 
-	idle_timer += delta
-	if idle_timer >= idle_interval:
-		sprite.play("default")
-		idle_timer = 0.0
-		idle_interval = randf_range(4.0, 7.0)
 
 	if player and not is_talking and Input.is_action_just_pressed("interact"):
-		if GlobalData.quest_step == 20:
+		if GlobalData.quest_step == 21:
 			start_dialogue()
 
 func start_dialogue():

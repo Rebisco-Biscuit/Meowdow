@@ -34,7 +34,7 @@ const TOWN3_QUESTS = [
 	{ "step": 18, "text": "Plant and harvest Gloomberries (F)" },
 	{ "step": 19, "text": "Enter the dungeon and face Echofall" },
 	{ "step": 20, "text": "Defeat Echofall" },
-	{ "step": 21, "text": "Choose your path..." },
+	{ "step": 21, "text": "Talk to the Entity in the dungeon" },
 	{ "step": 22, "text": "Plant the Seed of Rhomato (F)" },
 	{ "step": 23, "text": "Talk to Echofall — rewrite the ending" },
 	{ "step": 24, "text": "The End" },	

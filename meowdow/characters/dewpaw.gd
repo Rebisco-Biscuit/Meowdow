@@ -56,14 +56,27 @@ func start_dialogue():
 		bg.queue_free()
 
 		if GlobalData.quest_step == 4:
-			# Give wheepingwheat (corn) seed
-			var seed = preload("res://inventory/collectables/corn_seed.tscn").instantiate()
+			var carrot_item = preload("res://inventory/items/carrot.tres")
+
 			if player and player.inventory:
-				player.inventory.insert(seed.item)
-				print("Wheepingwheat seed given!")
-			seed.queue_free()
-			GlobalData.quest_step = 5  # next: plant wheepingwheat
-			GlobalData.create_save()
+				var carrot_count = player.inventory.get_item_count(carrot_item)
+
+				if carrot_count >= 100:
+					# remove() takes one at a time, so loop 100x
+					for i in 100:
+						player.inventory.remove(carrot_item)
+
+					# Give corn seed
+					var seed = preload("res://inventory/collectables/corn_seed.tscn").instantiate()
+					player.inventory.insert(seed.item)
+					seed.queue_free()
+
+					print("Wheepingwheat seed given!")
+
+					GlobalData.quest_step = 5
+					GlobalData.create_save()
+				else:
+					print("Not enough carrots!")
 
 		prompt.visible = player != null
 	, CONNECT_ONE_SHOT)

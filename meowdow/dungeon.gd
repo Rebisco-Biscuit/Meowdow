@@ -18,7 +18,7 @@ func _ready():
 	var quest_panel = preload("res://quest_panel.tscn").instantiate()
 	$CanvasLayer.add_child(quest_panel)	
 	
-	if GlobalData.echofall_defeated == true and GlobalData.quest_step == 20:
+	if GlobalData.echofall_defeated == true and GlobalData.quest_step == 21:
 		posa.visible = true
 
 	var playerCharPath = GlobalData.playerCharPath

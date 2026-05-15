@@ -1,39 +1,9 @@
 [gd_scene format=3 uid="uid://ccu4568spkpig"]
 
 [ext_resource type="Script" uid="uid://ca6tr1swgplv2" path="res://characters/entity.gd" id="1_pimh3"]
-[ext_resource type="Texture2D" uid="uid://baokpiq7os6do" path="res://assets/shadow.png" id="2_6tppj"]
-[ext_resource type="Texture2D" uid="uid://3ihr0hixomly" path="res://assets/Meow-Sprites/Free pack/cat 1.png" id="3_pb85n"]
+[ext_resource type="Texture2D" uid="uid://coyqa2axaam31" path="res://assets/Meow-Sprites/lore/entity.png" id="2_03rkj"]
 [ext_resource type="FontFile" uid="uid://temvh5pyi624" path="res://assets/Minecraft.ttf" id="4_vk4km"]
 [ext_resource type="Texture2D" uid="uid://cfu6em5siq51d" path="res://assets/UI-Sprites.png" id="5_2fq0f"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_5878s"]
-atlas = ExtResource("3_pb85n")
-region = Rect2(0, 896, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2455w"]
-atlas = ExtResource("3_pb85n")
-region = Rect2(32, 896, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1hufk"]
-atlas = ExtResource("3_pb85n")
-region = Rect2(64, 896, 32, 32)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_5d04d"]
-animations = [{
-"frames": [{
-"duration": 1.2,
-"texture": SubResource("AtlasTexture_5878s")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_2455w")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1hufk")
-}],
-"loop": false,
-"name": &"default",
-"speed": 5.0
-}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_idiep"]
 radius = 18.110771
@@ -56,21 +26,13 @@ region = Rect2(640, 128, 32, 32)
 [node name="Node2D" type="Node2D" unique_id=299663916]
 script = ExtResource("1_pimh3")
 
-[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=454277576]
-modulate = Color(1, 1, 1, 0.37254903)
-position = Vector2(0, 5)
-scale = Vector2(0.34632042, 0.5422222)
-texture = ExtResource("2_6tppj")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1202937529]
-sprite_frames = SubResource("SpriteFrames_5d04d")
-frame = 2
-frame_progress = 1.0
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1654837613]
+scale = Vector2(0.0325, 0.0325)
+texture = ExtResource("2_03rkj")
 
 [node name="InteractionZone" type="Area2D" parent="." unique_id=2086427358]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionZone" unique_id=2144422057]
-position = Vector2(0, -3)
 shape = SubResource("CircleShape2D_idiep")
 
 [node name="Label" type="Label" parent="." unique_id=1647688892]

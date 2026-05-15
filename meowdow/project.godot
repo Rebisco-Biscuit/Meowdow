@@ -108,25 +108,17 @@ variables={
 "gigglegrain_count": 0,
 "gloomberry_count": 0.0,
 "keeper_choice1": false,
-"no_money_trigger": false,
 "quest_started": false,
 "rhomato_count": 0.0,
 "snowbloom_count": 0.0,
 "thaaw_quest": false,
 "thaaw_quest_start": false,
+"town1_done": false,
 "town1event": false,
 "town1event2": false,
+"town2_done": false,
+"town3_done": false,
 "wheepingwheat_count": 0.0
-"wheepingwheat_count": 0
-},
-"town1": {
-"town_done": false
-},
-"town2": {
-"town_done": false
-},
-"town3": {
-"town_done": false
 }
 }
 layout/style_list=["res://Timelines/towns/Town1.tres"]

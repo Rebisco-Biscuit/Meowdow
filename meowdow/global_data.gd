@@ -123,7 +123,7 @@ func sync_to_dialogic():
 	Dialogic.VAR.Thaw.frostbell_count = frostbell_count
 	Dialogic.VAR.Thaw.snowbloom_count = snowbloom_count
 	Dialogic.VAR.Thaw.rhomato_count = rhomato_count
-	Dialogic.VAR.Thaw.gloomberry_count = gloomberry_count	
+	Dialogic.VAR.Thaw.gloomberry_count = gloomberry_count
 	Dialogic.VAR.Thaw.keeper_choice1 = old_jerry_choice
 	Dialogic.VAR.Thaw.thaaw_quest_start = thaaw_quest_start
 	Dialogic.VAR.Thaw.thaaw_quest = thaaw_quest_done
@@ -136,7 +136,7 @@ func sync_from_dialogic():
 	frostbell_count = int(Dialogic.VAR.Thaw.frostbell_count)
 	snowbloom_count = int(Dialogic.VAR.Thaw.snowbloom_count)
 	gloomberry_count = int(Dialogic.VAR.Thaw.gloomberry_count)
-	rhomato_count = int(Dialogic.VAR.Thaw.rhomato_count)	
+	rhomato_count = int(Dialogic.VAR.Thaw.rhomato_count)
 	old_jerry_choice = bool(Dialogic.VAR.Thaw.keeper_choice1)
 	thaaw_quest_done = bool(Dialogic.VAR.Thaw.thaaw_quest)
 	thaaw_quest_start = bool(Dialogic.VAR.Thaw.thaaw_quest_start)
@@ -164,7 +164,7 @@ func create_save():
 	file.store_line(str(frostbell_count))
 	file.store_line(str(snowbloom_count))
 	file.store_line(str(rhomato_count))
-	file.store_line(str(gloomberry_count))	
+	file.store_line(str(gloomberry_count))
 	file.store_line(str(old_jerry_choice))
 	file.store_line(str(thaaw_quest_done))
 	file.store_line(str(thaaw_quest_start))
@@ -218,9 +218,9 @@ func load_save():
 	frostbell_count = int(file.get_line())
 	snowbloom_count = int(file.get_line())
 	rhomato_count = int(file.get_line())
-	gloomberry_count = int(file.get_line())	
+	gloomberry_count = int(file.get_line())
 	old_jerry_choice = (file.get_line()) == "true"
-	thaaw_quest_done = (file.get_line()) == "true"	
+	thaaw_quest_done = (file.get_line()) == "true"
 	thaaw_quest_start = (file.get_line()) == "true"
 	echofall_defeated = (file.get_line()) == "true"
 	entity_choice = (file.get_line()) == "true"
@@ -284,7 +284,7 @@ func reset():
 	frostbell_count = 0
 	snowbloom_count = 0
 	rhomato_count = 0
-	gloomberry_count = 0	
+	gloomberry_count = 0
 	old_jerry_choice = false
 	thaaw_quest_done = false
 	thaaw_quest_start = false
