@@ -138,14 +138,33 @@ func _on_sell_pressed():
 	if selected_slot == null:
 		return
 
+	var item_name = selected_slot.item.name.to_lower()
+
 	for i in range(sell_quantity):
 		inventory.remove(selected_slot.item)
 
 	GlobalData.catnips += selected_price * sell_quantity
+	_reduce_crop_count(item_name, sell_quantity)
 
 	inventory.updated.emit()
 	refresh_slots()
 	clear_selection()
+
+
+func _reduce_crop_count(item_name: String, amount: int):
+	match item_name:
+		"carrot":
+			GlobalData.gigglegrain_count = max(0, GlobalData.gigglegrain_count - amount)
+		"corn":
+			GlobalData.wheepingwheat_count = max(0, GlobalData.wheepingwheat_count - amount)
+		"beetroot":
+			GlobalData.snowbloom_count = max(0, GlobalData.snowbloom_count - amount)
+		"berries":
+			GlobalData.frostbell_count = max(0, GlobalData.frostbell_count - amount)
+		"strawberry":
+			GlobalData.gloomberry_count = max(0, GlobalData.gloomberry_count - amount)
+		"tomato":
+			GlobalData.rhomato_count = max(0, GlobalData.rhomato_count - amount)
 
 
 func clear_selection():

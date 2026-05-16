@@ -250,7 +250,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 0
 theme_override_fonts/font = ExtResource("2_i5yno")
 theme_override_font_sizes/font_size = 28
-text = "⏱ 60s"
+text = "60s"
 
 [node name="WordLabel" type="Label" parent="VBoxContainer" unique_id=1859958440]
 layout_mode = 2
@@ -266,8 +266,9 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -250.0
-offset_top = -110.0
+offset_top = -140.0
 offset_right = 250.0
+offset_bottom = -30.0
 grow_horizontal = 2
 grow_vertical = 0
 size_flags_vertical = 8
@@ -297,13 +298,25 @@ horizontal_alignment = 1
 custom_minimum_size = Vector2(200, 45)
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_colors/font_color = Color(0.21230447, 0.21230504, 0.21230465, 1)
+theme_override_colors/font_color = Color(0.76862746, 0.63529414, 0.49411765, 1)
 theme_override_fonts/font = ExtResource("2_i5yno")
 theme_override_font_sizes/font_size = 23
 theme_override_styles/normal = SubResource("StyleBoxTexture_fnv16")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_tw4ul")
 theme_override_styles/hover = SubResource("StyleBoxTexture_jywba")
 text = "Start"
+
+[node name="BackButton" type="Button" parent="VBoxContainer2/VBoxContainer" unique_id=1903206571]
+custom_minimum_size = Vector2(200, 45)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.76862746, 0.63529414, 0.49411765, 1)
+theme_override_fonts/font = ExtResource("2_i5yno")
+theme_override_font_sizes/font_size = 23
+theme_override_styles/normal = SubResource("StyleBoxTexture_fnv16")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_tw4ul")
+theme_override_styles/hover = SubResource("StyleBoxTexture_jywba")
+text = "Back"
 
 [node name="PlayerSide" type="VBoxContainer" parent="." unique_id=70754405]
 layout_mode = 1
@@ -453,6 +466,15 @@ theme_override_fonts/font = ExtResource("2_i5yno")
 theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxEmpty_i5yno")
 
+[node name="Difficulty" type="Label" parent="DevSide/NinePatchRect/MarginContainer" unique_id=658399244]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_i5yno")
+theme_override_font_sizes/font_size = 32
+text = "WPM"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Label2" type="VBoxContainer" parent="DevSide" unique_id=316037366]
 layout_mode = 2
 size_flags_horizontal = 4
@@ -516,20 +538,29 @@ offset_right = 102.5
 offset_bottom = 60.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 10
 
 [node name="ResultLabel" type="Label" parent="ResultPanel/VBoxContainer" unique_id=1233368756]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_i5yno")
+theme_override_font_sizes/font_size = 32
 text = "🐍 Snake Length: X words!"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="RewardLabel" type="Label" parent="ResultPanel/VBoxContainer" unique_id=392442698]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_i5yno")
+theme_override_font_sizes/font_size = 32
 text = "🌱 You earned X seeds!"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="PlayAgainButton" type="Button" parent="ResultPanel/VBoxContainer" unique_id=911905459]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.42509362, 0.27698937, 0.14011863, 1)
+theme_override_colors/font_color = Color(0.76862746, 0.63529414, 0.49411765, 1)
 theme_override_fonts/font = ExtResource("2_i5yno")
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxTexture_8jvet")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_8c64r")
 theme_override_styles/hover = SubResource("StyleBoxTexture_a7nw4")
@@ -537,9 +568,9 @@ text = "Play Again"
 
 [node name="QuitButton" type="Button" parent="ResultPanel/VBoxContainer" unique_id=1748307102]
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0.76862746, 0.63529414, 0.49411765, 1)
 theme_override_fonts/font = ExtResource("2_i5yno")
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxTexture_ur7wl")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_50aox")
 theme_override_styles/hover = SubResource("StyleBoxTexture_h7nxv")

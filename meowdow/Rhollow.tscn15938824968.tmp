@@ -24,6 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://dua2223sje68" path="res://echofall_lair.tscn" id="19_dk04j"]
 [ext_resource type="PackedScene" uid="uid://dxnlqut7on5op" path="res://characters/catherine.tscn" id="20_uli8u"]
 [ext_resource type="PackedScene" uid="uid://0f0700crx0e" path="res://characters/dev3.tscn" id="23_8p8b7"]
+[ext_resource type="Script" uid="uid://dvmujbkxa6okc" path="res://characters/catherine_rhollow.gd" id="24_28vey"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0uypl"]
 content_margin_top = 20.0
@@ -4717,7 +4718,8 @@ position = Vector2(472, 257)
 [node name="Catherine" parent="." unique_id=1297075727 instance=ExtResource("20_uli8u")]
 z_index = 6
 position = Vector2(1041, 291)
+script = ExtResource("24_28vey")
 
-[node name="Rhoddz" parent="." unique_id=275898614 instance=ExtResource("23_8p8b7")]
+[node name="Node2D" parent="." unique_id=275898614 instance=ExtResource("23_8p8b7")]
 z_index = 6
 position = Vector2(576, 351)

@@ -10,6 +10,7 @@ region = Rect2(144, 144, 32, 32)
 
 [node name="Hotbar" type="Panel" unique_id=660909474]
 self_modulate = Color(1, 1, 1, 0)
+z_index = 1
 texture_filter = 1
 anchors_preset = 7
 anchor_left = 0.5

@@ -66,9 +66,11 @@ var return_scene: String = ""
 @onready var result_panel: Panel = $ResultPanel
 @onready var result_label: Label = $ResultPanel/VBoxContainer/ResultLabel
 @onready var reward_label: Label = $ResultPanel/VBoxContainer/RewardLabel
+@onready var difficulty_label: Label = $DevSide/NinePatchRect/MarginContainer/Difficulty
 
 @onready var play_again_button: Button = $ResultPanel/VBoxContainer/PlayAgainButton
 @onready var quit_button: Button = $ResultPanel/VBoxContainer/QuitButton
+@onready var back_button: Button = $VBoxContainer2/VBoxContainer/BackButton
 
 @onready var snake_bar: ProgressBar = $VBoxContainer2/VBoxContainer/SnakeBar
 
@@ -105,6 +107,8 @@ func _ready():
 	player_word_count.text = "Words: 0"
 	dev_word_count.text = "Words: 0"
 
+	difficulty_label.text = "%s" % GlobalData.dev_wpm + " WPM"
+
 	snake_bar.max_value = 30
 	snake_bar.value = 0
 
@@ -112,6 +116,7 @@ func _ready():
 	start_button.pressed.connect(_on_start_pressed)
 	play_again_button.pressed.connect(_on_play_again_pressed)
 	quit_button.pressed.connect(_on_quit_pressed)
+	back_button.pressed.connect(_on_quit_pressed)
 
 
 func _process(delta):
@@ -259,12 +264,17 @@ func end_game():
 
 	if snake_length > dev_score:
 		result_label.text = "You beat the Dev!"
-		reward_label.text = "You earned $10!"
-		GlobalData.catnips += 10
+		reward_label.text = "You earned $35!"
+		GlobalData.catnips += 35
 		GlobalData.create_save()
 	else:
 		result_label.text = "The Dev defeated you!"
-		reward_label.text = "Better luck next time!"
+		if GlobalData.catnips > 50:
+			reward_label.text = "You lost $20! Better luck next time!"			
+			GlobalData.catnips -= 20
+			GlobalData.create_save()
+		else:
+			reward_label.text = "Better luck next time!"
 
 	start_button.visible = false
 
